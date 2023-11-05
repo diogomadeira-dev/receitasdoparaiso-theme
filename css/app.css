@@ -555,6 +555,9 @@ video {
 .mt-4{
     margin-top: 1rem
 }
+.block{
+    display: block
+}
 .inline-block{
     display: inline-block
 }
@@ -618,6 +621,9 @@ video {
 .rounded{
     border-radius: 0.25rem
 }
+.rounded-lg{
+    border-radius: 0.5rem
+}
 .rounded-xl{
     border-radius: 0.75rem
 }
@@ -627,12 +633,20 @@ video {
 .border-b{
     border-bottom-width: 1px
 }
+.border-gray-100{
+    --tw-border-opacity: 1;
+    border-color: rgb(243 244 246 / var(--tw-border-opacity))
+}
 .border-primary{
     --tw-border-opacity: 1;
     border-color: rgb(14 165 233 / var(--tw-border-opacity))
 }
 .border-transparent{
     border-color: transparent
+}
+.bg-blue-700{
+    --tw-bg-opacity: 1;
+    background-color: rgb(29 78 216 / var(--tw-bg-opacity))
 }
 .bg-gray-100{
     --tw-bg-opacity: 1;
@@ -725,6 +739,12 @@ video {
 .py-6{
     padding-top: 1.5rem;
     padding-bottom: 1.5rem
+}
+.pl-3{
+    padding-left: 0.75rem
+}
+.pr-4{
+    padding-right: 1rem
 }
 .text-center{
     text-align: center
@@ -918,6 +938,10 @@ article > *:not(.entry-content),
     list-style-position: inside;
     list-style-type: decimal
 }
+.hover\:bg-gray-100:hover{
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity))
+}
 .focus\:outline-none:focus{
     outline: 2px solid transparent;
     outline-offset: 2px
@@ -937,6 +961,33 @@ article > *:not(.entry-content),
 .focus\:ring-offset-white:focus{
     --tw-ring-offset-color: #fff
 }
+@media (prefers-color-scheme: dark){
+
+    .dark\:border-gray-700{
+        --tw-border-opacity: 1;
+        border-color: rgb(55 65 81 / var(--tw-border-opacity))
+    }
+
+    .dark\:bg-gray-800{
+        --tw-bg-opacity: 1;
+        background-color: rgb(31 41 55 / var(--tw-bg-opacity))
+    }
+
+    .dark\:text-white{
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255 / var(--tw-text-opacity))
+    }
+
+    .dark\:hover\:bg-gray-700:hover{
+        --tw-bg-opacity: 1;
+        background-color: rgb(55 65 81 / var(--tw-bg-opacity))
+    }
+
+    .dark\:hover\:text-white:hover{
+        --tw-text-opacity: 1;
+        color: rgb(255 255 255 / var(--tw-text-opacity))
+    }
+}
 @media (min-width: 600px){
 
     .sm\:w-auto{
@@ -950,6 +1001,10 @@ article > *:not(.entry-content),
         margin-bottom: 1.5rem
     }
 
+    .md\:mt-0{
+        margin-top: 0px
+    }
+
     .md\:flex{
         display: flex
     }
@@ -958,9 +1013,72 @@ article > *:not(.entry-content),
         width: 50%
     }
 
+    .md\:flex-row{
+        flex-direction: row
+    }
+
+    .md\:space-x-8 > :not([hidden]) ~ :not([hidden]){
+        --tw-space-x-reverse: 0;
+        margin-right: calc(2rem * var(--tw-space-x-reverse));
+        margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)))
+    }
+
+    .md\:border-0{
+        border-width: 0px
+    }
+
+    .md\:bg-transparent{
+        background-color: transparent
+    }
+
+    .md\:bg-white{
+        --tw-bg-opacity: 1;
+        background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+    }
+
+    .md\:p-0{
+        padding: 0px
+    }
+
     .md\:text-3xl{
         font-size: 1.875rem;
         line-height: 2.25rem
+    }
+
+    .md\:text-blue-700{
+        --tw-text-opacity: 1;
+        color: rgb(29 78 216 / var(--tw-text-opacity))
+    }
+
+    .md\:hover\:bg-transparent:hover{
+        background-color: transparent
+    }
+
+    .md\:hover\:text-blue-700:hover{
+        --tw-text-opacity: 1;
+        color: rgb(29 78 216 / var(--tw-text-opacity))
+    }
+
+    @media (prefers-color-scheme: dark){
+
+        .md\:dark\:bg-gray-900{
+            --tw-bg-opacity: 1;
+            background-color: rgb(17 24 39 / var(--tw-bg-opacity))
+        }
+
+        .md\:dark\:text-blue-500{
+            --tw-text-opacity: 1;
+            color: rgb(59 130 246 / var(--tw-text-opacity))
+        }
+
+        .md\:dark\:hover\:bg-transparent:hover{
+            background-color: transparent
+        }
+
+        .md\:dark\:hover\:text-blue-500:hover{
+            --tw-text-opacity: 1;
+            color: rgb(59 130 246 / var(--tw-text-opacity))
+        }
     }
 }
 @media (min-width: 960px){
