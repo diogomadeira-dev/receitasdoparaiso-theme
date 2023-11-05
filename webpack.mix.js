@@ -27,6 +27,9 @@ mix.postCss("resources/css/editor-style.css", "css");
 
 mix.browserSync({
     proxy: "http://receitasdoparaiso.test",
+    host: 'receitasdoparaiso.test',
+    open: 'external',
+    port: 3000,
     files: [
         `./**/*.php`,
         // `./**/*.js`,
