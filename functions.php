@@ -111,7 +111,32 @@ add_filter( 'nav_menu_submenu_css_class', 'receitasdoparaiso_theme_nav_menu_add_
 /* Disable WordPress Admin Bar for all users */
 add_filter( 'show_admin_bar', '__return_false' );
 
-// Register Custom Post Type
+/**
+* Require WooCommerce to be active and if it isn’t, display the admin notice.
+*/
+function check_woocommerce_plugin() {
+    // Check if WooCommerce is installed and activated
+    if (class_exists('WooCommerce')) {
+        return true;
+    }
+    return false;
+}
+
+function woocommerce_alert() {
+    if (!check_woocommerce_plugin()) {
+        add_action('admin_notices', 'woocommerce_not_installed_alert');
+    }
+}
+
+function woocommerce_not_installed_alert() {
+    echo '<div class="error"><p><strong>Alerta:</strong> O plugin WooCommerce não está instalado ou ativado. Instale e active o WooCommerce para utilizar todas as funcionalidades deste tema.</p></div>';
+}
+
+add_action('admin_init', 'woocommerce_alert');
+
+/**
+* Register Custom Post Type
+*/
 function receitas() {
 
 	$labels = array(
