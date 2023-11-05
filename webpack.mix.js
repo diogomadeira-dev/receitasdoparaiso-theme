@@ -25,6 +25,15 @@ mix.postCss("resources/css/editor-style.css", "css");
 //     port: 8000
 // });
 
+mix.browserSync({
+    proxy: "http://receitasdoparaiso.test",
+    files: [
+        `./**/*.php`,
+        // `./**/*.js`,
+        // `./**/*.css`,
+    ]
+});
+
 if (mix.inProduction()) {
     mix.version();
 } else {
