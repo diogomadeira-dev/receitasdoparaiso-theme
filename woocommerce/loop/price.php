@@ -24,6 +24,6 @@ global $product;
 
 <?php if ( $price_html = $product->get_price_html() ) : ?>
 	<div class="flex justify-center">
-		<span class="text-sm"><?php echo $price_html; ?></span>
+		<span class="text-sm text-muted"><?php echo $price_html; ?></span>
 	</div>
 <?php endif; ?>
