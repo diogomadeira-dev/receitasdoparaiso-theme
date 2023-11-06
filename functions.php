@@ -112,6 +112,15 @@ add_filter( 'nav_menu_submenu_css_class', 'receitasdoparaiso_theme_nav_menu_add_
 add_filter( 'show_admin_bar', '__return_false' );
 
 /**
+* Admin footer modification
+*/
+function remove_footer_admin() {
+    echo '<span id="footer-thankyou">Powered by Receitas do Paraíso</span>';
+}
+ 
+add_filter('admin_footer_text', 'remove_footer_admin');
+
+/**
 * Require WooCommerce to be active and if it isn’t, display the admin notice.
 */
 function check_woocommerce_plugin() {
