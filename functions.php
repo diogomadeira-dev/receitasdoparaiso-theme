@@ -148,7 +148,7 @@ add_action('admin_init', 'woocommerce_alert');
 */
 function receitasdoparaiso_add_woocommerce_support() {
 	add_theme_support( 'woocommerce', array(
-		'thumbnail_image_width' => 150,
+		'thumbnail_image_width' => 600,
 		'single_image_width'    => 300,
 
         'product_grid'          => array(
