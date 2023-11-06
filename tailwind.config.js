@@ -1,5 +1,7 @@
 const theme = require('./theme.json');
 const tailpress = require("@jeffreyvr/tailwindcss-tailpress");
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -8,7 +10,7 @@ module.exports = {
         './**/*.php',
         './resources/css/*.css',
         './resources/js/*.js',
-        './safelist.txt'
+        './safelist.txt',
     ],
     theme: {
         container: {
@@ -20,7 +22,10 @@ module.exports = {
         },
         extend: {
             colors: tailpress.colorMapper(tailpress.theme('settings.color.palette', theme)),
-            fontSize: tailpress.fontSizeMapper(tailpress.theme('settings.typography.fontSizes', theme))
+            fontSize: tailpress.fontSizeMapper(tailpress.theme('settings.typography.fontSizes', theme)),
+            fontFamily: {
+                sans: ['Noto Sans', ...defaultTheme.fontFamily.sans]
+            }
         },
         screens: {
             'xs': '480px',
