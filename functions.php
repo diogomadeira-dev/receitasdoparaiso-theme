@@ -144,6 +144,12 @@ function woocommerce_not_installed_alert() {
 add_action('admin_init', 'woocommerce_alert');
 
 /**
+ * Move sales flash to price item
+ */
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 10);
+add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash', 6);
+
+/**
 * Declaring WooCommerce support in themes
 */
 function receitasdoparaiso_add_woocommerce_support() {
