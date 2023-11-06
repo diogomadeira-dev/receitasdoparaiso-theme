@@ -26,10 +26,10 @@ $button_classes = 'h-10 px-4 py-2 bg-neutral-200 text-secondary hover:bg-neutral
 echo apply_filters(
 	'woocommerce_loop_add_to_cart_link', // WPCS: XSS ok.
 	sprintf(
-		'<a href="%s" data-quantity="%s" class="%s" %s>%s</a>',
+		'<div class="mt-4"><a href="%s" data-quantity="%s" class="%s" %s>%s</a><div>',
 		esc_url( $product->add_to_cart_url() ),
 		esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
-		// esc_attr( isset( $args['class'] ) ? $args['class'] : 'button' ),
+		/** esc_attr( isset( $args['class'] ) ? $args['class'] : 'button' ), */
 		esc_attr( $button_classes ),
 		isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
 		esc_html( $product->add_to_cart_text() )
@@ -37,21 +37,3 @@ echo apply_filters(
 	$product,
 	$args
 );
-
-// $button_classes = 'bg-blue-500 text-white py-2 px-4 rounded';
-// $quantity = isset( $args['quantity'] ) ? $args['quantity'] : 1;
-// $button_text = esc_html( $product->add_to_cart_text() );
-
-// echo apply_filters(
-//     'woocommerce_loop_add_to_cart_link',
-//     sprintf(
-//         '<a href="%s" data-quantity="%s" class="%s" %s>%s</a>',
-//         esc_url( $product->add_to_cart_url() ),
-//         esc_attr( $quantity ),
-//         esc_attr( $button_classes ),
-//         isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
-//         $button_text
-//     ),
-//     $product,
-//     $args
-// );
