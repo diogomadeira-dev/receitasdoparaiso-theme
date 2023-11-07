@@ -1,8 +1,3 @@
-article > *:not(.entry-content),
-.entry-content > * {
-    @apply mx-auto max-w-content;
-}
-
 .entry-content, .block-editor-block-list__layout {
     h1 {
         @apply text-2xl;
@@ -39,4 +34,12 @@ article > *:not(.entry-content),
             @apply list-decimal list-inside;
         }
     }
+}
+
+.capitalize-first-letter {
+    text-transform: lowercase; /* Convert all text to lowercase */
+}
+
+.capitalize-first-letter::first-letter {
+    text-transform: uppercase; /* Capitalize the first letter of each sentence */
 }

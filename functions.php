@@ -177,6 +177,35 @@ add_theme_support( 'wc-product-gallery-lightbox' );
 add_theme_support( 'wc-product-gallery-slider' );
 
 /**
+* Disable html tab text-editor
+*/
+
+function my_editor_settings($settings) {
+	$settings['quicktags'] = false;
+	return $settings;
+}
+
+add_filter('wp_editor_settings', 'my_editor_settings');
+
+/**
+* Enable dashicons
+*/
+
+function load_dashicons(){
+    wp_enqueue_style('dashicons');
+}
+add_action('wp_enqueue_scripts', 'load_dashicons');
+
+/**
+* Disable Media Buttons
+*/
+
+function RemoveAddMediaButtonsForNonAdmins(){
+    remove_action( 'media_buttons', 'media_buttons' );
+}
+add_action('admin_head', 'RemoveAddMediaButtonsForNonAdmins');
+
+/**
 * Register Custom Post Type
 */
 function receitas() {
@@ -189,19 +218,19 @@ function receitas() {
 		'archives'              => __( 'Item Archives', 'text_domain' ),
 		'attributes'            => __( 'Item Attributes', 'text_domain' ),
 		'parent_item_colon'     => __( 'Parent Item:', 'text_domain' ),
-		'all_items'             => __( 'All Items', 'text_domain' ),
-		'add_new_item'          => __( 'Add New Item', 'text_domain' ),
-		'add_new'               => __( 'Add New', 'text_domain' ),
-		'new_item'              => __( 'New Item', 'text_domain' ),
-		'edit_item'             => __( 'Edit Item', 'text_domain' ),
+		'all_items'             => __( 'Todas', 'text_domain' ),
+		'add_new_item'          => __( 'Adicionar receita', 'text_domain' ),
+		'add_new'               => __( 'Adicionar', 'text_domain' ),
+		'new_item'              => __( 'Adicionar receita', 'text_domain' ),
+		'edit_item'             => __( 'Editar receita', 'text_domain' ),
 		'update_item'           => __( 'Update Item', 'text_domain' ),
 		'view_item'             => __( 'View Item', 'text_domain' ),
 		'view_items'            => __( 'View Items', 'text_domain' ),
 		'search_items'          => __( 'Search Item', 'text_domain' ),
 		'not_found'             => __( 'Not found', 'text_domain' ),
 		'not_found_in_trash'    => __( 'Not found in Trash', 'text_domain' ),
-		'featured_image'        => __( 'Featured Image', 'text_domain' ),
-		'set_featured_image'    => __( 'Set featured image', 'text_domain' ),
+		'featured_image'        => __( 'Imagem', 'text_domain' ),
+		'set_featured_image'    => __( 'Carregar imagem', 'text_domain' ),
 		'remove_featured_image' => __( 'Remove featured image', 'text_domain' ),
 		'use_featured_image'    => __( 'Use as featured image', 'text_domain' ),
 		'insert_into_item'      => __( 'Insert into item', 'text_domain' ),
@@ -214,13 +243,14 @@ function receitas() {
 		'label'                 => __( 'Receita', 'text_domain' ),
 		'description'           => __( 'Post Type Description', 'text_domain' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title' ),
-		'taxonomies'            => array( 'category', 'post_tag' ),
+		'supports'              => array( 'title', 'editor', 'thumbnail' ),
+		'taxonomies'            => array( 'category' ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
 		'show_in_menu'          => true,
-		'menu_position'         => 5,
+		'menu_position'         => 2,
+		'menu_icon'             => 'dashicons-youtube',
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
 		'can_export'            => true,
@@ -233,3 +263,4 @@ function receitas() {
 
 }
 add_action( 'init', 'receitas', 0 );
+
