@@ -1,30 +1,20 @@
-name: "pre-release"
-
-on:
+on: 
   push:
     branches:
-      - "main"
-  pull_request:
-    branches:
-      - "main"
-
+      - main
+name: 🚀 Deploy website on push
 jobs:
-  pre-release:
-    name: "Pre Release"
-    runs-on: "ubuntu-latest"
-
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
     steps:
-      # ...
-      - name: "Build & test"
-        run: |
-          echo "done!"
-
-      - uses: "marvinpinto/action-automatic-releases@latest"
-        with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
-          prerelease: true
-          title: "Development Build"
-          files: |
-            LICENSE.txt
-            *.jar
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+    
+    - name: 📂 Sync files
+      uses: Penguibird/FTP-Deploy-Action@4.2.0
+      with:
+        server: dev.receitasdoparaiso.pt
+        username: ${{ secrets.ftp_username }}
+        password: ${{ secrets.ftp_password }}
+        server-dir: /wp-content/themes
