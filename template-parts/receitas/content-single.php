@@ -17,6 +17,15 @@
             <header class="mb-4">
                 <?php the_title( sprintf( '<h1 class="entry-title text-2xl lg:text-4xl font-extrabold leading-tight capitalize-first-letter"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
                 <!-- <time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished" class="text-sm text-gray-700"><?php echo get_the_date(); ?></time> -->
+                <div>
+                <?php 
+                    foreach((get_the_category()) as $category){
+                        ?>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300"><?php  echo $category->name ?></span>
+                        <?php
+                        }
+                    ?>
+                </div>
             </header>
 
             <div class="entry-content">
@@ -26,11 +35,11 @@
 
                 <?php
                     // Get the custom field value
-                    $url_urlyoutube = get_post_meta(get_the_ID(), 'url_urlyoutube', true);
+                    $url = get_post_meta(get_the_ID(), 'url', true);
 
                     // Check if the field has a value
-                    if (!empty($url_urlyoutube)) {
-                        echo '<p><strong>URL Youtube:</strong> <a href="' . esc_url($url_urlyoutube) . '" target="_blank">' . esc_url($url_urlyoutube) . '</a></p>';
+                    if (!empty($url)) {
+                        echo '<p><strong>URL Youtube:</strong> <a href="' . esc_url($url) . '" target="_blank">' . esc_url($url) . '</a></p>';
                     }
                 ?>
                 
