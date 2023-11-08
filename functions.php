@@ -231,8 +231,8 @@ function receitas() {
 		'not_found_in_trash'    => __( 'Not found in Trash', 'text_domain' ),
 		'featured_image'        => __( 'Imagem', 'text_domain' ),
 		'set_featured_image'    => __( 'Carregar imagem', 'text_domain' ),
-		'remove_featured_image' => __( 'Remove featured image', 'text_domain' ),
-		'use_featured_image'    => __( 'Use as featured image', 'text_domain' ),
+		'remove_featured_image' => __( 'Remover imagem', 'text_domain' ),
+		'use_featured_image'    => __( 'Utilzar como imagem', 'text_domain' ),
 		'insert_into_item'      => __( 'Insert into item', 'text_domain' ),
 		'uploaded_to_this_item' => __( 'Uploaded to this item', 'text_domain' ),
 		'items_list'            => __( 'Items list', 'text_domain' ),
@@ -264,3 +264,110 @@ function receitas() {
 }
 add_action( 'init', 'receitas', 0 );
 
+
+ 
+         // Meta-Box Generator
+      // How to use: $meta_value = get_post_meta( $post_id, $field_id, true );
+      // Example: get_post_meta( get_the_ID(), "my_metabox_field", true );
+
+      class urlMetabox {
+
+        private $screens = array('receitas');
+
+        private $fields = array(
+          array(
+            'label' => 'URL Youtube',
+            'id' => 'url-youtube',
+            'type' => 'url',
+           )  
+        );
+
+        public function __construct() {
+          add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
+          add_action( 'save_post', array( $this, 'save_fields' ) );
+        }
+
+        public function add_meta_boxes() {
+          foreach ( $this->screens as $s ) {
+            add_meta_box(
+              'url',
+              __( 'url', 'textdomain' ),
+              array( $this, 'meta_box_callback' ),
+              $s,
+              'normal',
+              'default'
+            );
+          }
+        }
+
+        public function meta_box_callback( $post ) {
+          wp_nonce_field( 'url_data', 'url_nonce' ); 
+          echo "url from youtube";
+          $this->field_generator( $post );
+        }
+
+        public function field_generator( $post ) {
+          $output = '';
+          foreach ( $this->fields as $field ) {
+            $label = '<label for="' . $field['id'] . '">' . $field['label'] . '</label>';
+            $meta_value = get_post_meta( $post->ID, $field['id'], true );
+            if ( empty( $meta_value ) ) {
+              if ( isset( $field['default'] ) ) {
+                $meta_value = $field['default'];
+              }
+            }
+            switch ( $field['type'] ) {
+              default:
+                $input = sprintf(
+                '<input %s id="%s" name="%s" type="%s" value="%s">',
+                $field['type'] !== 'color' ? 'style="width: 100%"' : '',
+                $field['id'],
+                $field['id'],
+                $field['type'],
+                $meta_value
+              );
+            }
+            $output .= $this->format_rows( $label, $input );
+          }
+          echo '<table class="form-table"><tbody>' . $output . '</tbody></table>';
+        }
+
+        public function format_rows( $label, $input ) {
+          return '<div style="margin-top: 10px;"><strong>'.$label.'</strong></div><div>'.$input.'</div>';
+        }
+
+        
+
+        public function save_fields( $post_id ) {
+          if ( !isset( $_POST['url_nonce'] ) ) {
+            return $post_id;
+          }
+          $nonce = $_POST['url_nonce'];
+          if ( !wp_verify_nonce( $nonce, 'url_data' ) ) {
+            return $post_id;
+          }
+          if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+            return $post_id;
+          }
+          foreach ( $this->fields as $field ) {
+            if ( isset( $_POST[ $field['id'] ] ) ) {
+              switch ( $field['type'] ) {
+                case 'email':
+                  $_POST[ $field['id'] ] = sanitize_email( $_POST[ $field['id'] ] );
+                  break;
+                case 'text':
+                  $_POST[ $field['id'] ] = sanitize_text_field( $_POST[ $field['id'] ] );
+                  break;
+              }
+              update_post_meta( $post_id, $field['id'], $_POST[ $field['id'] ] );
+            } else if ( $field['type'] === 'checkbox' ) {
+              update_post_meta( $post_id, $field['id'], '0' );
+            }
+          }
+        }
+
+      }
+
+      if (class_exists('urlMetabox')) {
+        new urlMetabox;
+      };

@@ -24,6 +24,15 @@
                     <?php the_content(); ?>
                 </div>
 
+                <?php
+                    // Get the custom field value
+                    $url_urlyoutube = get_post_meta(get_the_ID(), 'url_urlyoutube', true);
+
+                    // Check if the field has a value
+                    if (!empty($url_urlyoutube)) {
+                        echo '<p><strong>URL Youtube:</strong> <a href="' . esc_url($url_urlyoutube) . '" target="_blank">' . esc_url($url_urlyoutube) . '</a></p>';
+                    }
+                ?>
                 
                 <div class="flex justify-end">
                     <?php

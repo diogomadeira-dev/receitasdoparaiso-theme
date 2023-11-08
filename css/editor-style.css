@@ -77,9 +77,6 @@
 .mt-4 {
     margin-top: 1rem
 }
-.mb-2 {
-    margin-bottom: 0.5rem
-}
 .block {
     display: block
 }
@@ -104,18 +101,6 @@
 .h-6 {
     height: 1.5rem
 }
-.h-36 {
-    height: 9rem
-}
-.h-48 {
-    height: 12rem
-}
-.h-auto {
-    height: auto
-}
-.max-h-56 {
-    max-height: 14rem
-}
 .max-h-96 {
     max-height: 24rem
 }
@@ -135,26 +120,17 @@
 .w-full {
     width: 100%
 }
-.w-72 {
-    width: 18rem
-}
-.w-36 {
-    width: 9rem
-}
-.w-96 {
-    width: 24rem
-}
 .max-w-screen-md {
     max-width: 782px
 }
 .max-w-sm {
     max-width: 24rem
 }
-.flex-none {
-    flex: none
-}
 .flex-1 {
     flex: 1 1 0%
+}
+.flex-none {
+    flex: none
 }
 .flex-grow {
     flex-grow: 1
@@ -182,9 +158,6 @@
 }
 .justify-between {
     justify-content: space-between
-}
-.gap-6 {
-    gap: 1.5rem
 }
 .gap-10 {
     gap: 2.5rem
@@ -251,18 +224,6 @@
     --tw-bg-opacity: 1;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity))
 }
-.bg-red-400 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(248 113 113 / var(--tw-bg-opacity))
-}
-.bg-blue-500 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(59 130 246 / var(--tw-bg-opacity))
-}
-.bg-red-600 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(220 38 38 / var(--tw-bg-opacity))
-}
 .bg-gradient-to-r {
     background-image: linear-gradient(to right, var(--tw-gradient-stops))
 }
@@ -291,10 +252,6 @@
 }
 .to-90\% {
     --tw-gradient-to-position: 90%
-}
-.object-contain {
-    -o-object-fit: contain;
-       object-fit: contain
 }
 .object-cover {
     -o-object-fit: cover;
@@ -409,9 +366,6 @@
 .capitalize {
     text-transform: capitalize
 }
-.normal-case {
-    text-transform: none
-}
 .italic {
     font-style: italic
 }
@@ -424,19 +378,7 @@
 .tracking-tight {
     letter-spacing: -0.025em
 }
-.tracking-wide {
-    letter-spacing: 0.025em
-}
-.tracking-widest {
-    letter-spacing: 0.1em
-}
 .tracking-wider {
-    letter-spacing: 0.05em
-}
-.-tracking-wide {
-    letter-spacing: -0.025em
-}
-.-tracking-tighter {
     letter-spacing: 0.05em
 }
 .text-blue-500 {
@@ -574,10 +516,6 @@ body {
 .hover\:bg-neutral-300:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(212 212 212 / var(--tw-bg-opacity))
-}
-.hover\:object-scale-down:hover {
-    -o-object-fit: scale-down;
-       object-fit: scale-down
 }
 .focus\:outline-none:focus {
     outline: 2px solid transparent;
@@ -726,6 +664,10 @@ body {
     .lg\:p-0 {
         padding: 0px
     }
+    .lg\:text-4xl {
+        font-size: 2.25rem;
+        line-height: 2.5rem
+    }
     .lg\:text-5xl {
         font-size: 3rem;
         line-height: 1
@@ -733,9 +675,5 @@ body {
     .lg\:text-6xl {
         font-size: 3.75rem;
         line-height: 1
-    }
-    .lg\:text-4xl {
-        font-size: 2.25rem;
-        line-height: 2.5rem
     }
 }

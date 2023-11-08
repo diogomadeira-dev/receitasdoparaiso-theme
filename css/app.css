@@ -555,9 +555,6 @@ video {
 .mt-4{
         margin-top: 1rem;
 }
-.mb-2{
-        margin-bottom: 0.5rem;
-}
 .block{
         display: block;
 }
@@ -639,9 +636,6 @@ video {
 }
 .justify-between{
         justify-content: space-between;
-}
-.gap-6{
-        gap: 1.5rem;
 }
 .gap-10{
         gap: 2.5rem;
@@ -862,19 +856,7 @@ video {
 .tracking-tight{
         letter-spacing: -0.025em;
 }
-.tracking-wide{
-        letter-spacing: 0.025em;
-}
-.tracking-widest{
-        letter-spacing: 0.1em;
-}
 .tracking-wider{
-        letter-spacing: 0.05em;
-}
-.-tracking-wide{
-        letter-spacing: -0.025em;
-}
-.-tracking-tighter{
         letter-spacing: 0.05em;
 }
 .text-blue-500{
@@ -1368,6 +1350,11 @@ video {
                 padding: 0px;
         }
 
+        .lg\:text-4xl{
+                font-size: 2.25rem;
+                line-height: 2.5rem;
+        }
+
         .lg\:text-5xl{
                 font-size: 3rem;
                 line-height: 1;
@@ -1376,11 +1363,6 @@ video {
         .lg\:text-6xl{
                 font-size: 3.75rem;
                 line-height: 1;
-        }
-
-        .lg\:text-4xl{
-                font-size: 2.25rem;
-                line-height: 2.5rem;
         }
 }
 
