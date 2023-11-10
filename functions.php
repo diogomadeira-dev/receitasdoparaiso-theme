@@ -376,156 +376,150 @@ if (class_exists('recipeMetabox')) {
 };
 
 /**
-* Informação Custom Taxonomy
+* Receita Informação Custom Taxonomy
 */
 
+class InformaçãoMetabox {
 
-      // Meta-Box Generator
-      // How to use: $meta_value = get_post_meta( $post_id, $field_id, true );
-      // Example: get_post_meta( get_the_ID(), "my_metabox_field", true );
+private $screens = array('receitas');
 
-      class InformaçãoMetabox {
+private $fields = array(
+	array(
+	'label' => 'Dificuldade',
+	'id' => 'select_dificuldade',
+	'type' => 'select',
+	'options' => array(
+		'Muito Fácil',
+		'Fácil',
+		'Intermédio',
+		'Difícil',
+		'Muito Difícil',
+	),
+	),
+	array(
+	'label' => 'Tempo de preparação (min)',
+	'id' => 'number_tempodepreparação',
+	'type' => 'number',
+	),
+	array(
+	'label' => 'Tempo total (min)',
+	'id' => 'number_tempototal',
+	'type' => 'number',
+	),
+	array(
+	'label' => 'Porções',
+	'id' => 'number_porções',
+	'type' => 'number',
+	)  
+);
 
-        private $screens = array('receitas');
+public function __construct() {
+	add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
+	add_action( 'save_post', array( $this, 'save_fields' ) );
+}
 
-        private $fields = array(
-          array(
-            'label' => 'Dificuldade',
-            'id' => 'select_dificuldade',
-            'type' => 'select',
-            'options' => array(
-               'Muito Fácil',
-               'Fácil',
-               'Intermediário',
-               'Difícil',
-               'Muito Difícil',
-            ),
-           ),
-          array(
-            'label' => 'Tempo de preparação',
-            'id' => 'number_tempodepreparação',
-            'type' => 'number',
-           ),
-          array(
-            'label' => 'Tempo total',
-            'id' => 'number_tempototal',
-            'type' => 'number',
-           ),
-          array(
-            'label' => 'Porções',
-            'id' => 'number_porções',
-            'type' => 'number',
-           )  
-        );
+public function add_meta_boxes() {
+	foreach ( $this->screens as $s ) {
+	add_meta_box(
+		'Informação',
+		__( 'Informação', 'details' ),
+		array( $this, 'meta_box_callback' ),
+		$s,
+		'normal',
+		'default'
+	);
+	}
+}
 
-        public function __construct() {
-          add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ) );
-          add_action( 'save_post', array( $this, 'save_fields' ) );
-        }
+public function meta_box_callback( $post ) {
+	wp_nonce_field( 'Informação_data', 'Informação_nonce' ); 
+	$this->field_generator( $post );
+}
 
-        public function add_meta_boxes() {
-          foreach ( $this->screens as $s ) {
-            add_meta_box(
-              'Informação',
-              __( 'Informação', 'details' ),
-              array( $this, 'meta_box_callback' ),
-              $s,
-              'normal',
-              'default'
-            );
-          }
-        }
+public function field_generator( $post ) {
+	$output = '';
+	foreach ( $this->fields as $field ) {
+	$label = '<label for="' . $field['id'] . '">' . $field['label'] . '</label>';
+	$meta_value = get_post_meta( $post->ID, $field['id'], true );
+	if ( empty( $meta_value ) ) {
+		if ( isset( $field['default'] ) ) {
+		$meta_value = $field['default'];
+		}
+	}
+	switch ( $field['type'] ) {
+		case 'select':
+		$input = sprintf(
+		'<select id="%s" name="%s">',
+		$field['id'],
+		$field['id']
+		);
+		foreach ( $field['options'] as $key => $value ) {
+		$field_value = !is_numeric( $key ) ? $key : $value;
+		$input .= sprintf(
+			'<option %s value="%s">%s</option>',
+			$meta_value === $field_value ? 'selected' : '',
+			$field_value,
+			$value
+		);
+		}
+		$input .= '</select>';
+		break;
 
-        public function meta_box_callback( $post ) {
-          wp_nonce_field( 'Informação_data', 'Informação_nonce' ); 
-          $this->field_generator( $post );
-        }
+		default:
+		$input = sprintf(
+		'<input %s id="%s" name="%s" type="%s" value="%s">',
+		$field['type'] !== 'color' ? 'style="width: 100%"' : '',
+		$field['id'],
+		$field['id'],
+		$field['type'],
+		$meta_value
+		);
+	}
+	$output .= $this->format_rows( $label, $input );
+	}
+	echo '<table class="form-table"><tbody>' . $output . '</tbody></table>';
+}
 
-        public function field_generator( $post ) {
-          $output = '';
-          foreach ( $this->fields as $field ) {
-            $label = '<label for="' . $field['id'] . '">' . $field['label'] . '</label>';
-            $meta_value = get_post_meta( $post->ID, $field['id'], true );
-            if ( empty( $meta_value ) ) {
-              if ( isset( $field['default'] ) ) {
-                $meta_value = $field['default'];
-              }
-            }
-            switch ( $field['type'] ) {
-              case 'select':
-              $input = sprintf(
-                '<select id="%s" name="%s">',
-                $field['id'],
-                $field['id']
-              );
-              foreach ( $field['options'] as $key => $value ) {
-                $field_value = !is_numeric( $key ) ? $key : $value;
-                $input .= sprintf(
-                  '<option %s value="%s">%s</option>',
-                  $meta_value === $field_value ? 'selected' : '',
-                  $field_value,
-                  $value
-                );
-              }
-              $input .= '</select>';
-              break;
-        
-              default:
-                $input = sprintf(
-                '<input %s id="%s" name="%s" type="%s" value="%s">',
-                $field['type'] !== 'color' ? 'style="width: 100%"' : '',
-                $field['id'],
-                $field['id'],
-                $field['type'],
-                $meta_value
-              );
-            }
-            $output .= $this->format_rows( $label, $input );
-          }
-          echo '<table class="form-table"><tbody>' . $output . '</tbody></table>';
-        }
+public function format_rows( $label, $input ) {
+	return '<div style="margin-top: 10px;"><strong>'.$label.'</strong></div><div>'.$input.'</div>';
+}
 
-        public function format_rows( $label, $input ) {
-          return '<div style="margin-top: 10px;"><strong>'.$label.'</strong></div><div>'.$input.'</div>';
-        }
 
-        
 
-        public function save_fields( $post_id ) {
-          if ( !isset( $_POST['Informação_nonce'] ) ) {
-            return $post_id;
-          }
-          $nonce = $_POST['Informação_nonce'];
-          if ( !wp_verify_nonce( $nonce, 'Informação_data' ) ) {
-            return $post_id;
-          }
-          if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-            return $post_id;
-          }
-          foreach ( $this->fields as $field ) {
-            if ( isset( $_POST[ $field['id'] ] ) ) {
-              switch ( $field['type'] ) {
-                case 'email':
-                  $_POST[ $field['id'] ] = sanitize_email( $_POST[ $field['id'] ] );
-                  break;
-                case 'text':
-                  $_POST[ $field['id'] ] = sanitize_text_field( $_POST[ $field['id'] ] );
-                  break;
-              }
-              update_post_meta( $post_id, $field['id'], $_POST[ $field['id'] ] );
-            } else if ( $field['type'] === 'checkbox' ) {
-              update_post_meta( $post_id, $field['id'], '0' );
-            }
-          }
-        }
+public function save_fields( $post_id ) {
+	if ( !isset( $_POST['Informação_nonce'] ) ) {
+	return $post_id;
+	}
+	$nonce = $_POST['Informação_nonce'];
+	if ( !wp_verify_nonce( $nonce, 'Informação_data' ) ) {
+	return $post_id;
+	}
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+	return $post_id;
+	}
+	foreach ( $this->fields as $field ) {
+	if ( isset( $_POST[ $field['id'] ] ) ) {
+		switch ( $field['type'] ) {
+		case 'email':
+			$_POST[ $field['id'] ] = sanitize_email( $_POST[ $field['id'] ] );
+			break;
+		case 'text':
+			$_POST[ $field['id'] ] = sanitize_text_field( $_POST[ $field['id'] ] );
+			break;
+		}
+		update_post_meta( $post_id, $field['id'], $_POST[ $field['id'] ] );
+	} else if ( $field['type'] === 'checkbox' ) {
+		update_post_meta( $post_id, $field['id'], '0' );
+	}
+	}
+}
 
-      }
+}
 
-      if (class_exists('InformaçãoMetabox')) {
-        new InformaçãoMetabox;
-      };
+if (class_exists('InformaçãoMetabox')) {
+new InformaçãoMetabox;
+};
 
-      
 
 /**
 * Ingredientes Custom Taxonomy

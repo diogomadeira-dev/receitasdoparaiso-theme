@@ -2072,6 +2072,13 @@ html {
 [dir="rtl"] .steps-vertical .step:before {
   margin-right: auto;
 }
+.btn {
+  border-radius: 9999px;
+}
+.btn-primary {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
 .badge {
   display: flex;
   height: 1.5rem;

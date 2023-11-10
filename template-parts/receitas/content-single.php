@@ -16,7 +16,7 @@
         <div class="flex-1">
             <header class="mb-6">
                 <div class="flex justify-between">
-                <?php the_title(sprintf('<h1 class="entry-title text-2xl lg:text-4xl font-extrabold leading-tight capitalize-first-letter mb-6">', esc_url(get_permalink())), '</h1>'); ?>
+                <?php the_title(sprintf('<h1 class="entry-title text-2xl lg:text-4xl font-extrabold leading-tight capitalize-first-letter mb-4">', esc_url(get_permalink())), '</h1>'); ?>
                 <!-- <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished" class="text-sm text-gray-700"><?php echo get_the_date(); ?></time> -->
 
                     <div class="flex justify-end gap-2">
@@ -76,7 +76,7 @@
 
                     $levelOne = 'Muito Fácil';
                     $levelTwo = 'Fácil';
-                    $levelThree = 'Intermediário';
+                    $levelThree = 'Intermédio';
                     $levelFour = 'Difícil';
                     $levelFive = 'Muito Difícil';
 

@@ -1,4 +1,12 @@
 @layer components {
+    .btn {
+        @apply rounded-full;
+    }
+
+    .btn-primary {
+        @apply text-white;
+    }
+
     .badge {
         @apply border-2 border-primary/20 text-black text-xs font-normal w-auto h-6 flex px-2.5 py-0.5 items-center justify-center rounded-full;
     }
