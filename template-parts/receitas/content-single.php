@@ -1,3 +1,5 @@
+<?php require get_template_directory() . '/utils.php'; ?>
+
 <article id="post-<?php the_ID(); ?>">
 
     <div class="flex gap-10">
@@ -118,19 +120,19 @@
                     <?php if ($preparationTime) : ?>
                         <div class="flex align-top flex-col">
                             <span class="text-xs text-muted font-medium">Tempo de preparação</span>
-                            <small class="text-xs font-medium"><?php echo $preparationTime; ?> min</small>
+                            <small class="text-xs font-medium"><?php echo convertToHourFormat($preparationTime); ?></small>
                         </div>
                     <?php endif; ?>    
 
-                    <?php $totalTime = get_post_meta( get_the_ID(), "number_tempodepreparação", true ); ?>
+                    <?php $totalTime = get_post_meta( get_the_ID(), "number_tempototal", true ); ?>
                     <?php if ($totalTime) : ?>
                         <div class="flex align-top flex-col">
                             <span class="text-xs text-muted font-medium">Tempo total</span>
-                            <small class="text-xs font-medium"><?php echo $totalTime; ?> min</small>
+                            <small class="text-xs font-medium"><?php echo convertToHourFormat($totalTime); ?></small>
                         </div>
                     <?php endif; ?>   
 
-                    <?php $portions = get_post_meta( get_the_ID(), "number_tempodepreparação", true ); ?>
+                    <?php $portions = get_post_meta( get_the_ID(), "number_porções", true ); ?>
                     <?php if ($portions) : ?>
                         <div class="flex align-top flex-col">
                             <span class="text-xs text-muted font-medium">Porções</span>
@@ -145,7 +147,6 @@
                 <?php if (!empty($url)) { 
                     echo '<a role="button" class="btn btn-primary" href="' . esc_url($url) . '" target="_blank">' . "Ver vídeo" . '</a>';
                 } ?>
-
                 
                 <?php
                 // wp_link_pages(
