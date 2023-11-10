@@ -14,9 +14,35 @@
 
 
         <div class="flex-1">
-            <header class="mb-4">
-                <?php the_title(sprintf('<h1 class="entry-title text-2xl lg:text-4xl font-extrabold leading-tight capitalize-first-letter">', esc_url(get_permalink())), '</h1>'); ?>
+            <header class="mb-6">
+                <div class="flex justify-between">
+                <?php the_title(sprintf('<h1 class="entry-title text-2xl lg:text-4xl font-extrabold leading-tight capitalize-first-letter mb-2">', esc_url(get_permalink())), '</h1>'); ?>
                 <!-- <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished" class="text-sm text-gray-700"><?php echo get_the_date(); ?></time> -->
+
+                    <div class="flex justify-end gap-2">
+                        <?php
+                        $previous_recipe = get_previous_post();
+                        if ($previous_recipe) :
+                            $previous_recipe_url = get_permalink($previous_recipe);
+                        ?>
+                            <a href="<?php echo $previous_recipe_url; ?>" data-tooltip-target="tooltip-default">
+                                <span class="dashicons dashicons-arrow-left-alt"></span>
+                            </a>
+                        <?php endif;
+                        ?>
+
+                        <?php
+                        $next_recipe = get_next_post();
+                        if ($next_recipe) :
+                            $next_recipe_url = get_permalink($next_recipe);
+                        ?>
+                            <a href="<?php echo $next_recipe_url; ?>">
+                                <span class="dashicons dashicons-arrow-right-alt"></span>
+                            </a>
+                        <?php endif;
+                        ?>
+                    </div>
+                </div>
                 <div>
                     <?php
                     foreach ((get_the_category()) as $category) {
@@ -42,32 +68,6 @@
                     echo '<p><strong>URL Youtube:</strong> <a href="' . esc_url($url) . '" target="_blank">' . esc_url($url) . '</a></p>';
                 }
                 ?>
-
-                <div class="flex justify-end">
-                    <?php
-                    $previous_recipe = get_previous_post();
-                    if ($previous_recipe) :
-                        $previous_recipe_url = get_permalink($previous_recipe);
-                    ?>
-                        <a href="<?php echo $previous_recipe_url; ?>">
-                            <span class="dashicons dashicons-arrow-left-alt"></span>
-                        </a>
-                    <?php endif;
-                    ?>
-
-                    <?php
-                    $next_recipe = get_next_post();
-                    if ($next_recipe) :
-                        $next_recipe_url = get_permalink($next_recipe);
-                    ?>
-                        <a href="<?php echo $next_recipe_url; ?>">
-                            <span class="dashicons dashicons-arrow-right-alt"></span>
-                        </a>
-                    <?php endif;
-                    ?>
-
-                </div>
-
 
                 <?php
                 // wp_link_pages(
