@@ -102,31 +102,41 @@
                     }
 
                     ?> 
-                    <div class="flex align-top flex-col">
-                        <span class="text-xs text-muted font-medium">Dificuldade</span> <?php
-                    if ($isConditionMet !== 0) : ?>
-                        <div class="flex gap-1 mt-1">
-                            <?php for ($i = 0; $i < 5; $i++) : ?>
-                                <div class="w-2 h-2 <?php echo $isConditionMet > $i ? 'bg-primary' : 'bg-neutral-300'; ?> rounded-full"></div>
-                            <?php endfor; ?>
+                    
+                    <?php if ($isConditionMet !== 0) : ?>
+                        <div class="flex align-top flex-col">
+                            <span class="text-xs text-muted font-medium">Dificuldade</span>
+                            <div class="flex gap-1 mt-1">
+                                <?php for ($i = 0; $i < 5; $i++) : ?>
+                                    <div class="w-2 h-2 <?php echo $isConditionMet > $i ? 'bg-primary' : 'bg-neutral-300'; ?> rounded-full"></div>
+                                <?php endfor; ?>
+                            </div>
                         </div>
                     <?php endif; ?>
-                    </div>
 
-                    <div class="flex align-top flex-col">
-                        <span class="text-xs text-muted font-medium">Tempo de preparação</span>
-                        <small class="text-xs font-medium"><?php echo get_post_meta( get_the_ID(), "number_tempodepreparação", true ); ?> min</small>
-                    </div>
+                    <?php $preparationTime = get_post_meta( get_the_ID(), "number_tempodepreparação", true ); ?>
+                    <?php if ($preparationTime) : ?>
+                        <div class="flex align-top flex-col">
+                            <span class="text-xs text-muted font-medium">Tempo de preparação</span>
+                            <small class="text-xs font-medium"><?php echo $preparationTime; ?> min</small>
+                        </div>
+                    <?php endif; ?>    
 
-                    <div class="flex align-top flex-col">
-                        <span class="text-xs text-muted font-medium">Tempo total</span>
-                        <small class="text-xs font-medium"><?php echo get_post_meta( get_the_ID(), "number_tempototal", true ); ?> min</small>
-                    </div>
+                    <?php $totalTime = get_post_meta( get_the_ID(), "number_tempodepreparação", true ); ?>
+                    <?php if ($totalTime) : ?>
+                        <div class="flex align-top flex-col">
+                            <span class="text-xs text-muted font-medium">Tempo total</span>
+                            <small class="text-xs font-medium"><?php echo $totalTime; ?> min</small>
+                        </div>
+                    <?php endif; ?>   
 
-                    <div class="flex align-top flex-col">
-                        <span class="text-xs text-muted font-medium">Porções</span>
-                        <small class="text-xs font-medium"><?php echo get_post_meta( get_the_ID(), "number_porções", true ); ?></small>
-                    </div>
+                    <?php $portions = get_post_meta( get_the_ID(), "number_tempodepreparação", true ); ?>
+                    <?php if ($portions) : ?>
+                        <div class="flex align-top flex-col">
+                            <span class="text-xs text-muted font-medium">Porções</span>
+                            <small class="text-xs font-medium"><?php echo $portions; ?></small>
+                        </div>
+                    <?php endif; ?>   
 
                 </div>
 
