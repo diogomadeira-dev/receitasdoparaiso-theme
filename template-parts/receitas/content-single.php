@@ -140,17 +140,11 @@
 
                 </div>
 
-                <?php
-                // Get the custom field value
-                $url = get_post_meta(get_the_ID(), 'url', true);
+                <?php $url = get_post_meta(get_the_ID(), 'url', true); ?>
 
-                // Check if the field has a value
-                if (!empty($url)) {
-                    echo '<p><strong>URL Youtube:</strong> <a href="' . esc_url($url) . '" target="_blank">' . esc_url($url) . '</a></p>';
-                }
-                ?>
-
-<button class="btn btn-primary">Accent</button>
+                <?php if (!empty($url)) { 
+                    echo '<a role="button" class="btn btn-primary" href="' . esc_url($url) . '" target="_blank">' . "Ver vídeo" . '</a>';
+                } ?>
 
                 
                 <?php
