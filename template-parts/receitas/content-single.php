@@ -16,7 +16,7 @@
         <div class="flex-1">
             <header class="mb-6">
                 <div class="flex justify-between">
-                <?php the_title(sprintf('<h1 class="entry-title text-2xl lg:text-4xl font-extrabold leading-tight capitalize-first-letter mb-2">', esc_url(get_permalink())), '</h1>'); ?>
+                <?php the_title(sprintf('<h1 class="entry-title text-2xl lg:text-4xl font-extrabold leading-tight capitalize-first-letter mb-6">', esc_url(get_permalink())), '</h1>'); ?>
                 <!-- <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished" class="text-sm text-gray-700"><?php echo get_the_date(); ?></time> -->
 
                     <div class="flex justify-end gap-2">
@@ -26,7 +26,7 @@
                             $previous_recipe_url = get_permalink($previous_recipe);
                         ?>
                             <a href="<?php echo $previous_recipe_url; ?>" data-tooltip-target="tooltip-default">
-                                <span class="dashicons dashicons-arrow-left-alt"></span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#383837" stroke-width="1.9285714285714286" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
                             </a>
                         <?php endif;
                         ?>
@@ -37,7 +37,7 @@
                             $next_recipe_url = get_permalink($next_recipe);
                         ?>
                             <a href="<?php echo $next_recipe_url; ?>">
-                                <span class="dashicons dashicons-arrow-right-alt"></span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#383837" stroke-width="1.9285714285714286" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                             </a>
                         <?php endif;
                         ?>
