@@ -71,6 +71,65 @@
                     <?php the_content(); ?>
                 </div>
 
+                <div class="flex gap-10 py-10">
+                    <?php $level = get_post_meta( get_the_ID(), "select_dificuldade", true ); 
+
+                    $levelOne = 'Muito Fácil';
+                    $levelTwo = 'Fácil';
+                    $levelThree = 'Intermediário';
+                    $levelFour = 'Difícil';
+                    $levelFive = 'Muito Difícil';
+
+                    switch (true) {
+                        case $level === $levelOne:
+                            $isConditionMet = 1;
+                            break;
+                        case $level === $levelTwo:
+                            $isConditionMet = 2;
+                            break;
+                        case $level === $levelThree:
+                            $isConditionMet = 3;
+                            break;
+                        case $level === $levelFour:
+                            $isConditionMet = 4;
+                            break;
+                        case $level === $levelFive:
+                            $isConditionMet = 5;
+                            break;
+                        default:
+                            $isConditionMet = 0;
+                            break;
+                    }
+
+                    ?> 
+                    <div class="flex align-top flex-col">
+                        <span class="text-xs text-muted font-medium">Dificuldade</span> <?php
+                    if ($isConditionMet !== 0) : ?>
+                        <div class="flex gap-1 mt-1">
+                            <?php for ($i = 0; $i < 5; $i++) : ?>
+                                <div class="w-2 h-2 <?php echo $isConditionMet > $i ? 'bg-primary' : 'bg-neutral-300'; ?> rounded-full"></div>
+                            <?php endfor; ?>
+                        </div>
+                    <?php endif; ?>
+                    </div>
+
+                    <div class="flex align-top flex-col">
+                        <span class="text-xs text-muted font-medium">Tempo de preparação</span>
+                        <small class="text-xs font-medium"><?php echo get_post_meta( get_the_ID(), "number_tempodepreparação", true ); ?> min</small>
+                    </div>
+
+                    <div class="flex align-top flex-col">
+                        <span class="text-xs text-muted font-medium">Tempo total</span>
+                        <small class="text-xs font-medium"><?php echo get_post_meta( get_the_ID(), "number_tempototal", true ); ?> min</small>
+                    </div>
+
+                    <div class="flex align-top flex-col">
+                        <span class="text-xs text-muted font-medium">Porções</span>
+                        <small class="text-xs font-medium"><?php echo get_post_meta( get_the_ID(), "number_porções", true ); ?></small>
+                    </div>
+
+                </div>
+
                 <?php
                 // Get the custom field value
                 $url = get_post_meta(get_the_ID(), 'url', true);
@@ -80,43 +139,6 @@
                     echo '<p><strong>URL Youtube:</strong> <a href="' . esc_url($url) . '" target="_blank">' . esc_url($url) . '</a></p>';
                 }
                 ?>
-
-                <?php $level = get_post_meta( get_the_ID(), "select_dificuldade", true ); 
-
-                $levelOne = 'Muito Fácil';
-                $levelTwo = 'Fácil';
-                $levelThree = 'Intermediário';
-                $levelFour = 'Difícil';
-                $levelFive = 'Muito Difícil';
-
-                switch (true) {
-                    case $level === $levelOne:
-                        $isConditionMet = 1;
-                        break;
-                    case $level === $levelTwo:
-                        $isConditionMet = 2;
-                        break;
-                    case $level === $levelThree:
-                        $isConditionMet = 3;
-                        break;
-                    case $level === $levelFour:
-                        $isConditionMet = 4;
-                        break;
-                    case $level === $levelFive:
-                        $isConditionMet = 5;
-                        break;
-                    default:
-                        $isConditionMet = 0;
-                        break;
-                }
-
-                if ($isConditionMet !== 0) : ?>
-                    <div class="flex gap-1">
-                        <?php for ($i = 0; $i < 5; $i++) : ?>
-                            <div class="w-2 h-2 <?php echo $isConditionMet > $i ? 'bg-primary' : 'bg-neutral-300'; ?> rounded-full"></div>
-                        <?php endfor; ?>
-                    </div>
-                <?php endif; ?>
                 
                 <?php
                 // wp_link_pages(

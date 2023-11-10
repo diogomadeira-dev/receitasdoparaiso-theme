@@ -29,8 +29,6 @@
                 @apply no-underline;
             }
         }
-
-        @apply mb-8;
     }
 
     ul:not(.block-editor-block-variation-picker__variations) {
