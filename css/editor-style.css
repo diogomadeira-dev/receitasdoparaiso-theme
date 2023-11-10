@@ -122,6 +122,12 @@
 .h-screen {
     height: 100vh
 }
+.h-12 {
+    height: 3rem
+}
+.h-3 {
+    height: 0.75rem
+}
 .max-h-96 {
     max-height: 24rem
 }
@@ -149,6 +155,18 @@
 }
 .w-10 {
     width: 2.5rem
+}
+.w-12 {
+    width: 3rem
+}
+.w-4 {
+    width: 1rem
+}
+.w-2 {
+    width: 0.5rem
+}
+.w-3 {
+    width: 0.75rem
 }
 .max-w-screen-md {
     max-width: 782px
@@ -194,6 +212,12 @@
 }
 .gap-2 {
     gap: 0.5rem
+}
+.gap-4 {
+    gap: 1rem
+}
+.gap-1 {
+    gap: 0.25rem
 }
 .space-y-4 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-y-reverse: 0;
@@ -280,6 +304,18 @@
 .bg-white {
     --tw-bg-opacity: 1;
     background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+}
+.bg-red-400 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(248 113 113 / var(--tw-bg-opacity))
+}
+.bg-secondary {
+    --tw-bg-opacity: 1;
+    background-color: rgb(56 56 55 / var(--tw-bg-opacity))
+}
+.bg-neutral-300 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(212 212 212 / var(--tw-bg-opacity))
 }
 .bg-gradient-to-r {
     background-image: linear-gradient(to right, var(--tw-gradient-stops))

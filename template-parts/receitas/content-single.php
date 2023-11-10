@@ -81,6 +81,42 @@
                 }
                 ?>
 
+                <?php $level = get_post_meta( get_the_ID(), "select_dificuldade", true ); 
+
+                $levelOne = 'Muito Fácil';
+                $levelTwo = 'Fácil';
+                $levelThree = 'Intermediário';
+                $levelFour = 'Difícil';
+                $levelFive = 'Muito Difícil';
+
+                switch (true) {
+                    case $level === $levelOne:
+                        $isConditionMet = 1;
+                        break;
+                    case $level === $levelTwo:
+                        $isConditionMet = 2;
+                        break;
+                    case $level === $levelThree:
+                        $isConditionMet = 3;
+                        break;
+                    case $level === $levelFour:
+                        $isConditionMet = 4;
+                        break;
+                    case $level === $levelFive:
+                        $isConditionMet = 5;
+                        break;
+                    default:
+                        $isConditionMet = 0;
+                        break;
+                }
+
+                ?>
+                <div class="flex gap-1">
+                    <?php for ($i = 0; $i < 5; $i++) : ?>
+                        <div class="w-2 h-2 <?php echo $isConditionMet > $i ? 'bg-primary' : 'bg-neutral-300'; ?> rounded-full"></div>
+                    <?php endfor; ?>
+                </div>
+                
                 <?php
                 // wp_link_pages(
                 //     array(
