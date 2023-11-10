@@ -1,14 +1,14 @@
 @layer components {
     .badge {
-        @apply border-2 border-primary/20 text-dark text-xs font-normal w-auto h-6 flex px-2.5 py-0.5 items-center justify-center rounded-full;
+        @apply border-2 border-primary/20 text-black text-xs font-normal w-auto h-6 flex px-2.5 py-0.5 items-center justify-center rounded-full;
     }
 
     .badge-social {
-        @apply border-2 border-primary/20 hover:bg-primary/60 transition ease-in-out cursor-pointer text-dark text-xs font-normal w-6 h-6 flex items-center justify-center rounded-full;
+        @apply border-2 border-primary/20 hover:bg-primary/60 transition ease-in-out cursor-pointer text-black text-xs font-normal w-6 h-6 flex items-center justify-center rounded-full;
     }
 }
 
-.entry-content, .block-editor-block-list__layout {
+/* .entry-content, .block-editor-block-list__layout {
     h1 {
         @apply text-2xl;
     }
@@ -42,7 +42,7 @@
             @apply list-decimal list-inside;
         }
     }
-}
+} */
 
 .capitalize-first-letter {
     text-transform: lowercase; /* Convert all text to lowercase */

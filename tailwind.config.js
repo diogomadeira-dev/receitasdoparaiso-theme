@@ -12,6 +12,13 @@ module.exports = {
         './resources/js/*.js',
         './safelist.txt',
     ],
+    daisyui: {
+        themes: [
+            {
+                mytheme: tailpress.colorMapper(tailpress.theme('settings.color.palette', theme)),
+            },
+        ],
+    },
     theme: {
         container: {
             padding: {
@@ -37,6 +44,7 @@ module.exports = {
         }
     },
     plugins: [
-        tailpress.tailwind
+        tailpress.tailwind,
+        require("daisyui")
     ]
 };
