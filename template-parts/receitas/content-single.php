@@ -110,12 +110,13 @@
                         break;
                 }
 
-                ?>
-                <div class="flex gap-1">
-                    <?php for ($i = 0; $i < 5; $i++) : ?>
-                        <div class="w-2 h-2 <?php echo $isConditionMet > $i ? 'bg-primary' : 'bg-neutral-300'; ?> rounded-full"></div>
-                    <?php endfor; ?>
-                </div>
+                if ($isConditionMet !== 0) : ?>
+                    <div class="flex gap-1">
+                        <?php for ($i = 0; $i < 5; $i++) : ?>
+                            <div class="w-2 h-2 <?php echo $isConditionMet > $i ? 'bg-primary' : 'bg-neutral-300'; ?> rounded-full"></div>
+                        <?php endfor; ?>
+                    </div>
+                <?php endif; ?>
                 
                 <?php
                 // wp_link_pages(
