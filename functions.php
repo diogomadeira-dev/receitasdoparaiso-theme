@@ -203,4 +203,18 @@ add_action('admin_head', 'RemoveAddMediaButtonsForNonAdmins');
 
 require 'inc/recipes/recipes-functions.php';
 
-      
+// function set_static_front_page() {
+//     // Check if the front page is already set
+//     $front_page_id = get_option('page_on_front');
+
+//     // If the front page is not set, set it to the desired page
+//     if (empty($front_page_id)) {
+//         $front_page = get_page_by_title('Your Static Page Title'); // Replace with the title of your static page
+//         if ($front_page) {
+//             update_option('page_on_front', $front_page->ID);
+//             update_option('show_on_front', 'page');
+//         }
+//     }
+// }
+
+// add_action('after_setup_theme', 'set_static_front_page');
