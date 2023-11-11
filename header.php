@@ -19,6 +19,8 @@
 
 	<header>
 
+	<?php get_template_part( 'components/navbar/index'); ?>
+<!-- 
 		<div class="mx-auto container">
 			<div class="lg:flex lg:justify-between lg:items-center border-b py-6">
 				<div class="flex justify-between items-center">
@@ -76,7 +78,7 @@
 					</li>
 				</ul>
 			</div>
-		</div>
+		</div> -->
 	</header>
 
 	<div id="content" class="site-content flex-grow">

@@ -1,6 +1,6 @@
 @layer components {
     .btn {
-        @apply rounded-full;
+        @apply rounded-full capitalize tracking-wider font-normal;
     }
 
     .btn-primary {
@@ -13,6 +13,10 @@
 
     .badge-social {
         @apply border-2 border-primary/20 hover:bg-primary/60 transition ease-in-out cursor-pointer text-black text-xs font-normal w-6 h-6 flex items-center justify-center rounded-full;
+    }
+
+    .badge-cart {
+        @apply border-2 border-white bg-primary text-white text-xs font-normal w-6 h-6 flex items-center justify-center rounded-full;
     }
 }
 
