@@ -13,11 +13,9 @@ jobs:
 
     - name: 🛠 Install npm dependencies
       run: npm install
-      working-directory: /wp-content/themes/receitasdoparaiso-theme/
 
     - name: 🚀 Build for production
       run: npm run production
-      working-directory: /wp-content/themes/receitasdoparaiso-theme/
     
     - name: 📂 Sync files
       uses: Penguibird/FTP-Deploy-Action@4.2.0
