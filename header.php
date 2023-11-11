@@ -19,6 +19,8 @@
 
 	<header>
 
+	<?php get_template_part( 'components/navbar/index'); ?>
+<!-- 
 		<div class="mx-auto container">
 			<div class="lg:flex lg:justify-between lg:items-center border-b py-6">
 				<div class="flex justify-between items-center">
@@ -76,14 +78,17 @@
 					</li>
 				</ul>
 			</div>
-		</div>
+		</div> -->
 	</header>
 
 	<div id="content" class="site-content flex-grow">
 
 		<?php if ( is_front_page() ) { ?>
 			<!-- Start introduction -->
-			<div class="container mx-auto">
+
+			<?php get_template_part( 'template-parts/home/index'); ?>
+
+			<!-- <div class="container mx-auto">
 				<div class="px-12 py-16 my-12 rounded-xl bg-gradient-to-r from-blue-50 from-10% via-sky-100 via-30% to-blue-200 to-90%">
                     <div class="mx-auto max-w-screen-md">
                         <h1 class="text-3xl lg:text-6xl tracking-tight font-extrabold text-gray-800 mb-6">Start building your next <a href="https://tailwindcss.com" class="text-secondary">Tailwind CSS</a> flavoured WordPress theme
@@ -96,7 +101,7 @@
                             on GitHub</a>
                     </div>
                 </div>
-			</div>
+			</div> -->
 			<!-- End introduction -->
 		<?php } ?>
 

@@ -37,6 +37,11 @@
     "typography": {
       "fontSizes": [
         {
+          "name": "XXS",
+          "slug": "xxs",
+          "size": "0.675rem"
+        },
+        {
           "name": "Small",
           "slug": "small",
           "size": "0.875rem"
