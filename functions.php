@@ -203,6 +203,15 @@ add_action('admin_head', 'RemoveAddMediaButtonsForNonAdmins');
 
 require 'inc/recipes/recipes-functions.php';
 
+// Activate WordPress Maintenance Mode
+function wp_maintenance_mode() {
+	if (!current_user_can('edit_themes') || !is_user_logged_in()) {
+		wp_die('<h1>Em desenvolvimento</h1>');
+	}
+}
+
+add_action('get_header', 'wp_maintenance_mode');
+
 // function set_static_front_page() {
 //     // Check if the front page is already set
 //     $front_page_id = get_option('page_on_front');
