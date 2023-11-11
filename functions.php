@@ -203,7 +203,7 @@ add_action('admin_head', 'RemoveAddMediaButtonsForNonAdmins');
 
 require 'inc/recipes/recipes-functions.php';
 
-// Activate WordPress Maintenance Mode
+// Activate WordPress Maintenance Mode	
 function wp_maintenance_mode() {
 	if (!current_user_can('edit_themes') || !is_user_logged_in()) {
 		wp_die('<h1>Em desenvolvimento</h1>');

@@ -54,14 +54,14 @@ $current_slug = add_query_arg(array(), $wp->request);
         <label tabindex="0" class="btn btn-ghost btn-circle">
             <div class="indicator">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>           
-                <?php if ( ! WC()->cart->is_empty() ) : ?>
+                <?php if ( !WC()->cart->is_empty() ) : ?>
                   <span class="badge-cart badge-sm indicator-item text-xxs"><?php echo WC()->cart->get_cart_contents_count() ?></span>
                 <?php endif; ?>
               </div>
         </label>
         <div tabindex="0" class="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
             <div class="card-body">
-            <?php if ( ! WC()->cart->is_empty() ) : ?>
+            <?php if ( class_exists( 'WooCommerce' ) && isset( WC()->cart ) && ! WC()->cart->is_empty() ) : ?>
               <span class="font-bold text-lg"><?php echo WC()->cart->get_cart_contents_count() ?> produtos</span>
               <span class="text-info">Subtotal: <?php echo WC()->cart->get_cart_subtotal(); ?></span>
               <div class="card-actions">
