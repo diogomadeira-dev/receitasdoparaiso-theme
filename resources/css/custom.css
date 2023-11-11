@@ -18,6 +18,23 @@
     .badge-cart {
         @apply border-2 border-white bg-primary text-white text-xs font-normal w-6 h-6 flex items-center justify-center rounded-full;
     }
+
+    .active {
+        @apply text-primary;
+
+        a {
+            @apply underline decoration-primary decoration-1 underline-offset-4;
+        }
+    }
+
+    .navbar-item {
+
+        @apply font-medium text-sm hover:text-black;
+
+        a {
+            @apply hover:text-black;
+        }
+    }
 }
 
 /* .entry-content, .block-editor-block-list__layout {
