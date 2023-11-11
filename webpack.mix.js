@@ -18,15 +18,8 @@ mix.postCss("resources/css/app.css", "css");
 
 mix.postCss("resources/css/editor-style.css", "css");
 
-// mix.browserSync({
-//     proxy: 'http://tailpress.test',
-//     host: 'tailpress.test',
-//     open: 'external',
-//     port: 8000
-// });
-
 mix.browserSync({
-    proxy: "http://receitasdoparaiso.test",
+    proxy: "http://receitasdoparaiso.local",
     host: 'receitasdoparaiso.test',
     open: 'external',
     port: 3000,
