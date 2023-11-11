@@ -18,3 +18,9 @@ jobs:
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
         server-dir: /wp-content/themes/receitasdoparaiso-theme/
+
+    - name: 🛠 Install npm dependencies
+      run: npm install
+
+    - name: 🚀 Build for production
+      run: npm run production
