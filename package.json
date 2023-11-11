@@ -16,11 +16,14 @@
 		"watch": "mix watch",
 		"watch-poll": "mix watch -- --watch-options-poll=1000",
 		"hot": "mix watch --hot",
-		"production": "mix --production"
+		"production": "mix --production",
+		"zip": "bestzip receitasdoparaiso-theme.zip screenshot.png *.php style.css css/* js/* fonts/* images/* template-parts/*",
+		"production-zip": "npm run production && npm run zip"
 	},
 	"devDependencies": {
 		"@jeffreyvr/tailwindcss-tailpress": "^2.0.0",
 		"autoprefixer": "^10.4.0",
+		"bestzip": "^2.2.1",
 		"browser-sync": "^2.26.14",
 		"browser-sync-webpack-plugin": "^2.3.0",
 		"cross-env": "^6.0.3",
