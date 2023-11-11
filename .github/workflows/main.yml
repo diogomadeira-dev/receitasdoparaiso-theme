@@ -11,11 +11,10 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2
 
-    - name: 🛠 Install npm dependencies
-      run: npm install
-
-    - name: 🚀 Build for production
-      run: npm run production
+    - name: 🔄 Install dependencies and build assets
+      run: |
+        npm install
+        npm run production
     
     - name: 📂 Sync files
       uses: Penguibird/FTP-Deploy-Action@4.2.0
