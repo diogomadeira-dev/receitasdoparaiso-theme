@@ -202,28 +202,34 @@ add_action('admin_head', 'RemoveAddMediaButtonsForNonAdmins');
 */
 
 require 'inc/recipes/recipes-functions.php';
+require 'inc/woocommerce/woocommerce-functions.php';
 
-// Activate WordPress Maintenance Mode	
-function wp_maintenance_mode() {
-	if (!current_user_can('edit_themes') || !is_user_logged_in()) {
-		wp_die('<h1>Em desenvolvimento</h1>');
-	}
-}
-
-add_action('get_header', 'wp_maintenance_mode');
-
-// function set_static_front_page() {
-//     // Check if the front page is already set
-//     $front_page_id = get_option('page_on_front');
-
-//     // If the front page is not set, set it to the desired page
-//     if (empty($front_page_id)) {
-//         $front_page = get_page_by_title('Your Static Page Title'); // Replace with the title of your static page
-//         if ($front_page) {
-//             update_option('page_on_front', $front_page->ID);
-//             update_option('show_on_front', 'page');
-//         }
-//     }
+/**
+* Activate WordPress Maintenance Mode	
+*/
+// function wp_maintenance_mode() {
+// 	if (!current_user_can('edit_themes') || !is_user_logged_in()) {
+// 		wp_die('<h1>Em desenvolvimento</h1>');
+// 	}
 // }
 
-// add_action('after_setup_theme', 'set_static_front_page');
+// add_action('get_header', 'wp_maintenance_mode');
+
+/**
+* Favicon
+*/
+
+function add_my_favicon() {
+	$favicon_path = get_template_directory_uri() . '/assets/favicon/';
+	
+ 	echo '<link rel="apple-touch-icon" sizes="180x180" href="' . esc_url($favicon_path) . 'apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32"  href="' . esc_url($favicon_path) . 'favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="' . esc_url($favicon_path) . 'favicon-16x16.png" />
+	<link rel="manifest" href="' . esc_url($favicon_path) . 'site.webmanifest" />';
+ }
+ 
+ add_action( 'wp_head', 'add_my_favicon' ); //front end
+ add_action( 'admin_head', 'add_my_favicon' ); //admin end
+
+
+

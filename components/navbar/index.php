@@ -63,7 +63,7 @@ $current_slug = add_query_arg(array(), $wp->request);
                 <?php endif; ?>
               </div>
         </label>
-        <div tabindex="0" class="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
+        <div tabindex="0" class="mt-3 z-[1] card card-compact dropdown-content w-52 bg-white shadow">
             <div class="card-body">
             <?php if ( !WC()->cart->is_empty() ) : ?>
               <span class="font-bold text-lg"><?php echo WC()->cart->get_cart_contents_count() ?> produtos</span>
@@ -80,22 +80,39 @@ $current_slug = add_query_arg(array(), $wp->request);
             </div>
         </div>
         </div>
-        <div class="dropdown dropdown-end">
-        <a role="button" class="btn btn-primary btn-sm font-light" href="<?php echo esc_url($url); ?>" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" x2="3" y1="12" y2="12"/></svg>
-            Entrar
-        </a>
-        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-            <li>
-            <a class="justify-between">
-                Profile
-                <span class="badge-cart">New</span>
-            </a>
-            </li>
-            <li><a>Settings</a></li>
-            <li><a>Logout</a></li>
-        </ul>
-        </div>
+          <?php if (is_user_logged_in()) : ?>
+            <div class="dropdown dropdown-end">
+              <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+              <div class="avatar placeholder">
+                <div class="bg-neutral text-neutral-content rounded-full w-10">
+                  <span><?php if( $current_user = wp_get_current_user() ) echo substr($current_user->display_name, 0, 2); ?></span>
+                </div>
+              </div> 
+              </label>
+              <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                <li><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">Conta</a></li>
+                <li><a href="<?php echo esc_url( wp_logout_url( get_permalink() ) ); ?>">Sair</a></li>
+              </ul>
+            </div>
+          <?php else : ?>
+            <div class="dropdown dropdown-end">
+              <a role="button" class="btn btn-primary btn-sm font-light" href="<?php echo esc_url($url); ?>" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" x2="3" y1="12" y2="12"/></svg>
+                  Entrar
+              </a>
+              <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                  <li>
+                  <a class="justify-between">
+                      Profile
+                      <span class="badge-cart">New</span>
+                  </a>
+                  </li>
+                  <li><a>Settings</a></li>
+                  <li><a>Logout</a></li>
+              </ul>
+            </div>
+          <?php endif; ?>
+
     </div>
   </div>
 </div>
