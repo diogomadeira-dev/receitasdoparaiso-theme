@@ -90,14 +90,8 @@ $current_slug = add_query_arg(array(), $wp->request);
               </div> 
               </label>
               <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                <li>
-                  <a class="justify-between">
-                    Profile
-                    <span class="badge">New</span>
-                  </a>
-                </li>
-                <li><a>Settings</a></li>
-                <li><a>Logout</a></li>
+                <li><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>">Conta</a></li>
+                <li><a href="<?php echo esc_url( wp_logout_url( get_permalink() ) ); ?>">Sair</a></li>
               </ul>
             </div>
           <?php else : ?>
