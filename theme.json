@@ -23,9 +23,24 @@
           "color": "#000000"
         },
         {
+          "name": "Accent",
+          "slug": "accent",
+          "color": "#383837"
+        },
+        {
+          "name": "Neutral",
+          "slug": "neutral",
+          "color": "#383837"
+        },
+        {
           "name": "Light",
           "slug": "light",
           "color": "#F9FAFB"
+        },
+        {
+          "name": "Base-100",
+          "slug": "base-100",
+          "color": "#FFFFFF"
         },
         {
           "name": "Muted",

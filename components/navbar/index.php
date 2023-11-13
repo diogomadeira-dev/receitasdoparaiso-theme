@@ -63,7 +63,7 @@ $current_slug = add_query_arg(array(), $wp->request);
                 <?php endif; ?>
               </div>
         </label>
-        <div tabindex="0" class="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
+        <div tabindex="0" class="mt-3 z-[1] card card-compact dropdown-content w-52 bg-white shadow">
             <div class="card-body">
             <?php if ( !WC()->cart->is_empty() ) : ?>
               <span class="font-bold text-lg"><?php echo WC()->cart->get_cart_contents_count() ?> produtos</span>
