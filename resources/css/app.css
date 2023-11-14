@@ -3,6 +3,9 @@
 @import "tailwindcss/utilities";
 
 @import "custom.css";
+@import "woocommerce.css";
+
+/* <?php echo get_stylesheet_directory_uri(); ?>/resources */
 
 @font-face {
     font-family: 'Noto Sans';

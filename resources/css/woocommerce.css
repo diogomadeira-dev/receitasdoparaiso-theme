@@ -1,0 +1,6 @@
+@layer components {
+    a:focus,
+    .focus a {
+        @apply !outline-none;
+    }
+}

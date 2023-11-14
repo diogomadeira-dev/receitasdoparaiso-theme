@@ -21,7 +21,7 @@
 		<?php get_template_part( 'components/navbar/index'); ?>
 	</header>
 
-	<div id="content" class="site-content flex-grow">
+	<div id="content" class="site-content flex-grow container mx-auto my-8">
 
 		<?php do_action( 'receitasdoparaiso_theme_content_start' ); ?>
 

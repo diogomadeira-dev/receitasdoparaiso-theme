@@ -112,6 +112,14 @@ add_filter( 'nav_menu_submenu_css_class', 'receitasdoparaiso_theme_nav_menu_add_
 add_filter( 'show_admin_bar', '__return_false' );
 
 /**
+* Includes
+*/
+
+require 'inc/recipes-functions.php';
+require 'inc/woocommerce-functions.php';
+require 'inc/storefront-functions.php';
+
+/**
 * Admin footer modification
 */
 function remove_footer_admin() {
@@ -143,13 +151,6 @@ add_action('admin_head', 'RemoveAddMediaButtonsForNonAdmins');
 
 
 /**
-* Includes
-*/
-
-require 'inc/recipes/recipes-functions.php';
-require 'inc/woocommerce/woocommerce-functions.php';
-
-/**
 * Activate WordPress Maintenance Mode	
 */
 function wp_maintenance_mode() {
@@ -175,6 +176,4 @@ function add_my_favicon() {
  
  add_action( 'wp_head', 'add_my_favicon' ); //front end
  add_action( 'admin_head', 'add_my_favicon' ); //admin end
-
-
 
