@@ -5,8 +5,6 @@
 @import "custom.css";
 @import "woocommerce.css";
 
-/* <?php echo get_stylesheet_directory_uri(); ?>/resources */
-
 @font-face {
     font-family: 'Noto Sans';
     src: url('./../fonts/NotoSans-Black.woff2') format('woff2'),
@@ -168,3 +166,9 @@
     font-style: italic;
     font-display: swap;
 }
+
+@layer base {
+    body {
+      font-family: "Noto Sans", system-ui, sans-serif;
+    }
+  }

@@ -3,4 +3,8 @@
     .focus a {
         @apply !outline-none;
     }
+
+    .button {
+        @apply btn;
+    }
 }

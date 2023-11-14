@@ -3,14 +3,19 @@
 /**
  * Dequeue the Storefront Parent theme core CSS
  */
-function enqueue_styles() {
-    wp_enqueue_style( 'storefront-woocommerce-style', get_template_directory_uri() . '/assets/css/woocommerce/woocommerce.css', array( 'storefront-icons' ), '1.0' );
-    wp_enqueue_style( 'storefront-child-style', get_stylesheet_directory_uri() . '/style.css', '', '1.0' );
+add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles', PHP_INT_MAX);
+
+function theme_enqueue_styles() {
+    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+    wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/css/app.css', array( 'parent-style' ) );
 }
 
-add_action( 'wp_enqueue_scripts', 'dequeue_styles', 99 );
-function dequeue_styles() {
-    wp_dequeue_style( 'storefront-style' );
+/**
+* @snippet Remove "Default Sorting" Dropdown @ WooCommerce Shop & Archive Pages
+*/
+function remove_default_sorting_storefront() {
+   remove_action( 'woocommerce_after_shop_loop', 'woocommerce_catalog_ordering', 10 );
+   remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 );
 }
+add_action( 'init', 'remove_default_sorting_storefront' );
 
-add_action( 'wp_enqueue_scripts', 'enqueue_styles' );

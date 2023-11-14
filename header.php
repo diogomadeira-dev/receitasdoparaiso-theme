@@ -7,6 +7,9 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 	<?php wp_head(); ?>
+
+	<!-- <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(). '/css/app.css' ?>"> -->
+
 </head>
 
 <body <?php body_class( 'bg-white text-gray-900 antialiased' ); ?>>

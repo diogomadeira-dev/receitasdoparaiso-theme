@@ -1,4 +1,5 @@
 @layer components {
+
     .btn {
         @apply rounded-full capitalize tracking-wider font-normal;
     }

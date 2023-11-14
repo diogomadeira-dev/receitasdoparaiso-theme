@@ -31,7 +31,7 @@ module.exports = {
             colors: tailpress.colorMapper(tailpress.theme('settings.color.palette', theme)),
             fontSize: tailpress.fontSizeMapper(tailpress.theme('settings.typography.fontSizes', theme)),
             fontFamily: {
-                sans: ['Noto Sans', ...defaultTheme.fontFamily.sans]
+                sans: ['"Noto Sans"', ...defaultTheme.fontFamily.sans]
             }
         },
         screens: {
