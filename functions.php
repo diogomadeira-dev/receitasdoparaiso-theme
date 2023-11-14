@@ -207,13 +207,13 @@ require 'inc/woocommerce/woocommerce-functions.php';
 /**
 * Activate WordPress Maintenance Mode	
 */
-// function wp_maintenance_mode() {
-// 	if (!current_user_can('edit_themes') || !is_user_logged_in()) {
-// 		wp_die('<h1>Em desenvolvimento</h1>');
-// 	}
-// }
+function wp_maintenance_mode() {
+	if (!current_user_can('edit_themes') || !is_user_logged_in()) {
+		wp_die('<h1>Em desenvolvimento</h1>');
+	}
+}
 
-// add_action('get_header', 'wp_maintenance_mode');
+add_action('get_header', 'wp_maintenance_mode');
 
 /**
 * Favicon
