@@ -1,5 +1,15 @@
 @layer components {
 
+    /* TYPOGRAPHY */
+
+    h1 {
+        @apply text-secondary text-4xl font-light text-left !mb-10;
+    }
+
+    h2 {
+        @apply text-secondary text-sm font-light;
+    }
+
     .btn {
         @apply rounded-full capitalize tracking-wider font-normal;
     }
