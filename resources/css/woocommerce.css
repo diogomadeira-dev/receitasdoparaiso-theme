@@ -8,7 +8,11 @@
         @apply btn;
     }
 
-    .woocommerce-products-header {
+    .entry-header, .woocommerce-products-header {
         @apply !pb-0;
+    }
+
+    .woocommerce-tabs .panel h2:first-of-type {
+        @apply text-secondary text-xl font-light;
     }
 }
