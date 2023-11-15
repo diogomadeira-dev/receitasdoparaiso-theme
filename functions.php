@@ -41,11 +41,11 @@ add_action( 'after_setup_theme', 'receitasdoparaiso_theme_setup' );
 function receitasdoparaiso_theme_enqueue_scripts() {
 	$theme = wp_get_theme();
 
-	wp_enqueue_style( 'tailpress', receitasdoparaiso_theme_asset( 'css/app.css' ), array(), $theme->get( 'Version' ) );
-	wp_enqueue_script( 'tailpress', receitasdoparaiso_theme_asset( 'js/app.js' ), array(), $theme->get( 'Version' ) );
+    wp_enqueue_style('tailpress-child', receitasdoparaiso_theme_asset('css/app.css'), array(), $theme->get('Version'));
+    wp_enqueue_script('tailpress-child', receitasdoparaiso_theme_asset('js/app.js'), array(), $theme->get('Version'));
 }
 
-add_action( 'wp_enqueue_scripts', 'receitasdoparaiso_theme_enqueue_scripts' );
+add_action( 'wp_enqueue_scripts', 'receitasdoparaiso_theme_enqueue_scripts', PHP_INT_MAX );
 
 /**
  * Get asset path.

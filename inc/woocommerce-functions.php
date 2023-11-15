@@ -24,6 +24,15 @@ function woocommerce_not_installed_alert() {
 add_action('admin_init', 'woocommerce_alert');
 
 /**
+ * Disable reviews.
+ */
+function iconic_disable_reviews() {
+	remove_post_type_support( 'product', 'comments' );
+}
+
+add_action( 'init', 'iconic_disable_reviews' );
+
+/**
 * Hide Added to Cart message in Woocommerce
 */
 // add_filter( 'wc_add_to_cart_message_html', '__return_false' );

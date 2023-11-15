@@ -6,13 +6,10 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-	<?php wp_head(); ?>
-
-	<!-- <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(). '/css/app.css' ?>"> -->
-
+	<?php echo wp_head(); ?>
 </head>
 
-<body <?php body_class( 'bg-white text-gray-900 antialiased' ); ?>>
+<body <?php body_class( 'bg-white text-gray-600 antialiased' ); ?>>
 
 <?php do_action( 'receitasdoparaiso_theme_site_before' ); ?>
 
@@ -20,7 +17,7 @@
 
 	<?php do_action( 'receitasdoparaiso_theme_header' ); ?>
 
-	<header>
+	<header id="scrollHeader" class="w-full sticky top-0 z-50 bg-white transition-shadow duration-500">
 		<?php get_template_part( 'components/navbar/index'); ?>
 	</header>
 

@@ -46,5 +46,5 @@ module.exports = {
     plugins: [
         tailpress.tailwind,
         require("daisyui")
-    ]
+    ],
 };
