@@ -123,7 +123,9 @@ require 'inc/storefront-functions.php';
 * Admin footer modification
 */
 function remove_footer_admin() {
-    echo '<span id="footer-thankyou">Powered by Receitas do Paraíso</span>';
+	$theme = wp_get_theme();
+
+	echo '<span id="footer-thankyou">Powered by Receitas do Paraíso - Versão ' . $theme->get('Version') . '</span>';
 }
  
 add_filter('admin_footer_text', 'remove_footer_admin');
