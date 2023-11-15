@@ -17,7 +17,7 @@
 
 	<?php do_action( 'receitasdoparaiso_theme_header' ); ?>
 
-	<header class="w-full border-b border-grey sticky top-0 z-50 bg-white">
+	<header id="scrollHeader" class="w-full sticky top-0 z-50 bg-white transition-shadow duration-500">
 		<?php get_template_part( 'components/navbar/index'); ?>
 	</header>
 

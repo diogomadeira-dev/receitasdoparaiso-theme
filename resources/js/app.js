@@ -7,13 +7,16 @@
 //       });
 // });
 
-// document.addEventListener('change', function (event) {
-//     // Check if the changed element is a first-input radio
-//     if (event.target.classList.contains('first-input') && event.target.checked) {
-//         // Find the second-input radio and check it
-//         var secondInput = document.querySelector('.second-input');
-//         if (secondInput) {
-//             secondInput.checked = true;
-//         }
-//     }
-// });
+document.addEventListener("DOMContentLoaded", function () {
+    var element = document.getElementById("scrollHeader");
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 0) {
+            element.classList.remove("shadow-none");
+            element.classList.add("shadow"); 
+        } else {
+            element.classList.remove("shadow");
+            element.classList.add("shadow-none");
+        }
+    });
+});
