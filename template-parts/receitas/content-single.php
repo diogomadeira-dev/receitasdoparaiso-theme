@@ -1,4 +1,4 @@
-<?php require get_template_directory() . '/utils.php'; ?>
+<?php require get_stylesheet_directory() . '/utils.php'; ?>
 
 <article id="post-<?php the_ID(); ?>">
 
@@ -10,7 +10,7 @@
                 echo $post_thumbnail = get_the_post_thumbnail(null, 'post-thumbnail', array('class' => 'hover:scale-125 transition duration-500 object-cover'));
                 ?>
             <?php else : ?>
-                <img class="object-cover max-h-96 w-full border" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/img-placeholder.png'); ?>" alt="img-placeholder">
+                <img class="object-cover max-h-96 w-full border" src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/images/img-placeholder.png'); ?>" alt="img-placeholder">
             <?php endif; ?>
         </div>
 

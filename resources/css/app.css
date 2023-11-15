@@ -3,6 +3,7 @@
 @import "tailwindcss/utilities";
 
 @import "custom.css";
+@import "woocommerce.css";
 
 @font-face {
     font-family: 'Noto Sans';
@@ -164,4 +165,10 @@
     font-weight: 100; /* Thin font weight */
     font-style: italic;
     font-display: swap;
+}
+
+@layer base {
+    body {
+      font-family: "Noto Sans", system-ui, sans-serif;
+    }
 }

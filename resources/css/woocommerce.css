@@ -1,0 +1,14 @@
+@layer components {
+    a:focus,
+    .focus a {
+        @apply !outline-none;
+    }
+
+    .button {
+        @apply btn;
+    }
+
+    .woocommerce-products-header {
+        @apply !pb-0;
+    }
+}
