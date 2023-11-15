@@ -7,13 +7,9 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 	<?php echo wp_head(); ?>
-
-	<!-- <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(). '/style.css' ?>"> -->
-	<!-- <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(). '/css/app.css' ?>"> -->
-
 </head>
 
-<body <?php body_class( 'bg-white text-gray-900 antialiased' ); ?>>
+<body <?php body_class( 'bg-white text-gray-600 antialiased' ); ?>>
 
 <?php do_action( 'receitasdoparaiso_theme_site_before' ); ?>
 
@@ -21,7 +17,7 @@
 
 	<?php do_action( 'receitasdoparaiso_theme_header' ); ?>
 
-	<header>
+	<header class="w-full border-b border-grey sticky top-0 z-50 bg-white">
 		<?php get_template_part( 'components/navbar/index'); ?>
 	</header>
 
