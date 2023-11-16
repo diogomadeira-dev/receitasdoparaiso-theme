@@ -15,4 +15,36 @@
     .woocommerce-tabs .panel h2:first-of-type {
         @apply text-secondary text-xl font-light;
     }
+
+    textarea:focus, input:focus {
+        @apply outline-secondary
+    }
 }
+
+@layer utilities {
+
+    .cart-contents:after {
+        @apply !content-none;
+    }
+
+    .cart-contents:hover {
+        @apply !bg-transparent;
+    }
+
+    .widget_shopping_cart .product_list_widget li {
+        @apply !p-6;
+    }
+
+    .woocommerce-mini-cart__buttons, .woocommerce-mini-cart__total {
+        @apply !p-6
+    }
+
+    .woocommerce-mini-cart__buttons a {
+        @apply !flex !items-center;
+    }
+
+    .site-header-cart .cart-contents {
+        @apply !block;
+    }
+}
+
