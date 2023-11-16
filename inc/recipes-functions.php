@@ -63,6 +63,17 @@ add_action( 'init', 'receitas', 0 );
 * Receitas Meta-Box
 */
 
+function receitas_per_page( $query ) {
+	if ( $query->is_archive('receitas') ) {
+		set_query_var('posts_per_page', 4);
+	}
+}
+add_action( 'pre_get_posts', 'receitas_per_page' );
+
+/**
+* Receitas Meta-Box
+*/
+
 class recipeMetabox {
 
   private $screens = array('receitas');
@@ -359,3 +370,4 @@ function custom_taxonomy() {
 add_action( 'init', 'custom_taxonomy', 0 );
 
 // ! ADICIONAR QUANTIDADE DO INGREDIENTE E UNIDADE DE MEDIDA
+

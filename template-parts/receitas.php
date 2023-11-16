@@ -8,8 +8,8 @@
             <?php endif; ?>
         </div>
         <div class="py-4">
-            <h3 class="text-md font-bold leading-tight capitalize-first-letter mb-2"><?php the_title() ?></h2>
-            <div class="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+            <h3 class="text-md font-bold leading-tight capitalize-first-letter mb-2 tracking-wide"><?php the_title() ?></h2>
+            <div class="flex gap-1 opacity-0 xl:group-hover:opacity-100 transition-opacity">
                 <?php foreach ((get_the_category( get_the_ID() )) as $category) { ?>
                     <span class="badge text-xs text-accent"><?php echo $category->name ?></span>
                 <?php } ?>
