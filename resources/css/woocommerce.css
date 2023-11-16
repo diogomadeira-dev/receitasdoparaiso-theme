@@ -43,7 +43,8 @@
         @apply !flex !items-center;
     }
 
-    /* .widget_shopping_cart {
-        @apply !w-96;
-    } */
+    .site-header-cart .cart-contents {
+        @apply !block;
+    }
 }
+
