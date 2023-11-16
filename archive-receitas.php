@@ -18,7 +18,7 @@
 
 	<?php
 
-	the_posts_pagination( array(
+    storefront_paging_nav( array(
 		'mid_size'  => 2,
 		'prev_text' => __( 'Anterior', 'textdomain' ),
 		'next_text' => __( 'Seguinte', 'textdomain' ),
