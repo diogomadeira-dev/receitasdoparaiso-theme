@@ -50,35 +50,8 @@ $current_slug = add_query_arg(array(), $wp->request);
   </div>
   <div class="navbar-end">
     <div class="flex items-center justify-between gap-2">
+          <?php echo storefront_header_cart(); ?>
         <div class="dropdown dropdown-end">
-        <label tabindex="0" class="btn btn-ghost btn-circle">
-            <div class="indicator">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>           
-                <?php 
-                  // Get cart
-                  $cart = WC()->cart;
-                
-                  if ( !is_null($cart) && !$cart->is_empty() ) : ?>
-                  <span class="badge-cart badge-sm indicator-item text-xxs"><?php echo WC()->cart->get_cart_contents_count() ?></span>
-                <?php endif; ?>
-              </div>
-        </label>
-        <div tabindex="0" class="mt-3 z-[1] card card-compact dropdown-content w-52 bg-white shadow">
-            <div class="card-body">
-            <?php if ( !WC()->cart->is_empty() ) : ?>
-              <span class="font-bold text-lg"><?php echo WC()->cart->get_cart_contents_count() ?> produtos</span>
-              <span class="text-info">Subtotal: <?php echo WC()->cart->get_cart_subtotal(); ?></span>
-              <div class="card-actions">
-                <a role="button" class="btn btn-primary" href="/carrinho">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></svg>
-                    Carrinho
-                </a>
-              </div>
-            <?php else : ?>
-                <p>Nenhum produto no carrinho</p>
-            <?php endif; ?>
-            </div>
-        </div>
         </div>
           <?php if (is_user_logged_in()) : ?>
             <div class="dropdown dropdown-end">
