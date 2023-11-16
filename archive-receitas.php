@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="">
+<div class="container mx-auto">
 
 	<h1>Receitas</h1>
 

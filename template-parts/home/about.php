@@ -611,14 +611,11 @@
                   Make your customers happy by giving services.
                </h2>
                <p class="mb-5 text-base text-body-color dark:text-dark-6">
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that it has a more-or-less.
+                  Explora o sabor da simplicidade saudável com as "Receitas do Paraíso", o teu guia culinário no YouTube. 
+                  Descobre pratos deliciosos que transformam ingredientes simples em experiências gastronómicas incríveis. 
                </p>
                <p class="mb-8 text-base text-body-color dark:text-dark-6">
-                  A domain name is one of the first steps to establishing your
-                  brand. Secure a consistent brand image with a domain name that
-                  matches your business.
+                  Deixa-te inspirar pela magia da cozinha descomplicada e saudável que partilho contigo no meu canal do youtube.
                </p>
                <a
                   href="javascript:void(0)"

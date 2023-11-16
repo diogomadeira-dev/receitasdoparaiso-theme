@@ -7,6 +7,10 @@
     <?php } ?>
 
     <?php if ( is_front_page() ) { ?>
+        <?php get_template_part( 'template-parts/home/stats'); ?>
+    <?php } ?>
+
+    <?php if ( is_front_page() ) { ?>
         <?php get_template_part( 'template-parts/home/about'); ?>
     <?php } ?>
 
