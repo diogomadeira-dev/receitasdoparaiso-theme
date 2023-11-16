@@ -15,4 +15,8 @@
     .woocommerce-tabs .panel h2:first-of-type {
         @apply text-secondary text-xl font-light;
     }
+
+    textarea:focus, input:focus {
+        @apply outline-secondary
+    }
 }
