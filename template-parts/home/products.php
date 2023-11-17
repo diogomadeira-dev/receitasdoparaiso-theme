@@ -1,91 +1,17 @@
 <div class="bg-neutral-50">
-  <div class="container mx-auto py-20">
+  <div class="container mx-auto py-20 px-10">
 
-  <h1>Ebooks</h1>
+   <h1>Ebooks</h1>
 
-   <?php echo do_shortcode('[products limit="6" columns="6" best_selling="true" ]'); ?>
+   <?php echo do_shortcode('[products limit="4" columns="4" best_selling="true" ]'); ?>
 
-  <!-- <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-12 lg:max-w-7xl lg:px-8">
-    <h2 class="text-2xl font-bold tracking-tight text-gray-900">Livros mais vendidos</h2>
-
-    <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-      <div class="group relative">
-        <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-          <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-        </div>
-        <div class="mt-4 flex justify-between">
-          <div>
-            <h3 class="text-sm text-gray-700">
-              <a href="#">
-                <span aria-hidden="true" class="absolute inset-0"></span>
-                Basic Tee
-              </a>
-            </h3>
-            <p class="mt-1 text-sm text-gray-500">Black</p>
-          </div>
-          <p class="text-sm font-medium text-gray-900">$35</p>
-        </div>
-      </div>
-
-
-      <div class="group relative">
-        <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-          <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-        </div>
-        <div class="mt-4 flex justify-between">
-          <div>
-            <h3 class="text-sm text-gray-700">
-              <a href="#">
-                <span aria-hidden="true" class="absolute inset-0"></span>
-                Basic Tee
-              </a>
-            </h3>
-            <p class="mt-1 text-sm text-gray-500">Black</p>
-          </div>
-          <p class="text-sm font-medium text-gray-900">$35</p>
-        </div>
-      </div>
-
-
-      <div class="group relative">
-        <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-          <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-        </div>
-        <div class="mt-4 flex justify-between">
-          <div>
-            <h3 class="text-sm text-gray-700">
-              <a href="#">
-                <span aria-hidden="true" class="absolute inset-0"></span>
-                Basic Tee
-              </a>
-            </h3>
-            <p class="mt-1 text-sm text-gray-500">Black</p>
-          </div>
-          <p class="text-sm font-medium text-gray-900">$35</p>
-        </div>
-      </div>
-
-
-      <div class="group relative">
-        <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-          <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-        </div>
-        <div class="mt-4 flex justify-between">
-          <div>
-            <h3 class="text-sm text-gray-700">
-              <a href="#">
-                <span aria-hidden="true" class="absolute inset-0"></span>
-                Basic Tee
-              </a>
-            </h3>
-            <p class="mt-1 text-sm text-gray-500">Black</p>
-          </div>
-          <p class="text-sm font-medium text-gray-900">$35</p>
-        </div>
-      </div>
-
+   <div class="w-full flex justify-center">
+      <a role="button" class="btn btn-primary btn-md font-light" href="<?php echo wc_get_page_permalink( 'shop' ) ?>">
+        Ver loja
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right"><path d="M18 8L22 12L18 16"/><path d="M2 12H22"/></svg>
+      </a>
     </div>
-  </div> -->
+
   </div>
 </div>
 
