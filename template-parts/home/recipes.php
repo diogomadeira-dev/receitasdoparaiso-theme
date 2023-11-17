@@ -1,4 +1,4 @@
-<div class="container mx-auto py-20">
+<div class="container mx-auto py-16 sm:py-20">
 
 	<h1>Últimas receitas</h1>
 
