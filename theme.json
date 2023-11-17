@@ -46,6 +46,11 @@
           "name": "Muted",
           "slug": "muted",
           "color": "#6d6d6d"
+        },
+        {
+          "name": "Orange",
+          "slug": "orange",
+          "color": "#FB9819"
         }
       ]
     },

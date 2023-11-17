@@ -46,5 +46,10 @@
     .site-header-cart .cart-contents {
         @apply !block;
     }
+
+    /* remove sidebar */
+    body.woocommerce #primary {
+        @apply w-full float-none;
+    }
 }
 
