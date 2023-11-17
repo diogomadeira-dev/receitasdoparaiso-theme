@@ -1,5 +1,5 @@
 <div class="bg-neutral-50">
-  <div class="container mx-auto py-20 px-10">
+  <div class="container mx-auto py-20">
 
    <h1>Ebooks</h1>
 
