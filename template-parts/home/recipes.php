@@ -2,17 +2,35 @@
 
 	<h1>Últimas receitas</h1>
 
-	<?php if ( have_posts() ) : ?>
+  <?php
 
-		<div class="grid grid-flow-row gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-			<?php while ( have_posts() ) : the_post(); ?>
+  $args = array(  
+    'post_type' => 'receitas',
+    'post_status' => 'publish',
+    'posts_per_page' => 8, 
+    'orderby' => 'date', 
+    'order' => 'DESC', 
+  );
 
-				<?php get_template_part( 'template-parts/receitas', get_post_format() ); ?>
+  $loop = new WP_Query( $args ); 
+  
+     if ( $loop->have_posts() ) : ?>
 
-			<?php endwhile; ?>
-		</div>
+      <div class="grid grid-flow-row gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    
+        <?php while ( $loop->have_posts() ) : $loop->the_post(); 
 
-	<?php endif; ?>
+          get_template_part( 'template-parts/receitas', get_post_format() );
+
+        endwhile;
+
+        wp_reset_postdata(); 
+
+        ?>
+
+      </div>
+
+    <?php endif; ?>
 
     <div class="w-full flex justify-center">
       <a role="button" class="btn btn-primary btn-md font-light" href="/receitas">

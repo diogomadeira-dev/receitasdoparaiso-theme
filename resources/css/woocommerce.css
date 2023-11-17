@@ -44,7 +44,7 @@
     }
 
     .site-header-cart .cart-contents {
-        @apply !block;
+        @apply !block !p-2;
     }
 
     /* remove sidebar */
