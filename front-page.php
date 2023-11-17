@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="">
+<div class="site-main">
 
     <?php if ( is_front_page() ) { ?>
         <?php get_template_part( 'template-parts/home/index'); ?>
@@ -12,6 +12,10 @@
 
     <?php if ( is_front_page() ) { ?>
         <?php get_template_part( 'template-parts/home/about'); ?>
+    <?php } ?>
+
+    <?php if ( is_front_page() ) { ?>
+        <?php get_template_part( 'template-parts/home/products'); ?>
     <?php } ?>
 
     <?php if ( is_front_page() ) { ?>
