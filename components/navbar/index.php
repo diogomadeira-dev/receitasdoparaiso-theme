@@ -3,7 +3,7 @@ global $wp;
 $current_slug = add_query_arg(array(), $wp->request);
 ?>
 
-<div class="navbar container mx-auto">
+<div class="navbar container mx-auto h-20">
   <div class="navbar-start">
     <div class="dropdown">
       <label tabindex="0" class="btn btn-ghost lg:hidden">
