@@ -82,10 +82,10 @@ if ( ! function_exists( 'storefront_header_cart' ) ) {
 	}
 }
 
-function rceitasdoparaiso_customizer_remove( $wp_customize ) {
+function receitasdoparaiso_customizer_remove( $wp_customize ) {
 	$wp_customize->remove_panel( 'themes' );
 }
-add_action( 'customize_register', 'rceitasdoparaiso_customizer_remove' );
+add_action( 'customize_register', 'receitasdoparaiso_customizer_remove' );
 
 
 function disable_all_widgets( $sidebars_widgets ) {
@@ -96,7 +96,7 @@ function disable_all_widgets( $sidebars_widgets ) {
 add_filter( 'sidebars_widgets', 'disable_all_widgets' );
 
 
-function rceitasdoparaiso_customize_register( $wp_customize ) {
+function receitasdoparaiso_customize_register( $wp_customize ) {
 
 	$wp_customize->remove_section('custom_css');	
 	$wp_customize->remove_section('storefront_layout');	
@@ -111,7 +111,7 @@ function rceitasdoparaiso_customize_register( $wp_customize ) {
 	// $wp_customize->remove_panel( 'nav_menus');
 	// $wp_customize->remove_panel( 'widgets');
 }
-add_action( 'customize_register', 'rceitasdoparaiso_customize_register', 20 );
+add_action( 'customize_register', 'receitasdoparaiso_customize_register', 20 );
 
 
 // //Remove top level admin menus
