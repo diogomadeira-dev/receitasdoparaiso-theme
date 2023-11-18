@@ -69,7 +69,7 @@ if ( ! function_exists( 'storefront_header_cart' ) ) {
 				$class = '';
 			}
 			?>
-		<ul id="site-header-cart" class="site-header-cart w-96 text-right">
+		<ul id="site-header-cart" class="site-header-cart text-right">
 			<li class="<?php echo esc_attr( $class ); ?>">
 				<?php storefront_cart_link(); ?>
 			</li>
