@@ -1,7 +1,7 @@
 <section class="flex bg-white h-[calc(100vh-80px)]">
     <div class="grid container px-4 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12">
         <div class="mr-auto place-self-center lg:col-span-7">
-            <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">O Paraíso em cada Receita</h1>
+            <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Um paraíso puro em cada receita</h1>
             <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">Receitas Simples, Saborosas e Saudáveis para facilitar a sua vida na cozinha.</p>
             <div class="mt-10 flex items-center justify-start gap-x-6">
               <a href="/receitas" class="btn btn-primary btn-outline">Ver receitas</a>
