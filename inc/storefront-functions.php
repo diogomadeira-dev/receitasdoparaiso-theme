@@ -82,5 +82,94 @@ if ( ! function_exists( 'storefront_header_cart' ) ) {
 	}
 }
 
+function rceitasdoparaiso_customizer_remove( $wp_customize ) {
+	$wp_customize->remove_panel( 'themes' );
+}
+add_action( 'customize_register', 'rceitasdoparaiso_customizer_remove' );
+
+
+function disable_all_widgets( $sidebars_widgets ) {
+  $sidebars_widgets = array( false );
+
+  return $sidebars_widgets;
+}
+add_filter( 'sidebars_widgets', 'disable_all_widgets' );
+
+
+function rceitasdoparaiso_customize_register( $wp_customize ) {
+
+	$wp_customize->remove_section('custom_css');	
+	$wp_customize->remove_section('storefront_layout');	
+	$wp_customize->remove_section('storefront_typography');	
+	$wp_customize->remove_section('storefront_more');	
+	$wp_customize->remove_section( 'static_front_page');
+	$wp_customize->remove_section( 'background_image');
+	$wp_customize->remove_section( 'header_image');
+	$wp_customize->remove_section( 'title_tagline');
+	$wp_customize->remove_section( 'storefront_footer');
+	$wp_customize->remove_section( 'storefront_buttons');
+	// $wp_customize->remove_panel( 'nav_menus');
+	// $wp_customize->remove_panel( 'widgets');
+	
+
+	// $wp_customize->remove_panel( 'storefront_typography' );
+	// $wp_customize->remove_panel( 'widgets' );
+	// $wp_customize->remove_section('header_image');
+	// $wp_customize->remove_panel('nav_menus');
+	//$wp_customize->remove_panel('widgets');
+	//$wp_customize->remove_section('colors');
+	//$wp_customize->remove_section('background_image');
+	//$wp_customize->remove_section('static_front_page');	 
+	//$wp_customize->remove_section('title_tagline');	
+}
+add_action( 'customize_register', 'rceitasdoparaiso_customize_register', 20 );
+
+
+
+// //Remove top level admin menus
+// function remove_admin_menus() {
+//     remove_menu_page( 'edit-comments.php' );
+//     remove_menu_page( 'link-manager.php' );
+//     remove_menu_page( 'tools.php' );
+//     remove_menu_page( 'plugins.php' );
+//     remove_menu_page( 'users.php' );
+//     remove_menu_page( 'options-general.php' );
+//     remove_menu_page( 'upload.php' );
+//     remove_menu_page( 'edit.php' );
+//     remove_menu_page( 'edit.php?post_type=page' );
+//     remove_menu_page( 'themes.php' );
+// }
+
+
+// //Remove sub level admin menus
+// function remove_admin_submenus() {
+//     remove_submenu_page( 'themes.php', 'theme-editor.php' );
+//     remove_submenu_page( 'themes.php', 'themes.php' );
+//     remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=post_tag' );
+//     remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=category' );
+//     remove_submenu_page( 'edit.php', 'post-new.php' );
+//     remove_submenu_page( 'themes.php', 'nav-menus.php' );
+//     remove_submenu_page( 'themes.php', 'widgets.php' );
+//     remove_submenu_page( 'themes.php', 'theme-editor.php' );
+//     remove_submenu_page( 'plugins.php', 'plugin-editor.php' );
+//     remove_submenu_page( 'plugins.php', 'plugin-install.php' );
+//     remove_submenu_page( 'users.php', 'users.php' );
+//     remove_submenu_page( 'users.php', 'user-new.php' );
+//     remove_submenu_page( 'upload.php', 'media-new.php' );
+//     remove_submenu_page( 'options-general.php', 'options-writing.php' );
+//     remove_submenu_page( 'options-general.php', 'options-discussion.php' );
+//     remove_submenu_page( 'options-general.php', 'options-reading.php' );
+//     remove_submenu_page( 'options-general.php', 'options-discussion.php' );
+//     remove_submenu_page( 'options-general.php', 'options-media.php' );
+//     remove_submenu_page( 'options-general.php', 'options-privacy.php' );
+//     remove_submenu_page( 'options-general.php', 'options-permalinks.php' );
+//     remove_submenu_page( 'index.php', 'update-core.php' );
+// }
+
+// add_action( 'admin_menu', 'remove_admin_menus' );
+// add_action( 'admin_menu', 'remove_admin_submenus' );
+
+
+
 
 
