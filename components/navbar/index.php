@@ -25,7 +25,7 @@ $current_slug = add_query_arg(array(), $wp->request);
     </div>
 
     <a href="/">
-      <div class="flex items-center w-40 h-20">
+      <div class="flex items-center w-40 h-12">
           <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/svg/logo-horizontal-light.svg'); ?>" alt="Logótipo Receitas do Paraíso" class="w-auto h-auto">
       </div>
     </a>
