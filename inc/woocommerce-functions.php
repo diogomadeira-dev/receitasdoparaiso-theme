@@ -71,3 +71,20 @@ add_action( 'init', 'iconic_disable_reviews' );
 // add_theme_support( 'wc-product-gallery-slider' );
 
 
+/**
+*  Show sales schedule on product
+*/
+function cxc_display_single_sale_price_after_sale_price() {
+	global $product;
+	if ( is_object( $product ) && $product->is_on_sale() ) {
+        $sales_price_from = get_post_meta( $product->get_id(), '_sale_price_dates_from', true );
+        $sales_price_to = get_post_meta( $product->get_id(), '_sale_price_dates_to', true );
+		if ( ! empty( $sales_price_to ) ) {
+            $sales_price_date_from = date( "d/m/y", $sales_price_from );
+            $sales_price_date_to   = date( "d/m/y", $sales_price_to );
+			echo '<p class="font-semibold mb-8">Preço promocional válido de ' . $sales_price_date_from . ' a ' . $sales_price_date_to . '</p>';
+		}
+	}
+}
+
+add_action( 'woocommerce_single_product_summary', 'cxc_display_single_sale_price_after_sale_price', 15 );
