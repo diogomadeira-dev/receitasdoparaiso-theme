@@ -1,7 +1,7 @@
 @layer components {
 
     body {
-        @apply w-fit;
+        @apply w-fit min-w-full;
     }
 
     /* TYPOGRAPHY */
