@@ -78,12 +78,14 @@ if ( ! function_exists( 'storefront_header_cart' ) ) {
 						</li>
 					</ul>	
 				</div> 
+				<?php if ( ! is_checkout() ) { ?>
 				<div class="drawer-side z-10 h-full">
 					<label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
 					<ul class="menu p-4 w-80 min-h-full bg-neutral-50 text-base-content">
 					<?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
 					</ul>
 				</div>
+				<?php } ?>
 			</div>
 			<?php
 		}
