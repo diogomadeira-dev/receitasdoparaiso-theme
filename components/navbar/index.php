@@ -51,25 +51,7 @@ $current_slug = add_query_arg(array(), $wp->request);
   <div class="navbar-end">
     <div class="flex items-center justify-between gap-2">
 
-        <div class="drawer drawer-end">
-          <input id="mini-cart-drawer" type="checkbox" class="drawer-toggle" />
-          <div class="drawer-content">
-            <!-- Page content here -->
-            <label for="mini-cart-drawer" tabindex="0" class="btn btn-ghost btn-circle">
-               <div class="indicator z-10">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>           
-                  <span class="badge-cart badge-sm indicator-item text-xxs"><?php echo wp_kses_data( sprintf( _n( '%d', '%d', WC()->cart->get_cart_contents_count(), 'storefront' ), WC()->cart->get_cart_contents_count() ) ); ?></span>
-               </div>
-            </label>
-          </div> 
-          <div class="drawer-side z-10">
-            <label for="mini-cart-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-            <ul class="menu p-4 w-80 min-h-full bg-neutral-50 text-base-content">
-               <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
-            </ul>
-          </div>
-        </div>
-
+        <?php echo storefront_header_cart(); ?>
 
         <div class="dropdown dropdown-end">
         </div>
