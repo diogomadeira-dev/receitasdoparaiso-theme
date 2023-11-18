@@ -1,4 +1,4 @@
-<div class="bg-neutral-50 py-16 sm:py-20">
+<div class="py-16 sm:py-20">
   <div class="container mx-auto">
 
    <h1>Ebooks</h1>

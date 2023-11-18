@@ -21,7 +21,7 @@
 		<?php get_template_part( 'components/navbar/index'); ?>
 	</header>
 
-	<?php $container = ! is_front_page() ? "container mx-auto" : ""; ?>
+	<?php $container = !is_front_page() ? "container mx-auto" : ""; ?>
 
 	<div id="content" class="site-content flex-grow my-8 <?php echo $container; ?>">
 

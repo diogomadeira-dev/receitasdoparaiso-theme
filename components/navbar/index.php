@@ -70,22 +70,10 @@ $current_slug = add_query_arg(array(), $wp->request);
               </ul>
             </div>
           <?php else : ?>
-            <div class="dropdown dropdown-end">
-              <a role="button" class="btn btn-primary btn-sm font-light flex-nowrap" href="<?php echo esc_url($url); ?>" target="_blank">
+              <a role="button" class="btn btn-primary btn-sm font-light flex-nowrap" href="/minha-conta">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" x2="3" y1="12" y2="12"/></svg>
                   Entrar
               </a>
-              <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                  <li>
-                  <a class="justify-between">
-                      Profile
-                      <span class="badge-cart">New</span>
-                  </a>
-                  </li>
-                  <li><a>Settings</a></li>
-                  <li><a>Logout</a></li>
-              </ul>
-            </div>
           <?php endif; ?>
 
     </div>
