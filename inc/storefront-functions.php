@@ -110,20 +110,8 @@ function rceitasdoparaiso_customize_register( $wp_customize ) {
 	$wp_customize->remove_section( 'storefront_buttons');
 	// $wp_customize->remove_panel( 'nav_menus');
 	// $wp_customize->remove_panel( 'widgets');
-	
-
-	// $wp_customize->remove_panel( 'storefront_typography' );
-	// $wp_customize->remove_panel( 'widgets' );
-	// $wp_customize->remove_section('header_image');
-	// $wp_customize->remove_panel('nav_menus');
-	//$wp_customize->remove_panel('widgets');
-	//$wp_customize->remove_section('colors');
-	//$wp_customize->remove_section('background_image');
-	//$wp_customize->remove_section('static_front_page');	 
-	//$wp_customize->remove_section('title_tagline');	
 }
 add_action( 'customize_register', 'rceitasdoparaiso_customize_register', 20 );
-
 
 
 // //Remove top level admin menus
