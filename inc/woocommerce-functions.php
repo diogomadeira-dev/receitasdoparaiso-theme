@@ -82,7 +82,7 @@ function cxc_display_single_sale_price_after_sale_price() {
 		if ( ! empty( $sales_price_to ) ) {
             $sales_price_date_from = date( "d/m/y", $sales_price_from );
             $sales_price_date_to   = date( "d/m/y", $sales_price_to );
-			echo '<p class="font-semibold mb-8">Preço promocional válido de ' . $sales_price_date_from . ' a ' . $sales_price_date_to . '</p>';
+			echo '<p class="text-xs font-semibold mb-8">Preço promocional válido de ' . $sales_price_date_from . ' a ' . $sales_price_date_to . '</p>';
 		}
 	}
 }
@@ -96,7 +96,10 @@ function bbloomer_user_logged_in_product_already_bought() {
     global $product;
     if ( ! is_user_logged_in() ) return;
     if ( wc_customer_bought_product( '', get_current_user_id(), $product->get_id() ) ) {
-       echo '<div><p class="text-sm text-primary">Adquirido</p></div>';
+        echo '<div role="alert" class="alert">
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span>Este produto já foi adquirido</span>
+        </div>';
     }
 }
 
