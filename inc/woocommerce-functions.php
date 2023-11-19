@@ -88,3 +88,28 @@ function cxc_display_single_sale_price_after_sale_price() {
 }
 
 add_action( 'woocommerce_single_product_summary', 'cxc_display_single_sale_price_after_sale_price', 15 );
+
+ /**
+*  WooCommerce Check if User Has Purchased Product
+*/  
+function bbloomer_user_logged_in_product_already_bought() {
+    global $product;
+    if ( ! is_user_logged_in() ) return;
+    if ( wc_customer_bought_product( '', get_current_user_id(), $product->get_id() ) ) {
+       echo '<div><p class="text-sm text-primary">Adquirido</p></div>';
+    }
+}
+
+add_action( 'woocommerce_after_shop_loop_item', 'bbloomer_user_logged_in_product_already_bought', 30 );
+
+function bbloomer_hide_add_cart_if_already_purchased( $is_purchasable, $product ) {
+    if ( wc_customer_bought_product( '', get_current_user_id(), $product->get_id() ) ) {
+       $is_purchasable = false;
+    }
+    return $is_purchasable;
+}
+ 
+add_filter( 'woocommerce_is_purchasable', 'bbloomer_hide_add_cart_if_already_purchased', 9999, 2 );
+
+
+
