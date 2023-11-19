@@ -1,5 +1,9 @@
 @layer components {
 
+    body {
+        @apply w-fit min-w-full;
+    }
+
     /* TYPOGRAPHY */
 
     h1 {

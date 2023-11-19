@@ -41,8 +41,8 @@ if ( ! function_exists( 'storefront_cart_link' ) ) {
 			return;
 		}
 		?>
-		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'storefront' ); ?>">			
-            <label tabindex="0" class="btn btn-ghost btn-circle">
+		<a class="cart-contents" title="<?php esc_attr_e( 'View your shopping cart', 'storefront' ); ?>">			
+            <label for="my-drawer-4" tabindex="0" class="btn btn-ghost btn-circle">
                <div class="indicator">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>           
                   <span class="badge-cart badge-sm indicator-item text-xxs"><?php echo wp_kses_data( sprintf( _n( '%d', '%d', WC()->cart->get_cart_contents_count(), 'storefront' ), WC()->cart->get_cart_contents_count() ) ); ?></span>
@@ -69,23 +69,33 @@ if ( ! function_exists( 'storefront_header_cart' ) ) {
 				$class = '';
 			}
 			?>
-		<ul id="site-header-cart" class="site-header-cart w-96 text-right">
-			<li class="<?php echo esc_attr( $class ); ?>">
-				<?php storefront_cart_link(); ?>
-			</li>
-			<li class="text-left">
-				<?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
-			</li>
-		</ul>
+			<div class="drawer drawer-end">
+				<input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+				<div class="drawer-content">
+					<ul id="site-header-cart" class="text-right">
+						<li class="<?php echo esc_attr( $class ); ?>">
+							<?php storefront_cart_link(); ?>
+						</li>
+					</ul>	
+				</div> 
+				<?php if ( ! is_checkout() ) { ?>
+				<div class="drawer-side z-10 h-full">
+					<label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
+					<ul class="menu p-4 w-80 min-h-full bg-neutral-50 text-base-content">
+					<?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
+					</ul>
+				</div>
+				<?php } ?>
+			</div>
 			<?php
 		}
 	}
 }
 
-function rceitasdoparaiso_customizer_remove( $wp_customize ) {
+function receitasdoparaiso_customizer_remove( $wp_customize ) {
 	$wp_customize->remove_panel( 'themes' );
 }
-add_action( 'customize_register', 'rceitasdoparaiso_customizer_remove' );
+add_action( 'customize_register', 'receitasdoparaiso_customizer_remove' );
 
 
 function disable_all_widgets( $sidebars_widgets ) {
@@ -96,7 +106,7 @@ function disable_all_widgets( $sidebars_widgets ) {
 add_filter( 'sidebars_widgets', 'disable_all_widgets' );
 
 
-function rceitasdoparaiso_customize_register( $wp_customize ) {
+function receitasdoparaiso_customize_register( $wp_customize ) {
 
 	$wp_customize->remove_section('custom_css');	
 	$wp_customize->remove_section('storefront_layout');	
@@ -111,52 +121,7 @@ function rceitasdoparaiso_customize_register( $wp_customize ) {
 	// $wp_customize->remove_panel( 'nav_menus');
 	// $wp_customize->remove_panel( 'widgets');
 }
-add_action( 'customize_register', 'rceitasdoparaiso_customize_register', 20 );
-
-
-// //Remove top level admin menus
-// function remove_admin_menus() {
-//     remove_menu_page( 'edit-comments.php' );
-//     remove_menu_page( 'link-manager.php' );
-//     remove_menu_page( 'tools.php' );
-//     remove_menu_page( 'plugins.php' );
-//     remove_menu_page( 'users.php' );
-//     remove_menu_page( 'options-general.php' );
-//     remove_menu_page( 'upload.php' );
-//     remove_menu_page( 'edit.php' );
-//     remove_menu_page( 'edit.php?post_type=page' );
-//     remove_menu_page( 'themes.php' );
-// }
-
-
-// //Remove sub level admin menus
-// function remove_admin_submenus() {
-//     remove_submenu_page( 'themes.php', 'theme-editor.php' );
-//     remove_submenu_page( 'themes.php', 'themes.php' );
-//     remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=post_tag' );
-//     remove_submenu_page( 'edit.php', 'edit-tags.php?taxonomy=category' );
-//     remove_submenu_page( 'edit.php', 'post-new.php' );
-//     remove_submenu_page( 'themes.php', 'nav-menus.php' );
-//     remove_submenu_page( 'themes.php', 'widgets.php' );
-//     remove_submenu_page( 'themes.php', 'theme-editor.php' );
-//     remove_submenu_page( 'plugins.php', 'plugin-editor.php' );
-//     remove_submenu_page( 'plugins.php', 'plugin-install.php' );
-//     remove_submenu_page( 'users.php', 'users.php' );
-//     remove_submenu_page( 'users.php', 'user-new.php' );
-//     remove_submenu_page( 'upload.php', 'media-new.php' );
-//     remove_submenu_page( 'options-general.php', 'options-writing.php' );
-//     remove_submenu_page( 'options-general.php', 'options-discussion.php' );
-//     remove_submenu_page( 'options-general.php', 'options-reading.php' );
-//     remove_submenu_page( 'options-general.php', 'options-discussion.php' );
-//     remove_submenu_page( 'options-general.php', 'options-media.php' );
-//     remove_submenu_page( 'options-general.php', 'options-privacy.php' );
-//     remove_submenu_page( 'options-general.php', 'options-permalinks.php' );
-//     remove_submenu_page( 'index.php', 'update-core.php' );
-// }
-
-// add_action( 'admin_menu', 'remove_admin_menus' );
-// add_action( 'admin_menu', 'remove_admin_submenus' );
-
+add_action( 'customize_register', 'receitasdoparaiso_customize_register', 20 );
 
 
 
