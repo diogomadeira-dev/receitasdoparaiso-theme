@@ -82,7 +82,7 @@ function cxc_display_single_sale_price_after_sale_price() {
 		if ( ! empty( $sales_price_to ) ) {
             $sales_price_date_from = date( "d/m/y", $sales_price_from );
             $sales_price_date_to   = date( "d/m/y", $sales_price_to );
-			echo '<p class="font-semibold mb-8">Preço promocional válido de ' . $sales_price_date_from . ' a ' . $sales_price_date_to . '</p>';
+			echo '<p class="text-xs font-semibold mb-8">Preço promocional válido de ' . $sales_price_date_from . ' a ' . $sales_price_date_to . '</p>';
 		}
 	}
 }
