@@ -134,8 +134,6 @@ class recipeMetabox {
     return '<div style="margin-top: 10px;"><strong>'.$label.'</strong></div><div>'.$input.'</div>';
   }
 
-  
-
   public function save_fields( $post_id ) {
     if ( !isset( $_POST['recipe_nonce'] ) ) {
       return $post_id;
