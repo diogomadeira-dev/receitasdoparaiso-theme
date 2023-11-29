@@ -12,8 +12,8 @@
 	"text_domain": "receitasdoparaiso-theme",
 	"license": "MIT",
 	"scripts": {
-		"dev": "mix",
-		"watch": "mix watch",
+		"mix": "mix",
+		"dev": "mix watch",
 		"watch-poll": "mix watch -- --watch-options-poll=1000",
 		"hot": "mix watch --hot",
 		"production": "mix --production",

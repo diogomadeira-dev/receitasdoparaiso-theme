@@ -115,7 +115,7 @@ add_filter( 'show_admin_bar', '__return_false' );
 * Includes
 */
 
-require 'inc/recipes-functions.php';
+// require 'inc/recipes-functions.php';
 require 'inc/woocommerce-functions.php';
 require 'inc/storefront-functions.php';
 
