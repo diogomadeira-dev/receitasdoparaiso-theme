@@ -46,10 +46,7 @@
                 </div>
                 <div class="flex gap-2">
                     <?php
-                    $categories = get_terms( 'categoria', array(
-                        'orderby'    => 'count',
-                        'hide_empty' => 0,
-                    ));
+                    $categories = get_the_terms( get_the_ID(), 'categoria' );
 
                     foreach (($categories) as $category) {
                     ?>
