@@ -78,7 +78,7 @@
                 </div>
 
                 <div class="flex gap-10 py-10">
-                    <?php $level = get_post_meta( get_the_ID(), "select_dificuldade", true ); 
+                    <?php $level = get_post_meta( get_the_ID(), "selecionar_dificuldade", true ); 
 
                     $levelOne = 'Muito Fácil';
                     $levelTwo = 'Fácil';
@@ -120,7 +120,7 @@
                         </div>
                     <?php endif; ?>
 
-                    <?php $preparationTime = get_post_meta( get_the_ID(), "number_tempodepreparação", true ); ?>
+                    <?php $preparationTime = get_post_meta( get_the_ID(), "tempo_de_preparacao", true ); ?>
                     <?php if ($preparationTime) : ?>
                         <div class="flex align-top flex-col">
                             <span class="text-xs text-muted font-medium">Tempo de preparação</span>
@@ -128,7 +128,7 @@
                         </div>
                     <?php endif; ?>    
 
-                    <?php $totalTime = get_post_meta( get_the_ID(), "number_tempototal", true ); ?>
+                    <?php $totalTime = get_post_meta( get_the_ID(), "tempo_total", true ); ?>
                     <?php if ($totalTime) : ?>
                         <div class="flex align-top flex-col">
                             <span class="text-xs text-muted font-medium">Tempo total</span>
@@ -136,7 +136,7 @@
                         </div>
                     <?php endif; ?>   
 
-                    <?php $portions = get_post_meta( get_the_ID(), "number_porções", true ); ?>
+                    <?php $portions = get_post_meta( get_the_ID(), "porcoes", true ); ?>
                     <?php if ($portions) : ?>
                         <div class="flex align-top flex-col">
                             <span class="text-xs text-muted font-medium">Porções</span>
@@ -146,7 +146,7 @@
 
                 </div>
 
-                <?php $url = get_post_meta(get_the_ID(), 'url', true); ?>
+                <?php $url = get_post_meta(get_the_ID(), 'link_yt', true); ?>
 
                 <?php if (!empty($url)) { ?>
                     <a role="button" class="btn btn-primary" href="<?php echo esc_url($url); ?>" target="_blank">
