@@ -199,7 +199,7 @@ function receitas_do_paraiso_admin_color_scheme() {
 
 	//Receitas do Paraíso
 	wp_admin_css_color( 'receitas_do_paraiso', __( 'Receitas do Paraíso' ),
-		$theme_dir . '/receitas_do_paraiso.css',
+		$theme_dir . '/css/admin.css',
 		array( '#242424', '#fff', '#fb9819' , '#ec7418')
 	);
 }
