@@ -2,7 +2,7 @@
 
 <article id="post-<?php the_ID(); ?>">
 
-    <div class="flex gap-10">
+    <div class="lg:flex gap-10">
 
         <div class="flex-1 overflow-hidden">
             <?php $post_thumbnail = get_field('imagem', get_the_ID()); ?>
@@ -13,12 +13,10 @@
             <?php endif; ?>
         </div>
 
-
         <div class="flex-1">
-            <header class="mb-6">
+            <header class="mb-6 mt-10 lg:mt-0">
                 <div class="flex justify-between">
                 <?php the_title(sprintf('<h1 class="entry-title text-2xl lg:text-4xl font-extrabold leading-tight capitalize-first-letter mb-4">', esc_url(get_permalink())), '</h1>'); ?>
-                <!-- <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished" class="text-sm text-gray-700"><?php echo get_the_date(); ?></time> -->
 
                     <div class="flex justify-end gap-2">
                         <?php
@@ -154,20 +152,7 @@
                     Ver vídeo
                 </a>
                 <?php } ?>
-                
-                <?php
-                // wp_link_pages(
-                //     array(
-                //         'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'tailpress' ) . '</span>',
-                //         'after'       => '</div>',
-                //         'link_before' => '<span>',
-                //         'link_after'  => '</span>',
-                //         'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'tailpress' ) . ' </span>%',
-                //         'separator'   => '<span class="screen-reader-text">, </span>',
-                //     )
-                // );
-                ?>
-
+            
             </div>
         </div>
     </div>

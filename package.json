@@ -1,8 +1,8 @@
 {
 	"name": "receitasdoparaiso-theme",
-	"version": "0.0.1",
-	"description": "Boilerplate WordPress theme with Tailwind CSS.",
-	"author": "Jeffrey van Rossum",
+	"version": "1.0.0",
+	"description": "Tema Receitas do Paraíso",
+	"author": "Receitas do Paraíso",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/username/receitasdoparaiso-theme"
@@ -17,7 +17,7 @@
 		"watch-poll": "mix watch -- --watch-options-poll=1000",
 		"hot": "mix watch --hot",
 		"production": "mix --production",
-		"zip": "bestzip receitasdoparaiso-theme.zip screenshot.png *.php style.css css/* js/* fonts/* images/* template-parts/*",
+		"zip": "bestzip receitasdoparaiso-theme.zip screenshot.png *.php style.css css/* js/* fonts/* images/* inc/* assets/* components/* template-parts/*",
 		"production-zip": "npm run production && npm run zip"
 	},
 	"devDependencies": {

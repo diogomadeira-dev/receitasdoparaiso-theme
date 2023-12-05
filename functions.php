@@ -115,7 +115,6 @@ add_filter( 'show_admin_bar', '__return_false' );
 * Includes
 */
 
-// require 'inc/recipes-functions.php';
 require 'inc/woocommerce-functions.php';
 require 'inc/storefront-functions.php';
 
@@ -223,6 +222,3 @@ function update_user_option_admin_color( $color_scheme ) {
     return $color_scheme;
 }
 add_filter( 'get_user_option_admin_color', 'update_user_option_admin_color', 5 );
-
-
-
