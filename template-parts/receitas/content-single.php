@@ -7,7 +7,7 @@
         <div class="flex-1 overflow-hidden">
             <?php $post_thumbnail = get_field('imagem', get_the_ID()); ?>
             <?php if ($post_thumbnail) : ?>
-                <img class="hover:scale-125 transition duration-500 object-cover" src="<?php echo $post_thumbnail['guid']; ?>">           
+                <img class="hover:scale-125 transition duration-500 object-cover" src="<?php echo $post_thumbnail['guid']; ?>">   
             <?php else : ?>
                 <img class="object-cover max-h-96 w-full border" src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/images/img-placeholder.png'); ?>" alt="img-placeholder">
             <?php endif; ?>
