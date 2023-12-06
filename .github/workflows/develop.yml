@@ -15,6 +15,7 @@ jobs:
       run: |
         npm install
         npm run production
+        npm run zip
     
     - name: 📂 Sync files
       uses: Penguibird/FTP-Deploy-Action@4.2.0
