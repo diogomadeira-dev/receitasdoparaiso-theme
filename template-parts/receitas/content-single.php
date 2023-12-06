@@ -2,23 +2,21 @@
 
 <article id="post-<?php the_ID(); ?>">
 
-    <div class="flex gap-10">
+    <div class="lg:flex gap-10">
 
         <div class="flex-1 overflow-hidden">
             <?php $post_thumbnail = get_field('imagem', get_the_ID()); ?>
             <?php if ($post_thumbnail) : ?>
-                <img class="hover:scale-125 transition duration-500 object-cover" src="<?php echo $post_thumbnail['guid']; ?>">           
+                <img class="hover:scale-125 transition duration-500 object-cover" src="<?php echo $post_thumbnail['guid']; ?>">   
             <?php else : ?>
                 <img class="object-cover max-h-96 w-full border" src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/images/img-placeholder.png'); ?>" alt="img-placeholder">
             <?php endif; ?>
         </div>
 
-
         <div class="flex-1">
-            <header class="mb-6">
+            <header class="mb-6 mt-10 lg:mt-0">
                 <div class="flex justify-between">
                 <?php the_title(sprintf('<h1 class="entry-title text-2xl lg:text-4xl font-extrabold leading-tight capitalize-first-letter mb-4">', esc_url(get_permalink())), '</h1>'); ?>
-                <!-- <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished" class="text-sm text-gray-700"><?php echo get_the_date(); ?></time> -->
 
                     <div class="flex justify-end gap-2">
                         <?php
@@ -45,18 +43,18 @@
                     </div>
                 </div>
                 <div class="flex gap-2">
-                    <?php
-                    $categories = get_terms( 'categoria', array(
-                        'orderby'    => 'count',
-                        'hide_empty' => 0,
-                    ));
 
-                    foreach (($categories) as $category) {
-                    ?>
-                        <span class="badge"><?php echo $category->name ?></span>
-                    <?php
-                    }
-                    ?>
+                    <?php 
+                        $categories = get_the_terms( get_the_ID(), 'categoria' );
+
+                        if ($categories) : 
+                            foreach ($categories as $category) {
+                        ?>
+                            <span class="badge"><?php echo $category->name ?></span>
+                        <?php } ?>
+                    <?php endif; ?>
+
+
                     <div class="badge-social">
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
                     </div>
@@ -78,7 +76,7 @@
                 </div>
 
                 <div class="flex gap-10 py-10">
-                    <?php $level = get_post_meta( get_the_ID(), "select_dificuldade", true ); 
+                    <?php $level = get_post_meta( get_the_ID(), "selecionar_dificuldade", true ); 
 
                     $levelOne = 'Muito Fácil';
                     $levelTwo = 'Fácil';
@@ -120,7 +118,7 @@
                         </div>
                     <?php endif; ?>
 
-                    <?php $preparationTime = get_post_meta( get_the_ID(), "number_tempodepreparação", true ); ?>
+                    <?php $preparationTime = get_post_meta( get_the_ID(), "tempo_de_preparacao", true ); ?>
                     <?php if ($preparationTime) : ?>
                         <div class="flex align-top flex-col">
                             <span class="text-xs text-muted font-medium">Tempo de preparação</span>
@@ -128,7 +126,7 @@
                         </div>
                     <?php endif; ?>    
 
-                    <?php $totalTime = get_post_meta( get_the_ID(), "number_tempototal", true ); ?>
+                    <?php $totalTime = get_post_meta( get_the_ID(), "tempo_total", true ); ?>
                     <?php if ($totalTime) : ?>
                         <div class="flex align-top flex-col">
                             <span class="text-xs text-muted font-medium">Tempo total</span>
@@ -136,7 +134,7 @@
                         </div>
                     <?php endif; ?>   
 
-                    <?php $portions = get_post_meta( get_the_ID(), "number_porções", true ); ?>
+                    <?php $portions = get_post_meta( get_the_ID(), "porcoes", true ); ?>
                     <?php if ($portions) : ?>
                         <div class="flex align-top flex-col">
                             <span class="text-xs text-muted font-medium">Porções</span>
@@ -146,7 +144,7 @@
 
                 </div>
 
-                <?php $url = get_post_meta(get_the_ID(), 'url', true); ?>
+                <?php $url = get_post_meta(get_the_ID(), 'link_yt', true); ?>
 
                 <?php if (!empty($url)) { ?>
                     <a role="button" class="btn btn-primary" href="<?php echo esc_url($url); ?>" target="_blank">
@@ -154,20 +152,7 @@
                     Ver vídeo
                 </a>
                 <?php } ?>
-                
-                <?php
-                // wp_link_pages(
-                //     array(
-                //         'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'tailpress' ) . '</span>',
-                //         'after'       => '</div>',
-                //         'link_before' => '<span>',
-                //         'link_after'  => '</span>',
-                //         'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'tailpress' ) . ' </span>%',
-                //         'separator'   => '<span class="screen-reader-text">, </span>',
-                //     )
-                // );
-                ?>
-
+            
             </div>
         </div>
     </div>

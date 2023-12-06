@@ -55,5 +55,9 @@
     .form-row {
         @apply mb-4;
     }
+
+    .woocommerce-form__label-for-checkbox {
+        @apply w-full border-none my-6;
+    }
 }
 

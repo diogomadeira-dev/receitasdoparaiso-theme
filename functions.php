@@ -115,7 +115,6 @@ add_filter( 'show_admin_bar', '__return_false' );
 * Includes
 */
 
-// require 'inc/recipes-functions.php';
 require 'inc/woocommerce-functions.php';
 require 'inc/storefront-functions.php';
 
@@ -179,3 +178,47 @@ function add_my_favicon() {
  add_action( 'wp_head', 'add_my_favicon' ); //front end
  add_action( 'admin_head', 'add_my_favicon' ); //admin end
 
+
+/**
+* Disable Gutenberg for receitas post type
+*/
+function prefix_disable_gutenberg($current_status, $post_type) {
+    if ($post_type === 'receitas') return false;
+    return $current_status;
+}
+add_filter('use_block_editor_for_post_type', 'prefix_disable_gutenberg', 10, 2);
+
+
+/**
+* Set new admin theme
+*/
+function receitas_do_paraiso_admin_color_scheme() {
+	//Get the theme directory
+	$theme_dir = get_stylesheet_directory_uri();
+
+	//Receitas do Paraíso
+	wp_admin_css_color( 'receitas_do_paraiso', __( 'Receitas do Paraíso' ),
+		$theme_dir . '/css/admin.css',
+		array( '#242424', '#fff', '#fb9819' , '#ec7418')
+	);
+}
+add_action('admin_init', 'receitas_do_paraiso_admin_color_scheme');
+
+/**
+* Disable admin color picker for admin
+*/
+function admin_color_scheme() {
+	global $_wp_admin_css_colors;
+	$_wp_admin_css_colors = 0;
+ }
+ add_action('admin_head', 'admin_color_scheme');
+
+/**
+* Set default admin color picker for admin
+*/
+function update_user_option_admin_color( $color_scheme ) {
+    $color_scheme = 'receitas_do_paraiso';
+
+    return $color_scheme;
+}
+add_filter( 'get_user_option_admin_color', 'update_user_option_admin_color', 5 );

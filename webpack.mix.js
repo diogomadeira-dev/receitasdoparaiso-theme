@@ -18,6 +18,8 @@ mix.postCss("resources/css/app.css", "css");
 
 mix.postCss("resources/css/editor-style.css", "css");
 
+mix.postCss("resources/css/admin.css", "css");
+
 mix.browserSync({
     proxy: "http://receitasdoparaiso.local",
     host: 'receitasdoparaiso.test',

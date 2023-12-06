@@ -22,11 +22,11 @@
       <div class="grid grid-cols-3 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-3 text-sm">
         <div>
           <ul class="mt-2 space-y-2">
-            <li>
+            <!-- <li>
               <a href="/" class="transition-colors duration-300 text-deep-purple-50 hover:text-primary">Contacta-nos</a>
-            </li>
+            </li> -->
             <li>
-              <a href="/" class="transition-colors duration-300 text-deep-purple-50 hover:text-primary">Loja</a>
+              <a href="/loja" class="transition-colors duration-300 text-deep-purple-50 hover:text-primary">Loja</a>
             </li>
             <!-- <li>
               <a href="/" class="transition-colors duration-300 text-deep-purple-50 hover:text-primary">Business</a>
@@ -39,32 +39,32 @@
         <div>
           <ul class="mt-2 space-y-2">
             <li>
-              <a href="/" class="transition-colors duration-300 text-deep-purple-50 hover:text-primary">Equipa</a>
+              <a href="/equipa" class="transition-colors duration-300 text-deep-purple-50 hover:text-primary">Equipa</a>
             </li>
-            <li>
+            <!-- <li>
               <a href="/" class="transition-colors duration-300 text-deep-purple-50 hover:text-primary">Sugestão Semanal</a>
+            </li> -->
+            <li>
+              <a href="/sobre" class="transition-colors duration-300 text-deep-purple-50 hover:text-primary">Sobre Nós</a>
             </li>
             <li>
-              <a href="/" class="transition-colors duration-300 text-deep-purple-50 hover:text-primary">Sobre Nós</a>
-            </li>
-            <li>
-              <a href="/" class="transition-colors duration-300 text-deep-purple-50 hover:text-primary">Canal do Youtube</a>
+              <a href="https://www.youtube.com/@ReceitasdoParaiso" target="_blank" class="transition-colors duration-300 text-deep-purple-50 hover:text-primary">Canal do Youtube</a>
             </li>
           </ul>
         </div>
         <div>
           <ul class="mt-2 space-y-2">
             <li>
-              <a href="/" class="transition-colors duration-300 text-deep-purple-50 hover:text-primary">Condições Gerais de Venda</a>
+              <a href="/condicoes-gerais-de-venda" class="transition-colors duration-300 text-deep-purple-50 hover:text-primary">Condições Gerais de Venda</a>
             </li>
             <li>
-              <a href="/" class="transition-colors duration-300 text-deep-purple-50 hover:text-primary">Resolução Alternativa de Litígios de Consumo</a>
+              <a href="/ral" class="transition-colors duration-300 text-deep-purple-50 hover:text-primary">Resolução Alternativa de Litígios de Consumo</a>
             </li>
             <li>
-              <a href="/" class="transition-colors duration-300 text-deep-purple-50 hover:text-primary">Política de Privacidade</a>
+              <a href="/politica-de-privacidade" class="transition-colors duration-300 text-deep-purple-50 hover:text-primary">Política de Privacidade</a>
             </li>
             <li>
-              <a href="/" class="transition-colors duration-300 text-deep-purple-50 hover:text-primary">Política de Cookies</a>
+              <a href="/politica-de-cookies" class="transition-colors duration-300 text-deep-purple-50 hover:text-primary">Política de Cookies</a>
             </li>
           </ul>
         </div>
