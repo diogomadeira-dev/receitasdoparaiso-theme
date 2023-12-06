@@ -19,9 +19,7 @@ jobs:
           uses: actions/upload-artifact@v3
           with:
             name: my-theme-build
-            path: |
-              dist/
-              vendor/
+            path: .
             retention-days: 1
   deploy:
       runs-on: ubuntu-latest
