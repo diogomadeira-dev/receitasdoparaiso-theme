@@ -20,7 +20,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Upload ftp
-      uses: genietim/ftp-action@releases/v4
+      uses: genietim/ftp-action@v4
       with:
         host: dev.receitasdoparaiso.pt
         user: ${{ secrets.ftp_username }}
