@@ -8,7 +8,7 @@ jobs:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
+    - name: 🚚 Checkout
       uses: actions/checkout@v3
 
     - name: 🔄 Install dependencies and build assets
@@ -27,12 +27,13 @@ jobs:
           node_modules/**
           .git/**
           .github/**
-          resources
+          resources/**
           .gitattributes
           .gitignore
           CHANGELOG.md
           LICENSE
           README.MD
+          safelist.txt
           mix-manifest.json
           package-lock.json
           package.json
