@@ -26,3 +26,18 @@ jobs:
         exclude: |
           node_modules/**
           .git/**
+          .github/**
+          resources
+          .gitattributes
+          .gitignore
+          CHANGELOG.md
+          LICENSE
+          README.MD
+          mix-manifest.json
+          package-lock.json
+          package.json
+          postcss.config.js
+          /**/safelist.txt
+          tailwind.config.js
+          theme.json
+          webpack.mix.js
