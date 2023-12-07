@@ -31,6 +31,19 @@ jobs:
               'assets/**'
               'components/**'
               'template-parts/**'
+              !.gitattributes
+              !.gitignore
+              !CHANGELOG.md
+              !LICENSE
+              !README.MD
+              !mix-manifest.json
+              !package-lock.json
+              !package.json
+              !postcss.config.js
+              !safelist.txt
+              !tailwind.config.js
+              !theme.json
+              !webpack.mix.js
             retention-days: 1
   deploy:
       runs-on: ubuntu-latest
