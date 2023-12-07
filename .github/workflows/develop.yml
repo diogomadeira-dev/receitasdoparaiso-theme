@@ -14,33 +14,17 @@ jobs:
           run: |
             npm install
             npm run production
-      
-        - name: Upload artifact
-          uses: actions/upload-artifact@v2
-          with:
-            name: my-theme-build
-            path: ./fonts
-            retention-days: 0
   deploy:
-      runs-on: ubuntu-latest
-      needs: build
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v3
-          with:
-            # Fetch the entire Git history
-            fetch-depth: 0
-  
-        - name: Download artifact
-          uses: actions/download-artifact@v2
-          with:
-            name: my-theme-build
-            path: .
-  
-        - name: 📂 Sync files
-          uses: Penguibird/FTP-Deploy-Action@4.2.0
-          with:
-            server: dev.receitasdoparaiso.pt
-            username: ${{ secrets.ftp_username }}
-            password: ${{ secrets.ftp_password }}
-            server-dir: /wp-content/themes/receitasdoparaiso-theme/
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Upload ftp
+      uses: genietim/ftp-action@releases/v4
+      with:
+        host: dev.receitasdoparaiso.pt
+        user: ${{ secrets.ftp_username }}
+        password: ${{ secrets.ftp_password }}
+        localDir: "components"
+        remoteDir: "/wp-content/themes/receitasdoparaiso-theme/"
+        
