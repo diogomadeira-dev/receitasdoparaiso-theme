@@ -17,7 +17,7 @@
 		"watch-poll": "mix watch -- --watch-options-poll=1000",
 		"hot": "mix watch --hot",
 		"production": "mix --production",
-		"zip": "bestzip receitasdoparaiso-theme.zip screenshot.png *.php style.css css/* js/* fonts/* images/* inc/* assets/* components/* template-parts/*",
+		"zip": "bestzip receitasdoparaiso-theme.zip screenshot.png *.php style.css css/* js/* fonts/* inc/* assets/* components/* template-parts/*",
 		"production-zip": "npm run production && npm run zip"
 	},
 	"devDependencies": {
