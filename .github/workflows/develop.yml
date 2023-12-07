@@ -25,4 +25,4 @@ jobs:
         server-dir: /wp-content/themes/receitasdoparaiso-theme/
         exclude: |
           node_modules/**
-          
+          .git/**
