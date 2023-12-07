@@ -35,7 +35,7 @@ jobs:
           uses: actions/download-artifact@v3
           with:
             name: my-theme-build
-            path: footer.php
+            path: /test/
   
         - name: 📂 Sync files
           uses: Penguibird/FTP-Deploy-Action@4.2.0
