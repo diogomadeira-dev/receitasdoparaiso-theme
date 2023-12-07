@@ -1,8 +1,8 @@
 on: 
   push:
     branches:
-      - main
-name: 🚀 Deploy to Production
+      - develop
+name: 🚀 Deploy to QA
 jobs:
   web-deploy:
     name: 🎉 Deploy
@@ -19,7 +19,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: receitasdoparaiso.pt
+        server: dev.receitasdoparaiso.pt
         username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
         server-dir: /wp-content/themes/receitasdoparaiso-theme/
