@@ -19,7 +19,7 @@ jobs:
           uses: actions/upload-artifact@v3
           with:
             name: my-theme-build
-            path: /**/footer.php
+            path: footer.php
             retention-days: 0
   deploy:
       runs-on: ubuntu-latest
