@@ -19,7 +19,18 @@ jobs:
           uses: actions/upload-artifact@v3
           with:
             name: my-theme-build
-            path: .
+            path: |
+              '**/*.php'
+              screenshot.png
+              style.css
+              'css/**'
+              'js/**'
+              'fonts/**'
+              'images/**'
+              'inc/**'
+              'assets/**'
+              'components/**'
+              'template-parts/**'
             retention-days: 1
   deploy:
       runs-on: ubuntu-latest
