@@ -20,7 +20,7 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: receitasdoparaiso.pt
-        username: ${{ secrets.ftp_username }}
+        username: ${{ secrets.ftp_username_prod }}
         password: ${{ secrets.ftp_password }}
         server-dir: /wp-content/themes/receitasdoparaiso-theme/
         exclude: |
