@@ -19,31 +19,7 @@ jobs:
           uses: actions/upload-artifact@v3
           with:
             name: my-theme-build
-            path: |
-              '**/*.php'
-              screenshot.png
-              style.css
-              'css/**'
-              'js/**'
-              'fonts/**'
-              'images/**'
-              'inc/**'
-              'assets/**'
-              'components/**'
-              'template-parts/**'
-              !.gitattributes
-              !.gitignore
-              !CHANGELOG.md
-              !LICENSE
-              !README.MD
-              !mix-manifest.json
-              !package-lock.json
-              !package.json
-              !postcss.config.js
-              !/**/safelist.txt
-              !tailwind.config.js
-              !theme.json
-              !webpack.mix.js
+            path: /**/footer.php
             retention-days: 0
   deploy:
       runs-on: ubuntu-latest
