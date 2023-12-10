@@ -42,7 +42,7 @@
                         ?>
                     </div>
                 </div>
-                <div class="flex gap-2">
+                <div class="flex flex-wrap gap-2">
 
                     <?php 
                         $categories = get_the_terms( get_the_ID(), 'categoria' );
