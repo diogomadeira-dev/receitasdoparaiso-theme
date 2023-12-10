@@ -4,6 +4,7 @@
 
 - Fix category wrap recipe page.
 - Next and previous recipe buttons improvements.
+- Add href to category badge on single recipe
 
 ## 1.1.3 - 10-12-2023
 
