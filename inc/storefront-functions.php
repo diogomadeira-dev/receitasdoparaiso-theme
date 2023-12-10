@@ -125,7 +125,3 @@ function receitasdoparaiso_customize_register( $wp_customize ) {
 	// $wp_customize->remove_panel( 'widgets');
 }
 add_action( 'customize_register', 'receitasdoparaiso_customize_register', 20 );
-
-
-
-
