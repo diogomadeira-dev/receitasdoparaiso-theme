@@ -9,19 +9,19 @@
 
 		if ( ! empty( $terms ) && is_array( $terms ) ) { ?>
 
-			<div class="flex justify-start items-center">
+			<div class="flex justify-end items-center">
+				<?php if ( $category ) : ?>
+					<a href="/receitas"><button class="btn btn-link no-underline text-xs text-accent tracking-tight">Limpar filtros</button></a>
+
+					<span class="badge bg-primary/10">
+						<?php echo $category; ?>
+					</span>
+				<?php endif; ?>
+
 				<button class="btn btn-ghost" onclick="recipe_category_filter.showModal()">
 					<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#383837" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-filter"><path d="M3 6h18"/><path d="M7 12h10"/><path d="M10 18h4"/></svg>
 					Filtrar
 				</button>
-
-				<?php if ( $category ) : ?>
-					<span class="badge bg-primary/10">
-						<?php echo $category; ?>
-					</span>
-
-					<a href="/receitas"><button class="btn btn-link no-underline text-xs text-accent tracking-tight">Limpar filtros</button></a>
-				<?php endif; ?>
 			</div>
 
 			<dialog id="recipe_category_filter" class="modal modal-bottom sm:modal-middle">
