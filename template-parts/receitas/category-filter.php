@@ -32,14 +32,14 @@
 				<div class="flex gap-2 flex-wrap"> 
 					<?php foreach ( $terms as $term ) { ?>
 							<a href="<?php echo esc_url( get_term_link( $term ) ) ?>">
-								<span class="badge py-4 <?php echo ($term->name === $category) ? 'bg-primary/10' : ''; ?>">
+								<span class="badge py-5 <?php echo ($term->name === $category) ? 'bg-primary/10' : ''; ?>">
 									<?php echo $term->name; ?>
 								</span>
 							</a>	
 					<?php } ?>
 				</div> 
 
-				<div class="modal-action py-12">
+				<div class="modal-action">
 					<form method="dialog">
 						<button class="btn">Fechar</button>
 					</form>
