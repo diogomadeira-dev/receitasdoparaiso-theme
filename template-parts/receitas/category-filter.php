@@ -1,5 +1,6 @@
 <?php
-	    $category = get_query_var('categoria');
+	    $slug = get_query_var('categoria');
+		$category = get_term_by('slug', $slug, 'categoria');
 
 		$terms = get_terms(
 			array(
@@ -9,12 +10,12 @@
 
 		if ( ! empty( $terms ) && is_array( $terms ) ) { ?>
 
-			<div class="flex justify-end items-center">
+			<div class="flex justify-end items-center gap-2">
 				<?php if ( $category ) : ?>
 					<a href="/receitas"><button class="btn btn-link no-underline text-xs text-accent tracking-tight">Limpar filtros</button></a>
 
 					<span class="badge bg-primary/10">
-						<?php echo $category; ?>
+						<?php echo $category->name; ?>
 					</span>
 				<?php endif; ?>
 
@@ -25,28 +26,27 @@
 			</div>
 
 			<dialog id="recipe_category_filter" class="modal modal-bottom sm:modal-middle">
+				<div class="modal-box">
+					<h2 class="text-lg pb-6">Filtrar categoria</h2>
+					
+					<div class="flex gap-2 flex-wrap"> 
+						<?php foreach ( $terms as $term ) { ?>
+								<a href="<?php echo esc_url( get_term_link( $term ) ) ?>">
+									<span class="badge py-5 <?php echo (is_object($category) && property_exists($category, 'slug') && $term->slug === $category->slug) ? 'bg-primary/10' : ''; ?>">
+										<?php echo $term->name; ?>
+									</span>
+								</a>	
+						<?php } ?>
+					</div> 
 
-			<div class="modal-box">
-				<h2 class="text-lg pb-6">Filtrar categoria</h2>
-				
-				<div class="flex gap-2 flex-wrap"> 
-					<?php foreach ( $terms as $term ) { ?>
-							<a href="<?php echo esc_url( get_term_link( $term ) ) ?>">
-								<span class="badge py-5 <?php echo ($term->name === $category) ? 'bg-primary/10' : ''; ?>">
-									<?php echo $term->name; ?>
-								</span>
-							</a>	
-					<?php } ?>
-				</div> 
-
-				<div class="modal-action">
-					<form method="dialog">
-						<button class="btn">Fechar</button>
-					</form>
+					<div class="modal-action">
+						<form method="dialog">
+							<a href="/receitas"><button type="button" class="btn btn-link no-underline text-sm text-accent tracking-tight">Limpar filtros</button></a>
+							<button class="btn">Fechar</button>
+						</form>
+					</div>
 				</div>
-			</div>
 			</dialog>
-
 
 		<?php 
 		} 
