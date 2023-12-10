@@ -15,7 +15,7 @@
     }
 
     .btn {
-        @apply rounded-full capitalize tracking-wider font-normal;
+        @apply rounded-full capitalize tracking-wider font-normal focus:outline-none;
     }
 
     .btn-primary {
@@ -58,4 +58,8 @@
 
 .capitalize-first-letter::first-letter {
     text-transform: uppercase; /* Capitalize the first letter of each sentence */
+}
+
+.woocommerce .cart a.button.alt, .woocommerce-page a.button.alt {
+    border-color: #87150d !important;
 }
