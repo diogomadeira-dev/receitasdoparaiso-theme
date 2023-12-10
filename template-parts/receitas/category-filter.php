@@ -32,7 +32,7 @@
 					<div class="flex gap-2 flex-wrap"> 
 						<?php foreach ( $terms as $term ) { ?>
 								<a href="<?php echo esc_url( get_term_link( $term ) ) ?>">
-									<span class="badge py-5 <?php echo (is_object($category) && property_exists($category, 'slug') && $term->slug === $category->slug) ? 'bg-primary/10' : ''; ?>">
+									<span class="badge py-5 hover:bg-primary/60 <?php echo (is_object($category) && property_exists($category, 'slug') && $term->slug === $category->slug) ? 'bg-primary/10' : ''; ?>">
 										<?php echo $term->name; ?>
 									</span>
 								</a>	

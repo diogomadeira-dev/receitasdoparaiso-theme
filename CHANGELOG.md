@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.4 - 10-12-2023
+
+- Fix category wrap recipe page.
+- Next and previous recipe buttons improvements.
+
 ## 1.1.3 - 10-12-2023
 
 - Fix active category filter and some visual upgrades.

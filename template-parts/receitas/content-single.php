@@ -20,24 +20,32 @@
 
                     <div class="flex justify-end gap-2">
                         <?php
-                        $previous_recipe = get_previous_post();
-                        if ($previous_recipe) :
-                            $previous_recipe_url = get_permalink($previous_recipe);
-                        ?>
-                            <a href="<?php echo $previous_recipe_url; ?>" data-tooltip-target="tooltip-default">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#383837" stroke-width="1.9285714285714286" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
-                            </a>
-                        <?php endif;
-                        ?>
-
-                        <?php
                         $next_recipe = get_next_post();
                         if ($next_recipe) :
                             $next_recipe_url = get_permalink($next_recipe);
                         ?>
-                            <a href="<?php echo $next_recipe_url; ?>">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#383837" stroke-width="1.9285714285714286" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                            </a>
+                            <div class="lg:tooltip" data-tip="Próxima receita">
+                                <a href="<?php echo $next_recipe_url; ?>" data-tooltip-target="tooltip-default">
+                                    <button class="btn btn-circle btn-outline">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#383837" stroke-width="1.9285714285714286" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+                                    </button>
+                                </a>
+                            </div>
+                        <?php endif;
+                        ?>
+
+                        <?php                            
+                        $previous_recipe = get_previous_post();
+                        if ($previous_recipe) :
+                            $previous_recipe_url = get_permalink($previous_recipe);
+                        ?>
+                            <div class="lg:tooltip" data-tip="Receita anterior">
+                                <a href="<?php echo $previous_recipe_url; ?>">
+                                    <button class="btn btn-circle btn-outline">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#383837" stroke-width="1.9285714285714286" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                                    </button>
+                                </a>
+                            </div>
                         <?php endif;
                         ?>
                     </div>
@@ -50,7 +58,9 @@
                         if ($categories) : 
                             foreach ($categories as $category) {
                         ?>
-                            <span class="badge"><?php echo $category->name ?></span>
+                            <a href="<?php echo '/categoria/' . $category->slug ?>">
+                                <span class="badge hover:bg-primary/60"><?php echo $category->name ?></span>
+                            </a>	
                         <?php } ?>
                     <?php endif; ?>
 
