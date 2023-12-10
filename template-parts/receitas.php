@@ -25,7 +25,7 @@
         </div>
         <div class="py-4">
             <h3 class="text-md font-bold leading-tight capitalize-first-letter mb-2 tracking-wide"><?php the_title() ?></h2>
-            <div class="flex gap-1 opacity-0 xl:group-hover:opacity-100 transition-opacity">
+            <div class="flex flex-wrap gap-1 opacity-0 xl:group-hover:opacity-100 transition-opacity">
                 <?php if (get_the_terms( get_the_ID(), 'categoria' )) : ?>
                     <?php foreach ((get_the_terms( get_the_ID(), 'categoria' )) as $category) { ?>
                         <span class="badge text-xs text-accent"><?php echo $category->name ?></span>
