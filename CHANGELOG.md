@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.5 - 11-12-2023
+
+- Image from youtube section (front page) updated.
+
 ## 1.1.4 - 10-12-2023
 
 - Fix category wrap recipe page.
