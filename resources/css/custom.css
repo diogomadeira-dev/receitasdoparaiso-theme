@@ -18,6 +18,10 @@
         @apply rounded-full capitalize tracking-wider font-normal focus:outline-none;
     }
 
+    .btn-outline {
+        @apply border hover:border-solid hover:border-neutral-500 hover:bg-white hover:shadow hover:transition ease-in-out duration-500;
+    }
+
     .btn-primary {
         @apply text-white;
     }

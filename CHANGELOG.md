@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.1.4 - 10-12-2023
+
+- Fix category wrap recipe page.
+- Next and previous recipe buttons improvements.
+- Add href to category badge on single recipe.
+- Fix share content by social media.
+
 ## 1.1.3 - 10-12-2023
 
 - Fix active category filter and some visual upgrades.
