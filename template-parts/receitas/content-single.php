@@ -73,7 +73,6 @@
                     $whatsapp_url = 'https://api.whatsapp.com/send/?text=' . $title . ' ' . $url;
                     $twitter_url = 'https://twitter.com/intent/tweet?url=' . $url . '&text=' . $title;
 
-                    echo $url;
                     ?>
 
 
