@@ -3,26 +3,33 @@ global $wp;
 $current_slug = add_query_arg(array(), $wp->request);
 ?>
 
+<dialog id="mobile_nav_modal" class="modal">
+  <div class="modal-box w-full h-full !max-h-full rounded-none">
+    <form method="dialog" class="h-[5%]">
+      <button class="btn btn-md btn-circle btn-ghost absolute right-2 top-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </form>
+    <div class="h-[90%] flex flex-col items-center justify-center gap-6">
+      <a href="/"><button class="btn btn-ghost btn-lg <?php echo ($current_slug === '') ? 'active' : ''; ?>">Início</button></a>
+      <a href="/receitas"><button class="btn btn-ghost btn-lg <?php echo ($current_slug === 'receitas') ? 'active' : ''; ?>">Receitas</button></a>
+      <a href="/loja"><button class="btn btn-ghost btn-lg <?php echo ($current_slug === 'loja') ? 'active' : ''; ?>">Loja</button></a>
+      <a href="/sobre"><button class="btn btn-ghost btn-lg <?php echo ($current_slug === 'sobre') ? 'active' : ''; ?>">Sobre nós</button></a>
+    </div>
+  </div>
+</dialog>
+
 <div class="navbar container mx-auto h-20">
   <div class="navbar-start">
-    <div class="dropdown">
-      <label tabindex="0" class="btn btn-ghost lg:hidden">
+      <label tabindex="0" class="btn btn-ghost lg:hidden" onclick="mobile_nav_modal.showModal()">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </label>
-      <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+      <!-- <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
         <li class="<?php echo ($current_slug === '') ? 'active' : ''; ?> navbar-item"><a href="/">Início</a></li>
         <li class="<?php echo ($current_slug === 'receitas') ? 'active' : ''; ?> navbar-item"><a href="/receitas">Receitas</a></li>
         <li class="<?php echo ($current_slug === 'loja') ? 'active' : ''; ?> navbar-item"><a href="/loja">Loja</a></li>
         <li class="<?php echo ($current_slug === 'sobre') ? 'active' : ''; ?> navbar-item"><a href="/sobre">Sobre nós</a></li>
-        <!-- <li>
-          <a>Parent</a>
-          <ul class="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </li> -->
-      </ul>
-    </div>
+      </ul> -->
 
     <a href="<?php echo get_home_url(); ?>">
       <div class="flex items-center w-40 h-12">

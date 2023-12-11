@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.6 - 11-12-2023
+
+- Mobile navigation updated.
+
 ## 1.1.5 - 11-12-2023
 
 - Image from youtube section (front page) updated.
