@@ -11,6 +11,10 @@
 		if ( ! empty( $terms ) && is_array( $terms ) ) { ?>
 
 			<div class="flex justify-end items-center gap-2">
+
+				<?php get_template_part( 'template-parts/receitas/search' ); ?>
+
+			
 				<?php if ( $category ) : ?>
 					<a href="/receitas"><button class="btn btn-link no-underline text-xs text-accent tracking-tight">Limpar filtros</button></a>
 
