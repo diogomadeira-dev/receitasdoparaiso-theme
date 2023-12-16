@@ -222,3 +222,88 @@ function update_user_option_admin_color( $color_scheme ) {
     return $color_scheme;
 }
 add_filter( 'get_user_option_admin_color', 'update_user_option_admin_color', 5 );
+
+/*
+ ==================
+ Simple Ajax Search
+======================   
+*/
+// add the ajax fetch js
+add_action( 'wp_footer', 'fetch_ajax' );
+function fetch_ajax() {
+?>
+<script type="text/javascript">
+function fetch(){
+
+	jQuery('#loading-spinner').show();
+	jQuery('#search-content').hide();
+
+    jQuery.ajax({
+        url: '<?php echo admin_url('admin-ajax.php'); ?>',
+        type: 'post',
+        data: { action: 'data_fetch', keyword: jQuery('#keyword').val() },
+        success: function(data) {
+			jQuery('#loading-spinner').hide();
+			jQuery('#search-content').show();
+            jQuery('#datafetch').html( data );
+        },
+		error: function () {
+			jQuery('#loading-spinner').hide();
+			jQuery('#search-content').hide();
+		}
+    });
+
+}
+</script>
+
+<?php
+}
+
+// the ajax function
+add_action('wp_ajax_data_fetch' , 'data_fetch');
+add_action('wp_ajax_nopriv_data_fetch','data_fetch');
+
+
+function data_fetch(){
+
+    $the_query = new WP_Query( 
+		array(
+			'posts_per_page' => -1, 
+			's' => esc_attr( $_POST['keyword'] ), 
+			'post_type' => array('receitas') 
+		) 
+	);
+    if( $the_query->have_posts() ) :?>
+	  <p id="loading-spinner">loading...</p>
+      <ul id="search-content" class="overflow-y-scroll">
+      	<?php while( $the_query->have_posts() ): $the_query->the_post(); ?>
+            <li><a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a></li>
+        <?php endwhile; ?>
+      	<?php while( $the_query->have_posts() ): $the_query->the_post(); ?>
+            <li><a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a></li>
+        <?php endwhile; ?>
+      	<?php while( $the_query->have_posts() ): $the_query->the_post(); ?>
+            <li><a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a></li>
+        <?php endwhile; ?>
+      	<?php while( $the_query->have_posts() ): $the_query->the_post(); ?>
+            <li><a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a></li>
+        <?php endwhile; ?>
+      	<?php while( $the_query->have_posts() ): $the_query->the_post(); ?>
+            <li><a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a></li>
+        <?php endwhile; ?>
+      	<?php while( $the_query->have_posts() ): $the_query->the_post(); ?>
+            <li><a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a></li>
+        <?php endwhile; ?>
+      	<?php while( $the_query->have_posts() ): $the_query->the_post(); ?>
+            <li><a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a></li>
+        <?php endwhile; ?>
+     </ul>
+	<?php else : ?>
+		
+		<p>sem resultados</p>
+
+       <?php wp_reset_postdata();  
+    endif;
+
+    die();
+}

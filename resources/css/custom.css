@@ -67,3 +67,8 @@
 .woocommerce .cart a.button.alt, .woocommerce-page a.button.alt {
     border-color: #87150d !important;
 }
+
+#loading-spinner {
+    display: none;
+    /* Add your spinner styles here */
+}
