@@ -279,24 +279,6 @@ function data_fetch(){
       	<?php while( $the_query->have_posts() ): $the_query->the_post(); ?>
             <li><a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a></li>
         <?php endwhile; ?>
-      	<?php while( $the_query->have_posts() ): $the_query->the_post(); ?>
-            <li><a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a></li>
-        <?php endwhile; ?>
-      	<?php while( $the_query->have_posts() ): $the_query->the_post(); ?>
-            <li><a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a></li>
-        <?php endwhile; ?>
-      	<?php while( $the_query->have_posts() ): $the_query->the_post(); ?>
-            <li><a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a></li>
-        <?php endwhile; ?>
-      	<?php while( $the_query->have_posts() ): $the_query->the_post(); ?>
-            <li><a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a></li>
-        <?php endwhile; ?>
-      	<?php while( $the_query->have_posts() ): $the_query->the_post(); ?>
-            <li><a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a></li>
-        <?php endwhile; ?>
-      	<?php while( $the_query->have_posts() ): $the_query->the_post(); ?>
-            <li><a href="<?php echo esc_url( post_permalink() ); ?>"><?php the_title();?></a></li>
-        <?php endwhile; ?>
      </ul>
 	<?php else : ?>
 		
