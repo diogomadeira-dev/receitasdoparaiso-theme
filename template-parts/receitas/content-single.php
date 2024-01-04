@@ -194,17 +194,19 @@
         </div>
     </div>
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3405549652085163"
-        crossorigin="anonymous"></script>
-    <!-- bloco single receitas -->
-    <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-3405549652085163"
-        data-ad-slot="6253740518"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+    <div class="py-6">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3405549652085163"
+            crossorigin="anonymous"></script>
+        <!-- bloco single receitas -->
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-3405549652085163"
+            data-ad-slot="6253740518"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
 
 </article>
