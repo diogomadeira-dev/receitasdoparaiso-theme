@@ -20,6 +20,19 @@
 
 	<?php storefront_paging_nav(); ?>
 
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3405549652085163"
+		crossorigin="anonymous"></script>
+	<!-- bloco -->
+	<ins class="adsbygoogle"
+		style="display:block"
+		data-ad-client="ca-pub-3405549652085163"
+		data-ad-slot="3076912833"
+		data-ad-format="auto"
+		data-full-width-responsive="true"></ins>
+	<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
+
 </div>
 
 <?php get_footer(); ?>
