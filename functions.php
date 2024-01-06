@@ -111,6 +111,15 @@ add_filter( 'nav_menu_submenu_css_class', 'receitasdoparaiso_theme_nav_menu_add_
 /* Disable WordPress Admin Bar for all users */
 add_filter( 'show_admin_bar', '__return_false' );
 
+/* Redirect /loja1 TO /loja */
+function wpc_shop_url_redirect() {
+    if(strpos($_SERVER['REQUEST_URI'], 'loja1') !== false){
+        wp_redirect( home_url( '/loja/' ) );
+        exit();
+    }
+}
+add_action( 'template_redirect', 'wpc_shop_url_redirect' );
+
 /**
 * Includes
 */
