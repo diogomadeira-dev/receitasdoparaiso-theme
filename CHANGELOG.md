@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.8 - 04-12-2023
+
+- Added redirection from /loja1 to /loja to prevent 404 redirections.
+
+## 1.1.7 - 04-12-2023
+
+- Removed christmas recipes section to front page.
+- Added ads banner to archive-receitas and single-receitas.
+
 ## 1.1.6 - 11-12-2023
 
 - Mobile navigation updated.
