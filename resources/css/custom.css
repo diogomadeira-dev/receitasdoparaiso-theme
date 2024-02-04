@@ -15,7 +15,7 @@
     }
 
     .btn {
-        @apply rounded-full capitalize tracking-wider font-normal focus:outline-none;
+        @apply rounded-full capitalize tracking-wider font-normal focus:outline-none hover:shadow-md;
     }
 
     .btn-outline {
