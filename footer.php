@@ -8,7 +8,7 @@
 <?php do_action( 'receitasdoparaiso_theme_content_after' ); ?>
 
 
-<footer class="relative mt-16 text-neutral-500 bg-neutral-950 -mx-10">
+<footer class="relative mt-16 text-neutral-500 bg-neutral-950">
   <svg class="absolute top-0 w-full h-6 -mt-5 sm:-mt-10 sm:h-16 text-deep-purple-accent-400" preserveAspectRatio="none" viewBox="0 0 1440 54">
     <path class="fill-neutral-950" d="M0 22L120 16.7C240 11 480 1.00001 720 0.700012C960 1.00001 1200 11 1320 16.7L1440 22V54H1320C1200 54 960 54 720 54C480 54 240 54 120 54H0V22Z"></path>
   </svg>
@@ -19,10 +19,9 @@
         	  <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/svg/logo-horizontal-dark.svg'); ?>" alt="Logótipo Receitas do Paraíso" class="w-auto h-full">
 	      </div>
       </div>
-      <div class="grid grid-cols-3 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-3 text-sm">
-        <div>
-          <ul class="mt-2 space-y-2">
-            
+      <div class="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-2 text-sm">
+        <!-- <div>
+          <ul class="mt-2 space-y-2"> -->
             <!-- <li>
               <a href="/" class="transition-colors duration-300 text-deep-purple-50 hover:text-primary">Contacta-nos</a>
             </li> -->
@@ -35,8 +34,8 @@
             <li>
               <a href="/" class="transition-colors duration-300 text-deep-purple-50 hover:text-primary">Entertainment</a>
             </li> -->
-          </ul>
-        </div>
+          <!-- </ul>
+        </div> -->
         <div>
           <ul class="mt-2 space-y-2">
             <!-- <li>
