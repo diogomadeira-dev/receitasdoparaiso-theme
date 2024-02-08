@@ -2,7 +2,7 @@
 
 <article id="post-<?php the_ID(); ?>">
 
-    <div class="lg:flex gap-10 mb-6">
+    <div class="lg:flex gap-10 mb-6 mt-12">
 
         <div class="flex-1 overflow-hidden">
             <?php $post_thumbnail = get_field('imagem', get_the_ID()); ?>
