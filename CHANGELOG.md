@@ -3,6 +3,8 @@
 ## 1.1.9 - 08-02-2024
 
 - Hero section refactor for mobile
+- Fix mobile recipe watch video button
+- Update footer to 2 columns
 
 ## 1.1.8 - 04-12-2023
 
