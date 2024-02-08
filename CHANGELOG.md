@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.9 - 08-02-2024
+
+- Hero section refactor for mobile
+
 ## 1.1.8 - 04-12-2023
 
 - Added redirection from /loja1 to /loja to prevent 404 redirections.
