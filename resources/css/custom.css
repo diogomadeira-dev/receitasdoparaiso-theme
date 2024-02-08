@@ -7,7 +7,7 @@
     /* TYPOGRAPHY */
 
     h1 {
-        @apply text-secondary text-4xl font-light text-left !mb-10;
+        @apply text-secondary text-4xl font-light text-left !mb-10 pt-10;
     }
 
     h2 {

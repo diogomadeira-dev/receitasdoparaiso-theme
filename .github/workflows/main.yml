@@ -13,7 +13,7 @@ jobs:
 
     - name: 🔄 Install dependencies and build assets
       run: |
-        npm install --force
+        npm install
         npm run production
     
     - name: 📂 Sync files
