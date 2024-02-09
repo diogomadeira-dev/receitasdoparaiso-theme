@@ -243,7 +243,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-full mb-10 sm:w-1/2 lg:w-1/3 xl:w-1/4 ">
+                <!-- <div class="w-full mb-10 sm:w-1/2 lg:w-1/3 xl:w-1/4 ">
                     <div class="mx-auto text-center ">
                         <div
                             class="inline-block mb-3 overflow-hidden text-xs rounded-full w-44 h-44 sm:w-64 sm:h-64">
@@ -279,7 +279,7 @@
                             </a>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
