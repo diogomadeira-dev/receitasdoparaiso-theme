@@ -114,5 +114,20 @@ function bbloomer_hide_add_cart_if_already_purchased( $is_purchasable, $product 
  
 add_filter( 'woocommerce_is_purchasable', 'bbloomer_hide_add_cart_if_already_purchased', 9999, 2 );
 
+ /**
+*  WooCommerce new product badge 90 days
+*/   
+function receitas_do_paraiso_new_badge_shop_page() {
+   global $product;
+   $newness_days = 30;
+   $created = strtotime( $product->get_date_created() );
+   if ( ( time() - ( 60 * 60 * 24 * $newness_days ) ) < $created ) {
+      echo '<span class="itsnew onsale bg-secondary text-white">' . esc_html__( 'Novo!', 'woocommerce' ) . '</span>';
+   }
+}
+
+add_action( 'woocommerce_after_shop_loop_item_title', 'receitas_do_paraiso_new_badge_shop_page', 3 );
+
+
 
 

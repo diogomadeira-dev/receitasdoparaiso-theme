@@ -16,8 +16,8 @@
                         <p class="mb-10 text-base leading-7 text-gray-500 text-justify">
 						<span class="italic text-primary">Receitas do Paraíso</span> é um canal, presente no Youtube, direcionado exclusivamente a receitas de culinária. 
 						Foi criado no dia 5 de janeiro de 2017, sendo a sua protagonista principal a Fernanda Meneses. 
-						Um dos nossos objetivos, é que as nossas receitas também fiquem registadas em livro e para isso temos 
-						já editados. Pode adquiri-los aqui. Também estão à venda no Google Play e na Amazon.
+						Um dos nossos objetivos, é que as nossas receitas também fiquem registadas em livro.
+                        Pode adquiri-los aqui. Também estão à venda no Google Play.
                         </p>
                         <div class="flex flex-wrap items-center">
                             <div class="w-full mb-6 sm:w-1/2 md:w-1/2 lg:mb-6">
@@ -64,7 +64,7 @@
                                     </span>
                                     <p class="mt-4 mb-2 text-3xl font-bold text-gray-700 dark:text-gray-400"><?php echo $count_recipes = wp_count_posts( 'receitas' )->publish; ?>
                                     </p>
-                                    <h2 class="text-sm text-gray-700 dark:text-gray-400">Vídeos</h2>
+                                    <h2 class="text-sm text-gray-700 dark:text-gray-400">Receitas</h2>
                                 </div>
                             </div>
                             <div class="w-full mb-6 sm:w-1/2 md:w-1/2 lg:mb-6">
@@ -76,9 +76,9 @@
                                                 d="M6 .5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H9v1.07a7.001 7.001 0 0 1 3.274 12.474l.601.602a.5.5 0 0 1-.707.708l-.746-.746A6.97 6.97 0 0 1 8 16a6.97 6.97 0 0 1-3.422-.892l-.746.746a.5.5 0 0 1-.707-.708l.602-.602A7.001 7.001 0 0 1 7 2.07V1h-.5A.5.5 0 0 1 6 .5zm2.5 5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5zM.86 5.387A2.5 2.5 0 1 1 4.387 1.86 8.035 8.035 0 0 0 .86 5.387zM11.613 1.86a2.5 2.5 0 1 1 3.527 3.527 8.035 8.035 0 0 0-3.527-3.527z" />
                                         </svg>
                                     </span>
-                                    <p class="mt-4 mb-2 text-3xl font-bold text-gray-700 dark:text-gray-400">100
+                                    <p class="mt-4 mb-2 text-3xl font-bold text-gray-700 dark:text-gray-400">5
                                     </p>
-                                    <h2 class="text-sm text-gray-700 dark:text-gray-400">Timing</h2>
+                                    <h2 class="text-sm text-gray-700 dark:text-gray-400">Livros</h2>
                                 </div>
                             </div>
                         </div>
@@ -107,16 +107,22 @@
                     <div class="mb-6">
 						<h1>Fernanda Meneses</h1>
                     </div>
+
                     <p class="mb-6 text-base leading-7 text-gray-500 text-justify">
 						Desde muito cedo, fui e sou uma apaixonada por culinária. Sempre investiguei, estudei, li, e procurei saber cada vez mais, 
 						sobre a boa comida à nossa mesa. Gosto muito de criar receitas novas e que sejam sempre saborosas, simples e saudáveis. 
 						Em todas as minhas receitas, procuro dentro do possível, evitar ao máximo o açúcar, o sal e a gordura. 
+                    </p>
+                    <p class="mb-6 text-base leading-7 text-gray-500 text-justify">
 						Certo dia, concretizei um dos meus sonhos: o canal “Receitas do Paraíso“. 
 						Com ele, quero partilhar o que sei, pois se assim não fosse, o que sei, não existia. 
-						O conhecimento que não é partilhado, não é conhecimento. 
 						Para além da culinária, sou apaixonada por flores, especialmente, por orquídeas. 
-						Gosto muito de conversar com as pessoas e sinto uma grande felicidade, quando posso ajudar os que precisam. 
-						Sinto-me muito feliz, quando vejo que as minhas receitas são apreciadas por muitos, por esse mundo fora.
+                    </p>
+                    <p class="mb-6 text-base leading-7 text-gray-500 text-justify">
+                        Com um grande abraço.
+                    </p>
+                    <p class="mb-6 text-base leading-7 text-gray-500 text-justify">
+                        Fernanda Meneses
                     </p>
                 </div>
             </div>
@@ -141,10 +147,10 @@
                         <div
                             class="inline-block mb-3 overflow-hidden text-xs rounded-full w-44 h-44 sm:w-64 sm:h-64">
                             <img class="object-cover w-full h-full transition-all hover:scale-110"
-                                src="https://i.postimg.cc/bNyr5cJq/pexels-anastasia-shuraeva-5704720.jpg" alt="">
+                                src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/images/team/jose-meneses.png'); ?>" alt="">
                         </div>
 						<h2 class="mb-2 text-xl font-semibold text-gray-800 dark:text-gray-300">José Meneses</h2>
-                        <span class="inline-block mb-6 text-base font-medium text-primary">Operador de câmara / Editor
+                        <span class="inline-block mb-6 text-base font-medium text-primary">Operador de câmara / Editor de vídeo
                         </span>
                         <div class="flex items-center justify-center">
                             <a class="inline-block mr-5 text-coolGray-300 hover:text-coolGray-400" href="#">
@@ -154,14 +160,7 @@
                                         d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
                                 </svg>
                             </a>
-                            <a class="inline-block mr-5 text-coolGray-300 hover:text-coolGray-400" href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="w-6 h-6 text-primary bi bi-twitter" viewBox="0 0 16 16">
-                                    <path
-                                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
-                                </svg>
-                            </a>
-                            <a class="inline-block text-coolGray-300 hover:text-coolGray-400" href="#">
+                            <a class="inline-block text-coolGray-300 hover:text-coolGray-400" href="https://www.shutterstock.com/g/meneses5">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="w-6 h-6 text-pink-600 bi bi-instagram"
                                     viewBox="0 0 16 16">
@@ -180,7 +179,7 @@
                                 src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/images/team/diogo-madeira.jpg'); ?>" alt="">
                         </div>
                         <h2 class="mb-2 text-xl font-semibold text-gray-800 dark:text-gray-300">Diogo Madeira</h2>
-                        <span class="inline-block mb-6 text-base font-medium text-primary">Programador / Design
+                        <span class="inline-block mb-6 text-base font-medium text-primary">Programador / Designer
                         </span>
                         <div class="flex items-center justify-center">
                             <a class="inline-block mr-5 text-coolGray-300 hover:text-coolGray-400" href="#">
@@ -243,16 +242,16 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="w-full mb-10 sm:w-1/2 lg:w-1/3 xl:w-1/4 ">
+                <div class="w-full mb-10 sm:w-1/2 lg:w-1/3 xl:w-1/4 ">
                     <div class="mx-auto text-center ">
                         <div
                             class="inline-block mb-3 overflow-hidden text-xs rounded-full w-44 h-44 sm:w-64 sm:h-64">
                             <img class="object-cover w-full h-full transition-all hover:scale-110"
                                 src="https://i.postimg.cc/bNyr5cJq/pexels-anastasia-shuraeva-5704720.jpg" alt="">
                         </div>
-                        <h2 class="mb-2 text-xl font-semibold text-gray-800 dark:text-gray-300">Saleena Robinson</h2>
+                        <h2 class="mb-2 text-xl font-semibold text-gray-800 dark:text-gray-300">Marta Meneses</h2>
                         <span
-                            class="inline-block mb-6 text-base font-medium text-primary">Photographer
+                            class="inline-block mb-6 text-base font-medium text-primary">Redatora
                         </span>
                         <div class="flex items-center justify-center">
                             <a class="inline-block mr-5 text-coolGray-300 hover:text-coolGray-400" href="#">
@@ -279,7 +278,7 @@
                             </a>
                         </div>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
     </section>
