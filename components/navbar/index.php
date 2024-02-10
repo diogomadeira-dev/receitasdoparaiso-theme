@@ -24,13 +24,6 @@ $current_slug = add_query_arg(array(), $wp->request);
       <label tabindex="0" class="btn btn-ghost lg:hidden" onclick="mobile_nav_modal.showModal()">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </label>
-      <!-- <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-        <li class="<?php echo ($current_slug === '') ? 'active' : ''; ?> navbar-item"><a href="/">Início</a></li>
-        <li class="<?php echo ($current_slug === 'receitas') ? 'active' : ''; ?> navbar-item"><a href="/receitas">Receitas</a></li>
-        <li class="<?php echo ($current_slug === 'loja') ? 'active' : ''; ?> navbar-item"><a href="/loja">Loja</a></li>
-        <li class="<?php echo ($current_slug === 'sobre') ? 'active' : ''; ?> navbar-item"><a href="/sobre">Sobre nós</a></li>
-      </ul> -->
-
     <a href="<?php echo get_home_url(); ?>">
       <div class="flex items-center w-40 h-12">
           <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/svg/logo-horizontal-light.svg'); ?>" alt="Logótipo Receitas do Paraíso" class="w-auto h-auto">
@@ -44,15 +37,6 @@ $current_slug = add_query_arg(array(), $wp->request);
       <li class="<?php echo ($current_slug === 'receitas') ? 'active' : ''; ?> navbar-item"><a href="/receitas">Receitas</a></li>
       <li class="<?php echo ($current_slug === 'loja') ? 'active' : ''; ?> navbar-item"><a href="/loja">Loja</a></li>
       <li class="<?php echo ($current_slug === 'sobre') ? 'active' : ''; ?> navbar-item"><a href="/sobre">Sobre nós</a></li>
-      <!-- <li tabindex="0">
-        <details>
-          <summary>Parent</summary>
-          <ul class="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </details>
-      </li> -->
     </ul>
   </div>
   <div class="navbar-end">
