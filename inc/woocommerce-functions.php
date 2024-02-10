@@ -89,22 +89,6 @@ function cxc_display_single_sale_price_after_sale_price() {
 
 add_action( 'woocommerce_single_product_summary', 'cxc_display_single_sale_price_after_sale_price', 15 );
 
- /**
-*  WooCommerce Check if User Has Purchased Product
-*/  
-function bbloomer_user_logged_in_product_already_bought() {
-    global $product;
-    if ( ! is_user_logged_in() ) return;
-    if ( wc_customer_bought_product( '', get_current_user_id(), $product->get_id() ) ) {
-        echo '<div role="alert" class="alert">
-            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-            <span>Este produto já foi adquirido</span>
-        </div>';
-    }
-}
-
-add_action( 'woocommerce_after_shop_loop_item', 'bbloomer_user_logged_in_product_already_bought', 30 );
-
 function bbloomer_hide_add_cart_if_already_purchased( $is_purchasable, $product ) {
     if ( wc_customer_bought_product( '', get_current_user_id(), $product->get_id() ) ) {
        $is_purchasable = false;
@@ -127,6 +111,50 @@ function receitas_do_paraiso_new_badge_shop_page() {
 }
 
 add_action( 'woocommerce_after_shop_loop_item_title', 'receitas_do_paraiso_new_badge_shop_page', 3 );
+
+ /**
+*  WooCommerce Check if User Has Purchased Product
+*/  
+// function bbloomer_user_logged_in_product_already_bought() {
+//     global $product;
+//     if ( ! is_user_logged_in() ) return;
+//     if ( wc_customer_bought_product( '', get_current_user_id(), $product->get_id() ) ) {
+//         echo '<div role="alert" class="alert">
+//             <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+//             <span>Este produto já foi adquirido</span>
+//         </div>';
+//     }
+// }
+
+// add_action( 'woocommerce_after_shop_loop_item', 'bbloomer_user_logged_in_product_already_bought', 30 );
+
+
+/**
+ * Hide loop read more buttons for out of stock items 
+ */
+if (!function_exists('woocommerce_template_loop_add_to_cart')) {
+	function woocommerce_template_loop_add_to_cart() {
+		global $product;
+		if ( ! $product->is_in_stock() || ! $product->is_purchasable() ) return;
+		wc_get_template('loop/add-to-cart.php');
+	}
+}
+
+
+// Add custom button for already purchased products on single product page
+add_action('woocommerce_get_price_html', 'add_custom_button_for_purchased_product', 15);
+function add_custom_button_for_purchased_product() {
+    global $product;
+    
+    // Check if product is already purchased
+    if ( wc_customer_bought_product( '', get_current_user_id(), $product->get_id() ) ) {
+        // Display custom button
+        echo '<div role="alert" class="alert mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span>Este produto já foi adquirido</span>
+        </div>';
+    }
+}
 
 
 
