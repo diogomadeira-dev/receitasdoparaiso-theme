@@ -300,7 +300,6 @@ function data_fetch(){
 }
 
 
-
 function rp_options($atts) {
     $atts = shortcode_atts(array(
         'key' => '', 

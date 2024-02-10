@@ -1,10 +1,13 @@
 # Changelog
 
-## 1.1.9 - 08-02-2024
+## 2.0.0 - 08-02-2024
 
 - Hero section refactor for mobile
 - Fix mobile recipe watch video button
 - Update footer to 2 columns
+- add new badge product for 90 days
+- add shortcode for stats
+- add about us page
 
 ## 1.1.8 - 04-12-2023
 
