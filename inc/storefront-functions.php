@@ -125,3 +125,15 @@ function receitasdoparaiso_customize_register( $wp_customize ) {
 	// $wp_customize->remove_panel( 'widgets');
 }
 add_action( 'customize_register', 'receitasdoparaiso_customize_register', 20 );
+
+
+/**
+* remove WooCommerce tabs from product page
+*/
+
+function my_remove_description_tab( $tabs ) {
+  unset( $tabs['description'] );
+  return $tabs;
+}
+
+add_filter( 'woocommerce_product_tabs', 'my_remove_description_tab', 11 );
