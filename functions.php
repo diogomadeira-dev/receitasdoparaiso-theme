@@ -298,3 +298,23 @@ function data_fetch(){
 
     die();
 }
+
+
+
+function rp_options($atts) {
+    $atts = shortcode_atts(array(
+        'key' => '', 
+    ), $atts, 'rp_options');
+
+    $options = get_option('wp_react_plugin_boilerplate_options');
+
+    if (is_array($options) && !empty($atts['key']) && isset($options[$atts['key']])) {
+        $value = $options[$atts['key']];
+    } else {
+        $value = 'Value not found';
+    }
+
+    return $value;
+}
+
+add_shortcode('rp_options', 'rp_options');
