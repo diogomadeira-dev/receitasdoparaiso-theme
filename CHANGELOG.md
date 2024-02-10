@@ -9,6 +9,7 @@
 - add shortcode for stats
 - add about us page
 - Remove Tools admin menu item for everyone other than Administrator
+- Hide loop read more buttons for out of stock items 
 
 ## 1.1.8 - 04-12-2023
 
