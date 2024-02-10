@@ -8,6 +8,7 @@
 - add new badge product for 90 days
 - add shortcode for stats
 - add about us page
+- Remove Tools admin menu item for everyone other than Administrator
 
 ## 1.1.8 - 04-12-2023
 
