@@ -305,7 +305,7 @@ function rp_options($atts) {
         'key' => '', 
     ), $atts, 'rp_options');
 
-    $options = get_option('wp_react_plugin_boilerplate_options');
+    $options = get_option('wp_receitas_do_paraiso_options');
 
     if (is_array($options) && !empty($atts['key']) && isset($options[$atts['key']])) {
         $value = $options[$atts['key']];
@@ -317,3 +317,64 @@ function rp_options($atts) {
 }
 
 add_shortcode('rp_options', 'rp_options');
+
+
+/**
+* Remove Tools admin menu item for everyone other than Administrator
+*/  
+function remove_menu_pages_for_all_except_admin() {
+
+global $user_ID;
+
+	if ( !current_user_can('administrator') ) {
+		remove_menu_page('edit.php'); // Posts
+		remove_menu_page('edit-comments.php'); // Comments
+		// remove_menu_page('upload.php'); // Media
+		// remove_menu_page('link-manager.php'); // Links
+		// remove_menu_page('edit.php?post_type=page'); // Pages
+		// remove_menu_page('plugins.php'); // Plugins
+		// remove_menu_page('themes.php'); // Appearance
+		// remove_menu_page('users.php'); // Users
+		// remove_menu_page('tools.php'); // Tools
+		// remove_menu_page('options-general.php'); // Settings
+
+		//Hide "Payments".
+		remove_menu_page('wc-admin&path=/wc-pay-welcome-page');
+		//Hide "Tools → Scheduled Actions".
+		remove_submenu_page('tools.php', 'action-scheduler');
+
+		//Hide "Analytics".
+		remove_menu_page('wc-admin&path=/analytics/overview');
+		//Hide "Analytics → Overview".
+		remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/overview');
+		//Hide "Analytics → Products".
+		remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/products');
+		//Hide "Analytics → Revenue".
+		remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/revenue');
+		//Hide "Analytics → Orders".
+		remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/orders');
+		//Hide "Analytics → Variations".
+		remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/variations');
+		//Hide "Analytics → Categories".
+		remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/categories');
+		//Hide "Analytics → Coupons".
+		remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/coupons');
+		//Hide "Analytics → Taxes".
+		remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/taxes');
+		//Hide "Analytics → Downloads".
+		remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/downloads');
+		//Hide "Analytics → Stock".
+		remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/stock');
+		//Hide "Analytics → Settings".
+		remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/settings');
+
+		//Hide "Marketing".
+		remove_menu_page('woocommerce-marketing');
+		//Hide "Marketing → Overview".
+		remove_submenu_page('woocommerce-marketing', 'admin.php?page=wc-admin&path=/marketing');
+		//Hide "Marketing → Coupons".
+		remove_submenu_page('woocommerce-marketing', 'edit.php?post_type=shop_coupon');
+	}
+}
+
+add_action( 'admin_init', 'remove_menu_pages_for_all_except_admin' );

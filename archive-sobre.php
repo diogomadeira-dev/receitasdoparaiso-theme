@@ -32,7 +32,7 @@
                                             <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z" />
                                         </svg>
                                     </span>
-                                    <p class="mt-4 mb-2 text-3xl font-bold text-gray-700 dark:text-gray-400">+250 mil
+                                    <p class="mt-4 mb-2 text-3xl font-bold text-gray-700 dark:text-gray-400">+<?php echo do_shortcode('[rp_options key="rp_subscribers"]'); ?> mil
                                     </p>
                                     <h2 class="text-sm text-gray-700 dark:text-gray-400">Subscritores</h2>
                                 </div>
@@ -48,7 +48,7 @@
 											d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
 									</svg>
                                     </span>
-                                    <p class="mt-4 mb-2 text-3xl font-bold text-gray-700 dark:text-gray-400">+30,000,000
+                                    <p class="mt-4 mb-2 text-3xl font-bold text-gray-700 dark:text-gray-400">+<?php echo do_shortcode('[rp_options key="rp_views"]'); ?>
                                     </p>
                                     <h2 class="text-sm text-gray-700 dark:text-gray-400">Visualizações</h2>
                                 </div>
