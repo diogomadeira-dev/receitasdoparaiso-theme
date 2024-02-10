@@ -142,20 +142,21 @@ if (!function_exists('woocommerce_template_loop_add_to_cart')) {
 
 
 // Add custom button for already purchased products on single product page
-add_action('woocommerce_get_price_html', 'add_custom_button_for_purchased_product', 15);
-function add_custom_button_for_purchased_product() {
-    global $product;
-    
-    // Check if product is already purchased
+function add_custom_button_for_purchased_product($price_html, $product) {
     if ( wc_customer_bought_product( '', get_current_user_id(), $product->get_id() ) ) {
-        // Display custom button
-        echo '<div role="alert" class="alert mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+        if ( is_product() && ! is_archive() ) {
+            $price_html .= '<div role="alert" class="alert my-4 bg-neutral-50 font-medium w-fit h-12 leading-none flex">
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6 text-success" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             <span>Este produto já foi adquirido</span>
         </div>';
+        } else {
+            $price_html .= '<div role="alert" class="alert my-4 bg-neutral-50 font-medium w-fit h-12 leading-none flex mx-auto">
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6 text-success" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span>Este produto já foi adquirido</span>
+        </div>';
+        }
     }
+    return $price_html;
 }
 
-
-
-
+add_filter('woocommerce_get_price_html', 'add_custom_button_for_purchased_product', 10, 2);
