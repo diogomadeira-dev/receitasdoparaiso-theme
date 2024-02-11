@@ -43,7 +43,7 @@
                             <div class="w-full mb-6 sm:w-1/2 md:w-1/2 lg:mb-6">
                                 <div class="p-6 bg-white dark:bg-gray-900">
                                     <span class="text-primary dark:text-yellow-400">
-                                    <svg class="h-14 w-14" fill="currentColor" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M9 19.5l-.012-4.5h2.012l1 4.5 1-4.5h2.037l-.037 4.5 2-4.5h3l-3.556 9h-8.888l-3.556-9h3l2 4.5zm10.941-5.5h-15.878s-1.059-.64-1.059-2.154c0-1.853 1.612-3.156 3.176-3.231.77 1.469 3.117 2.435 5.293 2.154-2.507-.558-5.692-3.718-3.9-6.21 1.272-1.77 4.473-1.486 3.9-4.559 2.131.589 3.43 2.167 3.176 4.308h.002c2.104-.101 3.867 1.3 3.173 4.307 1.754 0 3.176 1.447 3.176 3.231 0 1.328-1.051 2.148-1.059 2.154z"/></svg>
+                                       <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" class="h-14 w-14" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10.5 17.25c0-.414.336-.75.75-.75h10c.414 0 .75.336.75.75s-.336.75-.75.75h-10c-.414 0-.75-.336-.75-.75zm-1.5-3.55c0-.53-.47-1-1-1h-5c-.53 0-1 .47-1 1v4.3c0 .53.47 1 1 1h5c.53 0 1-.47 1-1zm1.5-1.7c0-.414.336-.75.75-.75h10c.414 0 .75.336.75.75s-.336.75-.75.75h-10c-.414 0-.75-.336-.75-.75zm-1.5-6c0-.53-.47-1-1-1h-5c-.53 0-1 .47-1 1v4.3c0 .53.47 1 1 1h5c.53 0 1-.47 1-1zm1.5.75c0-.414.336-.75.75-.75h10c.414 0 .75.336.75.75s-.336.75-.75.75h-10c-.414 0-.75-.336-.75-.75z" fill-rule="nonzero"/></svg>
                                     </span>                                    
                                     <p class="mt-4 mb-2 text-3xl font-bold text-gray-700 dark:text-gray-400"><?php echo $count_recipes = wp_count_posts( 'receitas' )->publish; ?>
                                     </p>
@@ -55,7 +55,19 @@
                                     <span class="text-primary dark:text-yellow-400">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="currentColor" viewBox="0 0 24 24"><path d="M15 12h-10v1h10v-1zm-4 2h-6v1h6v-1zm4-6h-10v1h10v-1zm0 2h-10v1h10v-1zm0-6h-10v1h10v-1zm0 2h-10v1h10v-1zm7.44 10.277c.183-2.314-.433-2.54-3.288-5.322.171 1.223.528 3.397.911 5.001.089.382-.416.621-.586.215-.204-.495-.535-2.602-.82-4.72-.154-1.134-1.661-.995-1.657.177.005 1.822.003 3.341 0 6.041-.003 2.303 1.046 2.348 1.819 4.931.132.444.246.927.339 1.399l3.842-1.339c-1.339-2.621-.693-4.689-.56-6.383zm-6.428 1.723h-13.012v-16h14v7.894c.646-.342 1.348-.274 1.877.101l.123-.018v-8.477c0-.828-.672-1.5-1.5-1.5h-15c-.828 0-1.5.671-1.5 1.5v17c0 .829.672 1.5 1.5 1.5h13.974c-.245-.515-.425-1.124-.462-2z"/></svg>
                                     </span>
-                                    <p class="mt-4 mb-2 text-3xl font-bold text-gray-700 dark:text-gray-400">5
+
+                                    <?php 
+                                    $args = array( 
+                                        'post_type' => 'product',
+                                        'post_status' => 'publish',
+                                    );
+                                    $loop = new WP_Query( $args );
+                                    $numproducts = $loop->post_count;
+                                    ?>
+                               
+                                    <p class="mt-4 mb-2 text-3xl font-bold text-gray-700 dark:text-gray-400">
+                                    <?php echo $numproducts; ?>
+
                                     </p>
                                     <h2 class="text-sm text-gray-700 dark:text-gray-400">Livros</h2>
                                 </div>
@@ -64,8 +76,8 @@
                     </div>
                 </div>
                 <div class="w-full mb-10 lg:w-1/2 lg:mb-0">
-                    <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/images/home/youtube.png'); ?>" alt="Fernanda Meneses"
-                        class="relative object-cover w-full h-full rounded">
+                    <img src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/images/about/youtube.png'); ?>" alt="Fernanda Meneses"
+                        class="relative object-cover w-full h-auto rounded-full">
                 </div>
             </div>
         </div>
