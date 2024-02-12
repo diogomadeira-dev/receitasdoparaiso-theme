@@ -21,38 +21,38 @@
                         </p>
                         <div class="flex flex-wrap items-center">
                             <div class="w-full mb-6 sm:w-1/2 md:w-1/2 lg:mb-6">
-                                <div class="p-6 bg-white dark:bg-gray-900">
-                                    <span class="text-primary dark:text-yellow-400">
+                                <div class="p-6 bg-white">
+                                    <span class="text-primary">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.997 18h-11.995l-.002-.623c0-1.259.1-1.986 1.588-2.33 1.684-.389 3.344-.736 2.545-2.209-2.366-4.363-.674-6.838 1.866-6.838 2.491 0 4.226 2.383 1.866 6.839-.775 1.464.826 1.812 2.545 2.209 1.49.344 1.589 1.072 1.589 2.333l-.002.619zm4.811-2.214c-1.29-.298-2.49-.559-1.909-1.657 1.769-3.342.469-5.129-1.4-5.129-1.265 0-2.248.817-2.248 2.324 0 3.903 2.268 1.77 2.246 6.676h4.501l.002-.463c0-.946-.074-1.493-1.192-1.751zm-22.806 2.214h4.501c-.021-4.906 2.246-2.772 2.246-6.676 0-1.507-.983-2.324-2.248-2.324-1.869 0-3.169 1.787-1.399 5.129.581 1.099-.619 1.359-1.909 1.657-1.119.258-1.193.805-1.193 1.751l.002.463z"/></svg>
                                     </span>
-                                    <p class="mt-4 mb-2 text-3xl font-bold text-gray-700 dark:text-gray-400">+<?php echo do_shortcode('[rp_options key="rp_subscribers"]'); ?> mil
+                                    <p class="mt-4 mb-2 text-3xl font-bold text-gray-700">+<?php echo do_shortcode('[rp_options key="rp_subscribers"]'); ?>
                                     </p>
-                                    <h2 class="text-sm text-gray-700 dark:text-gray-400">Subscritores</h2>
+                                    <h2 class="text-sm text-gray-700">Subscritores</h2>
                                 </div>
                             </div>
                             <div class="w-full mb-6 sm:w-1/2 md:w-1/2 lg:mb-6">
-                                <div class="p-6 bg-white dark:bg-gray-900">
-                                    <span class="text-primary dark:text-yellow-400">
+                                <div class="p-6 bg-white">
+                                    <span class="text-primary">
                                     <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" class="h-14 w-14" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m11.998 5c-4.078 0-7.742 3.093-9.853 6.483-.096.159-.145.338-.145.517s.048.358.144.517c2.112 3.39 5.776 6.483 9.854 6.483 4.143 0 7.796-3.09 9.864-6.493.092-.156.138-.332.138-.507s-.046-.351-.138-.507c-2.068-3.403-5.721-6.493-9.864-6.493zm.002 3c2.208 0 4 1.792 4 4s-1.792 4-4 4-4-1.792-4-4 1.792-4 4-4zm0 1.5c1.38 0 2.5 1.12 2.5 2.5s-1.12 2.5-2.5 2.5-2.5-1.12-2.5-2.5 1.12-2.5 2.5-2.5z" fill-rule="nonzero"/></svg>
                                     </span>
-                                    <p class="mt-4 mb-2 text-3xl font-bold text-gray-700 dark:text-gray-400">+<?php echo do_shortcode('[rp_options key="rp_views"]'); ?>
+                                    <p class="mt-4 mb-2 text-3xl font-bold text-gray-700">+<?php echo do_shortcode('[rp_options key="rp_views"]'); ?>
                                     </p>
-                                    <h2 class="text-sm text-gray-700 dark:text-gray-400">Visualizações</h2>
+                                    <h2 class="text-sm text-gray-700">Visualizações</h2>
                                 </div>
                             </div>
                             <div class="w-full mb-6 sm:w-1/2 md:w-1/2 lg:mb-6">
-                                <div class="p-6 bg-white dark:bg-gray-900">
-                                    <span class="text-primary dark:text-yellow-400">
+                                <div class="p-6 bg-white">
+                                    <span class="text-primary">
                                        <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" class="h-14 w-14" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m10.5 17.25c0-.414.336-.75.75-.75h10c.414 0 .75.336.75.75s-.336.75-.75.75h-10c-.414 0-.75-.336-.75-.75zm-1.5-3.55c0-.53-.47-1-1-1h-5c-.53 0-1 .47-1 1v4.3c0 .53.47 1 1 1h5c.53 0 1-.47 1-1zm1.5-1.7c0-.414.336-.75.75-.75h10c.414 0 .75.336.75.75s-.336.75-.75.75h-10c-.414 0-.75-.336-.75-.75zm-1.5-6c0-.53-.47-1-1-1h-5c-.53 0-1 .47-1 1v4.3c0 .53.47 1 1 1h5c.53 0 1-.47 1-1zm1.5.75c0-.414.336-.75.75-.75h10c.414 0 .75.336.75.75s-.336.75-.75.75h-10c-.414 0-.75-.336-.75-.75z" fill-rule="nonzero"/></svg>
                                     </span>                                    
-                                    <p class="mt-4 mb-2 text-3xl font-bold text-gray-700 dark:text-gray-400"><?php echo $count_recipes = wp_count_posts( 'receitas' )->publish; ?>
+                                    <p class="mt-4 mb-2 text-3xl font-bold text-gray-700"><?php echo $count_recipes = wp_count_posts( 'receitas' )->publish; ?>
                                     </p>
-                                    <h2 class="text-sm text-gray-700 dark:text-gray-400">Receitas</h2>
+                                    <h2 class="text-sm text-gray-700">Receitas</h2>
                                 </div>
                             </div>
                             <div class="w-full mb-6 sm:w-1/2 md:w-1/2 lg:mb-6">
-                                <div class="p-6 bg-white dark:bg-gray-900">
-                                    <span class="text-primary dark:text-yellow-400">
+                                <div class="p-6 bg-white">
+                                    <span class="text-primary">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="currentColor" viewBox="0 0 24 24"><path d="M15 12h-10v1h10v-1zm-4 2h-6v1h6v-1zm4-6h-10v1h10v-1zm0 2h-10v1h10v-1zm0-6h-10v1h10v-1zm0 2h-10v1h10v-1zm7.44 10.277c.183-2.314-.433-2.54-3.288-5.322.171 1.223.528 3.397.911 5.001.089.382-.416.621-.586.215-.204-.495-.535-2.602-.82-4.72-.154-1.134-1.661-.995-1.657.177.005 1.822.003 3.341 0 6.041-.003 2.303 1.046 2.348 1.819 4.931.132.444.246.927.339 1.399l3.842-1.339c-1.339-2.621-.693-4.689-.56-6.383zm-6.428 1.723h-13.012v-16h14v7.894c.646-.342 1.348-.274 1.877.101l.123-.018v-8.477c0-.828-.672-1.5-1.5-1.5h-15c-.828 0-1.5.671-1.5 1.5v17c0 .829.672 1.5 1.5 1.5h13.974c-.245-.515-.425-1.124-.462-2z"/></svg>
                                     </span>
 
@@ -65,11 +65,11 @@
                                     $numproducts = $loop->post_count;
                                     ?>
                                
-                                    <p class="mt-4 mb-2 text-3xl font-bold text-gray-700 dark:text-gray-400">
+                                    <p class="mt-4 mb-2 text-3xl font-bold text-gray-700">
                                     <?php echo $numproducts; ?>
 
                                     </p>
-                                    <h2 class="text-sm text-gray-700 dark:text-gray-400">Livros</h2>
+                                    <h2 class="text-sm text-gray-700">Livros</h2>
                                 </div>
                             </div>
                         </div>
@@ -84,8 +84,6 @@
     </section>
 
 
-
-	<!-- <section class="flex items-center bg-stone-100 xl:h-screen font-poppins dark:bg-gray-800 "> -->
         <section class="justify-center flex-1 py-4 mx-auto lg:py-6">
             <div class="flex flex-wrap ">
                 <div class="w-full mb-10 lg:w-1/2 lg:mb-0">
@@ -130,7 +128,7 @@
                     class="block mb-4 text-xs font-semibold leading-4 tracking-widest text-center text-primary uppercase">
                     Conheça a Nossa Equipa
                 </span>
-                <h1 class="text-3xl font-bold capitalize dark:text-white pt-0 text-center"> Por trás das câmaras </h1>
+                <h1 class="text-3xl font-bold capitalize pt-0 text-center"> Por trás das câmaras </h1>
             </div>
             <div class="flex flex-wrap justify-center -mx-4">
                 <div class="w-full mb-10 sm:w-1/2 lg:w-1/3 xl:w-1/4 ">
@@ -140,11 +138,11 @@
                             <img class="object-cover w-full h-full transition-all hover:scale-110"
                                 src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/images/team/jose-meneses.png'); ?>" alt="José Meneses">
                         </div>
-						<h2 class="mb-2 text-xl font-semibold text-gray-800 dark:text-gray-300">José Meneses</h2>
+						<h2 class="mb-2 text-xl font-semibold text-gray-800">José Meneses</h2>
                         <span class="inline-block mb-6 text-base font-medium text-primary">Operador de câmara / Editor de vídeo
                         </span>
                         <div class="flex items-center justify-center">
-                            <a class="inline-block mr-5 text-coolGray-300 hover:text-coolGray-400" href="#" target="_blank">
+                            <a class="inline-block mr-5 text-coolGray-300 hover:text-coolGray-400" href="https://www.facebook.com/jose.m.rocha.108" target="_blank">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="w-6 h-6 text-blue-800 bi bi-facebook" viewBox="0 0 16 16">
                                     <path
@@ -168,7 +166,7 @@
                             <img class="object-cover w-full h-full transition-all hover:scale-110"
                                 src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/images/team/diogo-madeira.jpg'); ?>" alt="Diogo Madeira">
                         </div>
-                        <h2 class="mb-2 text-xl font-semibold text-gray-800 dark:text-gray-300">Diogo Madeira</h2>
+                        <h2 class="mb-2 text-xl font-semibold text-gray-800">Diogo Madeira</h2>
                         <span class="inline-block mb-6 text-base font-medium text-primary">Programador / Designer
                         </span>
                         <div class="flex items-center justify-center">
@@ -187,7 +185,7 @@
                             <img class="object-cover w-full h-full transition-all hover:scale-110"
                                 src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/images/team/andre-meneses.jpg'); ?>" alt="André Meneses">
                         </div>
-                        <h2 class="mb-2 text-xl font-semibold text-gray-800 dark:text-gray-300">André Meneses</h2>
+                        <h2 class="mb-2 text-xl font-semibold text-gray-800">André Meneses</h2>
                         <span class="inline-block mb-6 text-base font-medium text-primary">Compositor de música</span>
                         <div class="flex items-center justify-center">
                             <a class="inline-block mr-5 text-coolGray-300 hover:text-coolGray-400" href="https://www.facebook.com/andremeneses55" target="_blank">
@@ -217,7 +215,7 @@
                             <img class="object-cover w-full h-full transition-all hover:scale-110"
                                 src="<?php echo esc_url(get_stylesheet_directory_uri() . '/assets/images/team/marta-meneses.jpg'); ?>" alt="Marta Meneses">
                         </div>
-                        <h2 class="mb-2 text-xl font-semibold text-gray-800 dark:text-gray-300">Marta Meneses</h2>
+                        <h2 class="mb-2 text-xl font-semibold text-gray-800">Marta Meneses</h2>
                         <span
                             class="inline-block mb-6 text-base font-medium text-primary">Redatora
                         </span>

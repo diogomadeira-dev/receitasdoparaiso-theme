@@ -56,8 +56,8 @@
             </a>
           </div>
         </div>
-      <h1 class="max-w-2xl mb-4 text-4xl font-bold tracking-tight leading-none lg:text-5xl xl:text-6xl dark:text-white">Um paraíso puro em cada <span class="text-primary font-extrabold">receita</span></h1>
-        <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 lg:text-lg lg:text-xl dark:text-gray-400">Receitas Simples, Saborosas e Saudáveis para facilitar a sua vida na cozinha.</p>
+      <h1 class="max-w-2xl mb-4 text-4xl font-bold tracking-tight leading-none lg:text-5xl xl:text-6xl">Um paraíso puro em cada <span class="text-primary font-extrabold">receita</span></h1>
+        <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 lg:text-lg lg:text-xl">Receitas Simples, Saborosas e Saudáveis para facilitar a sua vida na cozinha.</p>
         <div class="mt-10 flex items-center justify-start gap-x-6">
           <a href="/receitas" class="btn btn-primary">Ver receitas</a>
           <a role="button" class="btn btn-ghost btn-link text-black hover:bg-neutral-50 no-underline" href="https://www.youtube.com/@ReceitasdoParaiso?sub_confirmation=1" target="_blank">

@@ -318,63 +318,31 @@ function rp_options($atts) {
 
 add_shortcode('rp_options', 'rp_options');
 
-
 /**
-* Remove Tools admin menu item for everyone other than Administrator
-*/  
-function remove_menu_pages_for_all_except_admin() {
+* ROLES AND CAPABILTIES
+*/
 
-global $user_ID;
+function remove_built_in_roles() {
+    global $wp_roles;
 
-	if ( !current_user_can('administrator') ) {
-		remove_menu_page('edit.php'); // Posts
-		remove_menu_page('edit-comments.php'); // Comments
-		// remove_menu_page('upload.php'); // Media
-		// remove_menu_page('link-manager.php'); // Links
-		// remove_menu_page('edit.php?post_type=page'); // Pages
-		// remove_menu_page('plugins.php'); // Plugins
-		// remove_menu_page('themes.php'); // Appearance
-		// remove_menu_page('users.php'); // Users
-		// remove_menu_page('tools.php'); // Tools
-		// remove_menu_page('options-general.php'); // Settings
+    $roles_to_remove = array('subscriber', 'contributor', 'author', 'editor');
 
-		//Hide "Payments".
-		remove_menu_page('wc-admin&path=/wc-pay-welcome-page');
-		//Hide "Tools → Scheduled Actions".
-		remove_submenu_page('tools.php', 'action-scheduler');
-
-		//Hide "Analytics".
-		remove_menu_page('wc-admin&path=/analytics/overview');
-		//Hide "Analytics → Overview".
-		remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/overview');
-		//Hide "Analytics → Products".
-		remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/products');
-		//Hide "Analytics → Revenue".
-		remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/revenue');
-		//Hide "Analytics → Orders".
-		remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/orders');
-		//Hide "Analytics → Variations".
-		remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/variations');
-		//Hide "Analytics → Categories".
-		remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/categories');
-		//Hide "Analytics → Coupons".
-		remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/coupons');
-		//Hide "Analytics → Taxes".
-		remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/taxes');
-		//Hide "Analytics → Downloads".
-		remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/downloads');
-		//Hide "Analytics → Stock".
-		remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/stock');
-		//Hide "Analytics → Settings".
-		remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/settings');
-
-		//Hide "Marketing".
-		remove_menu_page('woocommerce-marketing');
-		//Hide "Marketing → Overview".
-		remove_submenu_page('woocommerce-marketing', 'admin.php?page=wc-admin&path=/marketing');
-		//Hide "Marketing → Coupons".
-		remove_submenu_page('woocommerce-marketing', 'edit.php?post_type=shop_coupon');
-	}
+    foreach ($roles_to_remove as $role) {
+        if (isset($wp_roles->roles[$role])) {
+            $wp_roles->remove_role($role);
+        }
+    }
 }
 
-add_action( 'admin_init', 'remove_menu_pages_for_all_except_admin' );
+add_action('admin_menu', 'remove_built_in_roles');
+
+/**
+* add capabilities to Shop manager 
+*/
+
+function wpse243341_modify_editor_role() {
+    $role = get_role( 'shop_manager' );
+    $role->add_cap( 'manage_options' ); 
+}
+
+add_action( 'admin_init', 'wpse243341_modify_editor_role');

@@ -147,7 +147,7 @@ function add_custom_button_for_purchased_product($price_html, $product) {
         if ( is_product() && ! is_archive() ) {
             $price_html .= '<div role="alert" class="alert my-4 bg-neutral-50 font-medium w-fit h-12 leading-none flex">
             <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6 text-success" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-            <span>Este produto já foi adquirido</span>
+            <span>Este produto já foi adquirido, descarregue <a class="text-underline text-primary" href="/minha-conta/downloads/">aqui</a>.</span>
         </div>';
         } else {
             $price_html .= '<div role="alert" class="alert my-4 bg-neutral-50 font-medium w-fit h-12 leading-none flex mx-auto">
@@ -160,3 +160,64 @@ function add_custom_button_for_purchased_product($price_html, $product) {
 }
 
 add_filter('woocommerce_get_price_html', 'add_custom_button_for_purchased_product', 10, 2);
+
+
+/**
+
+ * WebAppick - Set session variable on page load if the query string has coupon_code variable.
+
+ */
+
+function ts_get_custom_coupon_code_to_session() {
+
+if( isset( $_GET[ 'coupon_code' ] ) ) {
+
+     // Ensure that customer session is started
+
+     if( !WC()->session->has_session() )
+
+         WC()->session->set_customer_session_cookie(true);
+
+     // Check and register coupon code in a custom session variable
+
+     $coupon_code = WC()->session->get( 'coupon_code' );
+
+     if( empty( $coupon_code ) && isset( $_GET[ 'coupon_code' ] ) ) {
+
+         $coupon_code = esc_attr( $_GET[ 'coupon_code' ] );
+
+         WC()->session->set( 'coupon_code', $coupon_code ); // Set the coupon code in session
+
+     }
+
+}
+
+}
+
+add_action( 'init', 'ts_get_custom_coupon_code_to_session' );
+
+/**
+
+ * Apply Coupon code to the cart if the session has coupon_code variable.
+
+ */
+
+function ts_apply_discount_to_cart() {
+
+// Set coupon code
+
+$coupon_code = WC()->session->get( 'coupon_code' );
+
+if ( ! empty( $coupon_code ) && ! WC()->cart->has_discount( $coupon_code ) ){
+
+     WC()->cart->add_discount( $coupon_code ); // apply the coupon discount
+
+     WC()->session->__unset( 'coupon_code' ); // remove coupon code from session
+
+}
+
+}
+
+add_action( 'woocommerce_before_cart_table', 'ts_apply_discount_to_cart', 10, 0 );
+
+// carrinho/?coupon_code=bundle10
