@@ -1,6 +1,10 @@
 # Changelog
 
-## 2.0.0 - 08-02-2024
+## 2.1.0 - 15-02-2024
+
+- add woocommerce discount alert
+
+## 2.0.0 - 11-02-2024
 
 - Hero section refactor for mobile
 - Fix mobile recipe watch video button
