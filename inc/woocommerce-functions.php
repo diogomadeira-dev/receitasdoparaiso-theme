@@ -230,6 +230,7 @@ function woocommerce_store_notice_alert($text) {
     $applied_coupons = WC()->cart->get_applied_coupons();
     $discount_status = do_shortcode('[rp_options key="discount_status"]');
     $discount_percentage = do_shortcode('[rp_options key="discount_value"]');
+    $discount_code = do_shortcode('[rp_options key="discount_code"]');
  
     if( count( $applied_coupons ) > 0 ) { 
         $text = str_replace(
@@ -243,7 +244,7 @@ function woocommerce_store_notice_alert($text) {
             array('<p class="woocommerce-store-notice demo_store">', '</p>', 'Dismiss'), 
         array('
         <div class=""><p class="woocommerce-store-notice demo_store">', 
-        "<span class='font-semibold mr-6'>Clica para obteres cupão um desconto de $discount_percentage% em todos os Ebooks, válido em apenas uma compra.</span><a href='/carrinho/?coupon_code=bundle10'><button class='btn btn-primary'>Aplicar $discount_percentage%</button></a> </p></div>", '(close svg icon here)')
+        "<span class='font-semibold mr-6'>Clica para obteres cupão um desconto de $discount_percentage% em todos os Ebooks, válido em apenas uma compra.</span><a href='/carrinho/?coupon_code=$discount_code'><button class='btn btn-primary'>Aplicar $discount_percentage%</button></a> </p></div>", '(close svg icon here)')
         , $text);
     }
 
