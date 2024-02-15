@@ -14,9 +14,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (window.scrollY > 0) {
             element.classList.remove("shadow-none");
             element.classList.add("shadow"); 
+            element.classList.remove("bg-none");
+            element.classList.add("bg-white"); 
         } else {
             element.classList.remove("shadow");
             element.classList.add("shadow-none");
+            element.classList.remove("bg-white");
+            element.classList.add("bg-none");
         }
     });
 });

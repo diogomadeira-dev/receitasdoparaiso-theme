@@ -298,3 +298,51 @@ function data_fetch(){
 
     die();
 }
+
+
+function rp_options($atts) {
+    $atts = shortcode_atts(array(
+        'key' => '', 
+    ), $atts, 'rp_options');
+
+    $options = get_option('wp_receitas_do_paraiso_options');
+
+    if (is_array($options) && !empty($atts['key']) && isset($options[$atts['key']])) {
+        $value = $options[$atts['key']];
+    } else {
+        $value = 'Value not found';
+    }
+
+    return $value;
+}
+
+add_shortcode('rp_options', 'rp_options');
+
+/**
+* ROLES AND CAPABILTIES
+*/
+
+function remove_built_in_roles() {
+    global $wp_roles;
+
+    $roles_to_remove = array('subscriber', 'contributor', 'author', 'editor');
+
+    foreach ($roles_to_remove as $role) {
+        if (isset($wp_roles->roles[$role])) {
+            $wp_roles->remove_role($role);
+        }
+    }
+}
+
+add_action('admin_menu', 'remove_built_in_roles');
+
+/**
+* add capabilities to Shop manager 
+*/
+
+function wpse243341_modify_editor_role() {
+    $role = get_role( 'shop_manager' );
+    $role->add_cap( 'manage_options' ); 
+}
+
+add_action( 'admin_init', 'wpse243341_modify_editor_role');

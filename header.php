@@ -17,13 +17,13 @@
 
 	<?php do_action( 'receitasdoparaiso_theme_header' ); ?>
 
-	<header id="scrollHeader" class="w-full sticky top-0 z-40 bg-white transition-shadow duration-500">
+	<header id="scrollHeader" class="w-full sticky top-0 z-40 transition-all delay-50 duration-500">
 		<?php get_template_part( 'components/navbar/index'); ?>
 	</header>
 
 	<?php $container = !is_front_page() ? "container mx-auto" : ""; ?>
 
-	<div id="content" class="site-content flex-grow my-8 <?php echo $container; ?>">
+	<div id="content" class="site-content flex-grow <?php echo $container; ?>">
 
 		<?php do_action( 'receitasdoparaiso_theme_content_start' ); ?>
 

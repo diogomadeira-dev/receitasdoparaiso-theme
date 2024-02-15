@@ -59,5 +59,13 @@
     .woocommerce-form__label-for-checkbox {
         @apply w-full border-none my-6;
     }
+
+    .woocommerce-store-notice {
+        @apply bottom-0 bg-info text-info-txt;
+    }
+
+    .woocommerce-store-notice__dismiss-link {
+        @apply !hidden;
+    }
 }
 

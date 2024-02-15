@@ -7,7 +7,7 @@
     /* TYPOGRAPHY */
 
     h1 {
-        @apply text-secondary text-4xl font-light text-left !mb-10;
+        @apply text-secondary text-4xl font-light text-left !mb-10 pt-10;
     }
 
     h2 {
@@ -15,7 +15,7 @@
     }
 
     .btn {
-        @apply rounded-full capitalize tracking-wider font-normal focus:outline-none;
+        @apply rounded-full capitalize tracking-wider font-normal focus:outline-none hover:shadow-md;
     }
 
     .btn-outline {

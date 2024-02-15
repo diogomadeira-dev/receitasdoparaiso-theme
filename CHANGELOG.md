@@ -1,5 +1,21 @@
 # Changelog
 
+## 2.1.0 - 15-02-2024
+
+- add woocommerce discount alert
+
+## 2.0.0 - 11-02-2024
+
+- Hero section refactor for mobile
+- Fix mobile recipe watch video button
+- Update footer to 2 columns
+- add new badge product for 90 days
+- add shortcode for stats
+- add about us page
+- Remove Tools admin menu item for everyone other than Administrator
+- Hide loop read more buttons for out of stock items 
+- remove WooCommerce tabs from product page
+
 ## 1.1.8 - 04-12-2023
 
 - Added redirection from /loja1 to /loja to prevent 404 redirections.
