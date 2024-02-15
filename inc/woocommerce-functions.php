@@ -197,27 +197,71 @@ if( isset( $_GET[ 'coupon_code' ] ) ) {
 add_action( 'init', 'ts_get_custom_coupon_code_to_session' );
 
 /**
-
  * Apply Coupon code to the cart if the session has coupon_code variable.
-
  */
 
 function ts_apply_discount_to_cart() {
 
-// Set coupon code
+    $coupon_code = WC()->session->get( 'coupon_code' );
 
-$coupon_code = WC()->session->get( 'coupon_code' );
-
-if ( ! empty( $coupon_code ) && ! WC()->cart->has_discount( $coupon_code ) ){
-
-     WC()->cart->add_discount( $coupon_code ); // apply the coupon discount
-
-     WC()->session->__unset( 'coupon_code' ); // remove coupon code from session
-
-}
-
+    if ( ! empty( $coupon_code ) && ! WC()->cart->has_discount( $coupon_code ) ) {
+        WC()->cart->add_discount( $coupon_code ); // apply the coupon discount
+        WC()->session->__unset( 'coupon_code' ); // remove coupon code from session
+    }
 }
 
 add_action( 'woocommerce_before_cart_table', 'ts_apply_discount_to_cart', 10, 0 );
 
-// carrinho/?coupon_code=bundle10
+
+function woocommerce_coupons_enabled_checkout( $coupons_enabled ) {
+    global $woocommerce;
+    if ( ! empty( $woocommerce->cart->applied_coupons ) ) {
+        return false;
+    }
+    return $coupons_enabled;
+}
+
+add_filter( 'woocommerce_coupons_enabled', 'woocommerce_coupons_enabled_checkout' );
+
+
+function woocommerce_store_notice_alert($text) {
+    global $woocommerce;
+
+    $applied_coupons = WC()->cart->get_applied_coupons();
+    $discount_status = do_shortcode('[rp_options key="discount_status"]');
+    $discount_percentage = do_shortcode('[rp_options key="discount_value"]');
+ 
+    if( count( $applied_coupons ) > 0 ) { 
+        $text = str_replace(
+        array('<p class="woocommerce-store-notice demo_store">', '</p>', 'Dismiss'), 
+        array('
+        <div class="hello"><p class="woocommerce-store-notice demo_store">', 
+        "Cupão de desconto de $discount_percentage% aplicado com sucesso.</p></div>", '(close svg icon here)')
+        , $text);
+    } else {
+        $text = str_replace(
+            array('<p class="woocommerce-store-notice demo_store">', '</p>', 'Dismiss'), 
+        array('
+        <div class=""><p class="woocommerce-store-notice demo_store">', 
+        "<span class='font-semibold mr-6'>Clica para obteres cupão um desconto de $discount_percentage% em todos os Ebooks, válido em apenas uma compra.</span><a href='/carrinho/?coupon_code=bundle10'><button class='btn btn-primary'>Aplicar $discount_percentage%</button></a> </p></div>", '(close svg icon here)')
+        , $text);
+    }
+
+    if($discount_status) {
+        return $text;
+    }
+    
+    return null;
+}
+
+add_filter('woocommerce_demo_store', 'woocommerce_store_notice_alert', 10, 1);
+
+
+function display_store_notice_on_shop_page_only() {
+    if ( is_shop() || is_cart() ) {
+        add_action( 'wp_footer', 'woocommerce_demo_store', 10 );
+    } else {
+        remove_action( 'wp_footer', 'woocommerce_demo_store', 10 );
+    }
+}
+add_action( 'wp', 'display_store_notice_on_shop_page_only' );

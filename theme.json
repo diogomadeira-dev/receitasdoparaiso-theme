@@ -51,6 +51,16 @@
           "name": "Orange",
           "slug": "orange",
           "color": "#FB9819"
+        },
+        {
+          "name": "Info",
+          "slug": "info",
+          "color": "#B5D6D6"
+        },
+        {
+          "name": "Info",
+          "slug": "info-txt",
+          "color": "#0E1A1A"
         }
       ]
     },
